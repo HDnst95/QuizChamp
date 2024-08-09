@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">QuizChamp</string>
+    <string name="submit">Submit</string>
+    <string name="player_turn">Player %1$d\'s Turn</string>
+</resources>
