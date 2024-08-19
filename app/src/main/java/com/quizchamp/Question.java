@@ -3,30 +3,31 @@ package com.quizchamp;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "question")
-public class Question {
+import com.google.gson.annotations.SerializedName;
 
+@Entity
+public class Question {
     @PrimaryKey(autoGenerate = true)
     private int id;
+    @SerializedName("questionText")
+    public String questionText;
 
-    private String questionText;
-    private String option1;
-    private String option2;
-    private String option3;
-    private String option4;
-    private String correctAnswer;
+    @SerializedName("option1")
+    public String option1;
 
-    public Question(String questionText, String option1, String option2, String option3, String option4, String correctAnswer) {
-        this.questionText = questionText;
-        this.option1 = option1;
-        this.option2 = option2;
-        this.option3 = option3;
-        this.option4 = option4;
-        this.correctAnswer = correctAnswer;
-    }
+    @SerializedName("option2")
+    public String option2;
 
-    // Getters and Setters
+    @SerializedName("option3")
+    public String option3;
 
+    @SerializedName("option4")
+    public String option4;
+
+    @SerializedName("correctAnswer")
+    public String correctAnswer;
+
+    // Getters and setters
     public int getId() {
         return id;
     }

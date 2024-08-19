@@ -1,0 +1,1482 @@
+[
+  {
+    "questionText": "Was ist das chemische Symbol für Stickstoff?",
+    "option1": "N",
+    "option2": "Ni",
+    "option3": "Ne",
+    "option4": "Nn",
+    "correctAnswer": "N"
+  },
+  {
+    "questionText": "Was ist die Hauptstadt von Spanien?",
+    "option1": "Madrid",
+    "option2": "Barcelona",
+    "option3": "Valencia",
+    "option4": "Sevilla",
+    "correctAnswer": "Madrid"
+  },
+  {
+    "questionText": "Wer schrieb 'Der Graf von Monte Christo'?",
+    "option1": "Alexandre Dumas",
+    "option2": "Victor Hugo",
+    "option3": "Gustave Flaubert",
+    "option4": "Honoré de Balzac",
+    "correctAnswer": "Alexandre Dumas"
+  },
+  {
+    "questionText": "Welches Element hat das chemische Symbol 'Hg'?",
+    "option1": "Quecksilber",
+    "option2": "Helium",
+    "option3": "Hydrogen",
+    "option4": "Holmium",
+    "correctAnswer": "Quecksilber"
+  },
+  {
+    "questionText": "Was ist die chemische Formel für Salpetersäure?",
+    "option1": "HNO3",
+    "option2": "HNO2",
+    "option3": "H2SO4",
+    "option4": "HClO4",
+    "correctAnswer": "HNO3"
+  },
+  {
+    "questionText": "Wer schrieb 'Der Glöckner von Notre-Dame'?",
+    "option1": "Victor Hugo",
+    "option2": "Alexandre Dumas",
+    "option3": "Gustave Flaubert",
+    "option4": "Honoré de Balzac",
+    "correctAnswer": "Victor Hugo"
+  },
+  {
+    "questionText": "Was ist die Hauptstadt von Belgien?",
+    "option1": "Brüssel",
+    "option2": "Antwerpen",
+    "option3": "Gent",
+    "option4": "Brügge",
+    "correctAnswer": "Brüssel"
+  },
+  {
+    "questionText": "Welches Element hat das chemische Symbol 'Pt'?",
+    "option1": "Platin",
+    "option2": "Palladium",
+    "option3": "Plutonium",
+    "option4": "Polonium",
+    "correctAnswer": "Platin"
+  },
+  {
+    "questionText": "Was ist die chemische Formel für Kaliumchlorid?",
+    "option1": "KCl",
+    "option2": "K2Cl",
+    "option3": "K2Cl2",
+    "option4": "K2O",
+    "correctAnswer": "KCl"
+  },
+  {
+    "questionText": "Wer schrieb 'Faust'?",
+    "option1": "Johann Wolfgang von Goethe",
+    "option2": "Friedrich Schiller",
+    "option3": "Heinrich Heine",
+    "option4": "Gotthold Ephraim Lessing",
+    "correctAnswer": "Johann Wolfgang von Goethe"
+  },
+  {
+    "questionText": "Was ist die Hauptstadt von Dänemark?",
+    "option1": "Kopenhagen",
+    "option2": "Aarhus",
+    "option3": "Odense",
+    "option4": "Aalborg",
+    "correctAnswer": "Kopenhagen"
+  },
+  {
+    "questionText": "Welches Element hat das chemische Symbol 'Ni'?",
+    "option1": "Nickel",
+    "option2": "Neon",
+    "option3": "Niob",
+    "option4": "Natrium",
+    "correctAnswer": "Nickel"
+  },
+  {
+    "questionText": "Was ist die chemische Formel für Magnesiumoxid?",
+    "option1": "MgO",
+    "option2": "MgOH",
+    "option3": "MgO2",
+    "option4": "MgCO3",
+    "correctAnswer": "MgO"
+  },
+  {
+    "questionText": "Wer schrieb 'Der Prozeß'?",
+    "option1": "Franz Kafka",
+    "option2": "James Joyce",
+    "option3": "Virginia Woolf",
+    "option4": "F. Scott Fitzgerald",
+    "correctAnswer": "Franz Kafka"
+  },
+  {
+    "questionText": "Was ist die Hauptstadt von Irland?",
+    "option1": "Dublin",
+    "option2": "Cork",
+    "option3": "Galway",
+    "option4": "Limerick",
+    "correctAnswer": "Dublin"
+  },
+  {
+    "questionText": "Welches Element hat das chemische Symbol 'Kr'?",
+    "option1": "Krypton",
+    "option2": "Kalium",
+    "option3": "Kobalt",
+    "option4": "Kalzium",
+    "correctAnswer": "Krypton"
+  },
+  {
+    "questionText": "Was ist die chemische Formel für Aluminiumoxid?",
+    "option1": "Al2O3",
+    "option2": "AlO2",
+    "option3": "AlO3",
+    "option4": "Al2O",
+    "correctAnswer": "Al2O3"
+  },
+  {
+    "questionText": "Wer schrieb 'Das Bildnis des Dorian Gray'?",
+    "option1": "Oscar Wilde",
+    "option2": "James Joyce",
+    "option3": "Virginia Woolf",
+    "option4": "Mark Twain",
+    "correctAnswer": "Oscar Wilde"
+  },
+  {
+    "questionText": "Was ist die Hauptstadt von Finnland?",
+    "option1": "Helsinki",
+    "option2": "Turku",
+    "option3": "Oulu",
+    "option4": "Tampere",
+    "correctAnswer": "Helsinki"
+  },
+  {
+    "questionText": "Welches Element hat das chemische Symbol 'I'?",
+    "option1": "Iod",
+    "option2": "Indium",
+    "option3": "Iridium",
+    "option4": "Eisen",
+    "correctAnswer": "Iod"
+  },
+  {
+    "questionText": "Was ist die chemische Formel für Kaliumpermanganat?",
+    "option1": "KMnO4",
+    "option2": "K2MnO4",
+    "option3": "K2MnO3",
+    "option4": "KMnO3",
+    "correctAnswer": "KMnO4"
+  },
+  {
+    "questionText": "Wer schrieb 'Sturmhöhe'?",
+    "option1": "Emily Brontë",
+    "option2": "Charlotte Brontë",
+    "option3": "Jane Austen",
+    "option4": "Mary Shelley",
+    "correctAnswer": "Emily Brontë"
+  },
+  {
+    "questionText": "Was ist die Hauptstadt von Ungarn?",
+    "option1": "Budapest",
+    "option2": "Debrecen",
+    "option3": "Szeged",
+    "option4": "Miskolc",
+    "correctAnswer": "Budapest"
+  },
+  {
+    "questionText": "Welches Element hat das chemische Symbol 'Xe'?",
+    "option1": "Xenon",
+    "option2": "Zink",
+    "option3": "Xenium",
+    "option4": "Xylol",
+    "correctAnswer": "Xenon"
+  },
+  {
+    "questionText": "Was ist die chemische Formel für Bariumchlorid?",
+    "option1": "BaCl2",
+    "option2": "BaCl",
+    "option3": "BaCl3",
+    "option4": "BaOCl",
+    "correctAnswer": "BaCl2"
+  },
+  {
+    "questionText": "Wer schrieb 'Jane Eyre'?",
+    "option1": "Charlotte Brontë",
+    "option2": "Emily Brontë",
+    "option3": "Jane Austen",
+    "option4": "Mary Shelley",
+    "correctAnswer": "Charlotte Brontë"
+  },
+  {
+    "questionText": "Was ist die Hauptstadt von Portugal?",
+    "option1": "Lissabon",
+    "option2": "Porto",
+    "option3": "Coimbra",
+    "option4": "Faro",
+    "correctAnswer": "Lissabon"
+  },
+  {
+    "questionText": "Welches Element hat das chemische Symbol 'Cd'?",
+    "option1": "Cadmium",
+    "option2": "Calcium",
+    "option3": "Cäsium",
+    "option4": "Curium",
+    "correctAnswer": "Cadmium"
+  },
+  {
+    "questionText": "Was ist die chemische Formel für Kalziumkarbonat?",
+    "option1": "CaCO3",
+    "option2": "CaC2",
+    "option3": "CaO3",
+    "option4": "CaCl2",
+    "correctAnswer": "CaCO3"
+  },
+  {
+    "questionText": "Wer schrieb 'Frankenstein'?",
+    "option1": "Mary Shelley",
+    "option2": "Emily Brontë",
+    "option3": "Charlotte Brontë",
+    "option4": "Jane Austen",
+    "correctAnswer": "Mary Shelley"
+  },
+  {
+    "questionText": "Was ist die Hauptstadt von Griechenland?",
+    "option1": "Athen",
+    "option2": "Thessaloniki",
+    "option3": "Patras",
+    "option4": "Heraklion",
+    "correctAnswer": "Athen"
+  },
+  {
+    "questionText": "Welches Element hat das chemische Symbol 'Zn'?",
+    "option1": "Zink",
+    "option2": "Zinn",
+    "option3": "Zirconium",
+    "option4": "Zeolith",
+    "correctAnswer": "Zink"
+  },
+  {
+    "questionText": "Was ist die chemische Formel für Schwefelsäure?",
+    "option1": "H2SO4",
+    "option2": "H2S",
+    "option3": "H2SO3",
+    "option4": "HSO4",
+    "correctAnswer": "H2SO4"
+  },
+  {
+    "questionText": "Wer schrieb 'Die Schachnovelle'?",
+    "option1": "Stefan Zweig",
+    "option2": "Franz Kafka",
+    "option3": "Hermann Hesse",
+    "option4": "Thomas Mann",
+    "correctAnswer": "Stefan Zweig"
+  },
+  {
+    "questionText": "Was ist die Hauptstadt von Österreich?",
+    "option1": "Wien",
+    "option2": "Graz",
+    "option3": "Linz",
+    "option4": "Salzburg",
+    "correctAnswer": "Wien"
+  },
+  {
+    "questionText": "Welches Element hat das chemische Symbol 'Pb'?",
+    "option1": "Blei",
+    "option2": "Platin",
+    "option3": "Palladium",
+    "option4": "Polonium",
+    "correctAnswer": "Blei"
+  },
+  {
+    "questionText": "Was ist die chemische Formel für Natriumchlorid?",
+    "option1": "NaCl",
+    "option2": "Na2Cl",
+    "option3": "NaCl2",
+    "option4": "NaOCl",
+    "correctAnswer": "NaCl"
+  },
+  {
+    "questionText": "Wer schrieb 'Der Steppenwolf'?",
+    "option1": "Hermann Hesse",
+    "option2": "Franz Kafka",
+    "option3": "Thomas Mann",
+    "option4": "Stefan Zweig",
+    "correctAnswer": "Hermann Hesse"
+  },
+  {
+    "questionText": "Was ist die Hauptstadt von Schweden?",
+    "option1": "Stockholm",
+    "option2": "Göteborg",
+    "option3": "Malmö",
+    "option4": "Uppsala",
+    "correctAnswer": "Stockholm"
+  },
+  {
+    "questionText": "Welches Element hat das chemische Symbol 'Sn'?",
+    "option1": "Zinn",
+    "option2": "Silizium",
+    "option3": "Selen",
+    "option4": "Strontium",
+    "correctAnswer": "Zinn"
+  },
+  {
+    "questionText": "Was ist die chemische Formel für Natriumhydroxid?",
+    "option1": "NaOH",
+    "option2": "NaO",
+    "option3": "NaHO",
+    "option4": "NaH",
+    "correctAnswer": "NaOH"
+  },
+  {
+    "questionText": "Wer schrieb 'Im Westen nichts Neues'?",
+    "option1": "Erich Maria Remarque",
+    "option2": "Hermann Hesse",
+    "option3": "Thomas Mann",
+    "option4": "Stefan Zweig",
+    "correctAnswer": "Erich Maria Remarque"
+  },
+  {
+    "questionText": "Was ist die Hauptstadt von Norwegen?",
+    "option1": "Oslo",
+    "option2": "Bergen",
+    "option3": "Stavanger",
+    "option4": "Trondheim",
+    "correctAnswer": "Oslo"
+  },
+  {
+    "questionText": "Welches Element hat das chemische Symbol 'Au'?",
+    "option1": "Gold",
+    "option2": "Silber",
+    "option3": "Platin",
+    "option4": "Kupfer",
+    "correctAnswer": "Gold"
+  },
+  {
+    "questionText": "Was ist die chemische Formel für Ammoniak?",
+    "option1": "NH3",
+    "option2": "NH2",
+    "option3": "NH4",
+    "option4": "N2H3",
+    "correctAnswer": "NH3"
+  },
+  {
+    "questionText": "Wer schrieb 'Der Name der Rose'?",
+    "option1": "Umberto Eco",
+    "option2": "Gabriel Garcia Marquez",
+    "option3": "Paulo Coelho",
+    "option4": "Jorge Luis Borges",
+    "correctAnswer": "Umberto Eco"
+  },
+  {
+    "questionText": "Was ist die Hauptstadt von Schweiz?",
+    "option1": "Bern",
+    "option2": "Zürich",
+    "option3": "Genf",
+    "option4": "Basel",
+    "correctAnswer": "Bern"
+  },
+  {
+    "questionText": "Welches Element hat das chemische Symbol 'Fe'?",
+    "option1": "Eisen",
+    "option2": "Fermium",
+    "option3": "Fluor",
+    "option4": "Francium",
+    "correctAnswer": "Eisen"
+  },
+  {
+    "questionText": "Was ist die chemische Formel für Schwefelwasserstoff?",
+    "option1": "H2S",
+    "option2": "HSO4",
+    "option3": "HSO3",
+    "option4": "SO2",
+    "correctAnswer": "H2S"
+  },
+  {
+    "questionText": "Wer schrieb 'Don Quijote'?",
+    "option1": "Miguel de Cervantes",
+    "option2": "Gabriel Garcia Marquez",
+    "option3": "Paulo Coelho",
+    "option4": "Jorge Luis Borges",
+    "correctAnswer": "Miguel de Cervantes"
+  },
+  {
+    "questionText": "Was ist die Hauptstadt von Italien?",
+    "option1": "Rom",
+    "option2": "Mailand",
+    "option3": "Neapel",
+    "option4": "Turin",
+    "correctAnswer": "Rom"
+  },
+  {
+    "questionText": "Welches Element hat das chemische Symbol 'C'?",
+    "option1": "Kohlenstoff",
+    "option2": "Chlor",
+    "option3": "Chrom",
+    "option4": "Cäsium",
+    "correctAnswer": "Kohlenstoff"
+  },
+  {
+    "questionText": "Was ist die chemische Formel für Methan?",
+    "option1": "CH4",
+    "option2": "C2H6",
+    "option3": "C3H8",
+    "option4": "C4H10",
+    "correctAnswer": "CH4"
+  },
+  {
+    "questionText": "Wer schrieb 'Die Verwandlung'?",
+    "option1": "Franz Kafka",
+    "option2": "Hermann Hesse",
+    "option3": "Thomas Mann",
+    "option4": "Stefan Zweig",
+    "correctAnswer": "Franz Kafka"
+  },
+  {
+    "questionText": "Was ist die Hauptstadt von Frankreich?",
+    "option1": "Paris",
+    "option2": "Lyon",
+    "option3": "Marseille",
+    "option4": "Bordeaux",
+    "correctAnswer": "Paris"
+  },
+  {
+    "questionText": "Welches Element hat das chemische Symbol 'Ag'?",
+    "option1": "Silber",
+    "option2": "Gold",
+    "option3": "Kupfer",
+    "option4": "Aluminium",
+    "correctAnswer": "Silber"
+  },
+  {
+    "questionText": "Was ist die chemische Formel für Butan?",
+    "option1": "C4H10",
+    "option2": "C3H8",
+    "option3": "C2H6",
+    "option4": "C5H12",
+    "correctAnswer": "C4H10"
+  },
+  {
+    "questionText": "Wer schrieb 'Der alte Mann und das Meer'?",
+    "option1": "Ernest Hemingway",
+    "option2": "William Faulkner",
+    "option3": "John Steinbeck",
+    "option4": "F. Scott Fitzgerald",
+    "correctAnswer": "Ernest Hemingway"
+  },
+  {
+    "questionText": "Was ist die Hauptstadt von Deutschland?",
+    "option1": "Berlin",
+    "option2": "Hamburg",
+    "option3": "München",
+    "option4": "Köln",
+    "correctAnswer": "Berlin"
+  },
+  {
+    "questionText": "Welches Element hat das chemische Symbol 'Cu'?",
+    "option1": "Kupfer",
+    "option2": "Calcium",
+    "option3": "Chrom",
+    "option4": "Cäsium",
+    "correctAnswer": "Kupfer"
+  },
+  {
+    "questionText": "Was ist die chemische Formel für Wasserstoffperoxid?",
+    "option1": "H2O2",
+    "option2": "H2O",
+    "option3": "H3O2",
+    "option4": "H2O3",
+    "correctAnswer": "H2O2"
+  },
+  {
+    "questionText": "Wer schrieb 'Moby-Dick'?",
+    "option1": "Herman Melville",
+    "option2": "Nathaniel Hawthorne",
+    "option3": "Mark Twain",
+    "option4": "James Fenimore Cooper",
+    "correctAnswer": "Herman Melville"
+  },
+  {
+    "questionText": "Was ist die Hauptstadt von Großbritannien?",
+    "option1": "London",
+    "option2": "Edinburgh",
+    "option3": "Cardiff",
+    "option4": "Belfast",
+    "correctAnswer": "London"
+  },
+  {
+    "questionText": "Welches Element hat das chemische Symbol 'Al'?",
+    "option1": "Aluminium",
+    "option2": "Argon",
+    "option3": "Arsen",
+    "option4": "Antimon",
+    "correctAnswer": "Aluminium"
+  },
+  {
+    "questionText": "Was ist die chemische Formel für Kohlendioxid?",
+    "option1": "CO2",
+    "option2": "CO",
+    "option3": "C2O",
+    "option4": "C2O2",
+    "correctAnswer": "CO2"
+  },
+  {
+    "questionText": "Wer schrieb 'Der Herr der Ringe'?",
+    "option1": "J.R.R. Tolkien",
+    "option2": "C.S. Lewis",
+    "option3": "George R.R. Martin",
+    "option4": "J.K. Rowling",
+    "correctAnswer": "J.R.R. Tolkien"
+  },
+  {
+    "questionText": "Was ist die Hauptstadt von Russland?",
+    "option1": "Moskau",
+    "option2": "Sankt Petersburg",
+    "option3": "Nowosibirsk",
+    "option4": "Jekaterinburg",
+    "correctAnswer": "Moskau"
+  },
+  {
+    "questionText": "Welches Element hat das chemische Symbol 'O'?",
+    "option1": "Sauerstoff",
+    "option2": "Osmium",
+    "option3": "Oxid",
+    "option4": "Oganesson",
+    "correctAnswer": "Sauerstoff"
+  },
+  {
+    "questionText": "Was ist die chemische Formel für Ethanol?",
+    "option1": "C2H5OH",
+    "option2": "CH3OH",
+    "option3": "C2H6O",
+    "option4": "C2H4O",
+    "correctAnswer": "C2H5OH"
+  },
+  {
+    "questionText": "Wer schrieb 'Krieg und Frieden'?",
+    "option1": "Leo Tolstoi",
+    "option2": "Fyodor Dostoevsky",
+    "option3": "Anton Chekhov",
+    "option4": "Ivan Turgenev",
+    "correctAnswer": "Leo Tolstoi"
+  },
+  {
+    "questionText": "Was ist die Hauptstadt von China?",
+    "option1": "Peking",
+    "option2": "Shanghai",
+    "option3": "Guangzhou",
+    "option4": "Shenzhen",
+    "correctAnswer": "Peking"
+  },
+  {
+    "questionText": "Welches Element hat das chemische Symbol 'N'?",
+    "option1": "Stickstoff",
+    "option2": "Neon",
+    "option3": "Natrium",
+    "option4": "Niob",
+    "correctAnswer": "Stickstoff"
+  },
+  {
+    "questionText": "Was ist die chemische Formel für Aceton?",
+    "option1": "C3H6O",
+    "option2": "C2H4O",
+    "option3": "C3H8O",
+    "option4": "C4H10O",
+    "correctAnswer": "C3H6O"
+  },
+  {
+    "questionText": "Wer schrieb 'Die Brüder Karamasow'?",
+    "option1": "Fyodor Dostoevsky",
+    "option2": "Leo Tolstoi",
+    "option3": "Anton Chekhov",
+    "option4": "Ivan Turgenev",
+    "correctAnswer": "Fyodor Dostoevsky"
+  },
+  {
+    "questionText": "Was ist die Hauptstadt von Japan?",
+    "option1": "Tokio",
+    "option2": "Osaka",
+    "option3": "Nagoya",
+    "option4": "Yokohama",
+    "correctAnswer": "Tokio"
+  },
+  {
+    "questionText": "Welches Element hat das chemische Symbol 'H'?",
+    "option1": "Wasserstoff",
+    "option2": "Helium",
+    "option3": "Hafnium",
+    "option4": "Holmium",
+    "correctAnswer": "Wasserstoff"
+  },
+  {
+    "questionText": "Was ist die chemische Formel für Propan?",
+    "option1": "C3H8",
+    "option2": "C2H6",
+    "option3": "C4H10",
+    "option4": "C5H12",
+    "correctAnswer": "C3H8"
+  },
+  {
+    "questionText": "Wer schrieb 'Die Göttliche Komödie'?",
+    "option1": "Dante Alighieri",
+    "option2": "Giovanni Boccaccio",
+    "option3": "Francesco Petrarca",
+    "option4": "Niccolò Machiavelli",
+    "correctAnswer": "Dante Alighieri"
+  },
+  {
+    "questionText": "Was ist die Hauptstadt von Indien?",
+    "option1": "Neu-Delhi",
+    "option2": "Mumbai",
+    "option3": "Kolkata",
+    "option4": "Chennai",
+    "correctAnswer": "Neu-Delhi"
+  },
+  {
+    "questionText": "Welches Element hat das chemische Symbol 'He'?",
+    "option1": "Helium",
+    "option2": "Hydrogen",
+    "option3": "Hafnium",
+    "option4": "Holmium",
+    "correctAnswer": "Helium"
+  },
+  {
+    "questionText": "Was ist die chemische Formel für Ethin?",
+    "option1": "C2H2",
+    "option2": "C2H4",
+    "option3": "C2H6",
+    "option4": "C3H6",
+    "correctAnswer": "C2H2"
+  },
+  {
+    "questionText": "Wer schrieb 'Das Kapital'?",
+    "option1": "Karl Marx",
+    "option2": "Friedrich Engels",
+    "option3": "Vladimir Lenin",
+    "option4": "Joseph Stalin",
+    "correctAnswer": "Karl Marx"
+  },
+  {
+    "questionText": "Was ist die Hauptstadt von Brasilien?",
+    "option1": "Brasília",
+    "option2": "Rio de Janeiro",
+    "option3": "São Paulo",
+    "option4": "Salvador",
+    "correctAnswer": "Brasília"
+  },
+  {
+    "questionText": "Welches Element hat das chemische Symbol 'Ar'?",
+    "option1": "Argon",
+    "option2": "Arsen",
+    "option3": "Americium",
+    "option4": "Astat",
+    "correctAnswer": "Argon"
+  },
+  {
+    "questionText": "Was ist die chemische Formel für Essigsäure?",
+    "option1": "CH3COOH",
+    "option2": "C2H5OH",
+    "option3": "C3H7OH",
+    "option4": "C4H9OH",
+    "correctAnswer": "CH3COOH"
+  },
+  {
+    "questionText": "Wer schrieb '1984'?",
+    "option1": "George Orwell",
+    "option2": "Aldous Huxley",
+    "option3": "Ray Bradbury",
+    "option4": "H.G. Wells",
+    "correctAnswer": "George Orwell"
+  },
+  {
+    "questionText": "Was ist die Hauptstadt von Australien?",
+    "option1": "Canberra",
+    "option2": "Sydney",
+    "option3": "Melbourne",
+    "option4": "Brisbane",
+    "correctAnswer": "Canberra"
+  },
+  {
+    "questionText": "Welches Element hat das chemische Symbol 'K'?",
+    "option1": "Kalium",
+    "option2": "Kobalt",
+    "option3": "Krypton",
+    "option4": "Kalzium",
+    "correctAnswer": "Kalium"
+  },
+  {
+    "questionText": "Was ist die chemische Formel für Buttersäure?",
+    "option1": "C4H8O2",
+    "option2": "C3H6O2",
+    "option3": "C2H4O2",
+    "option4": "C5H10O2",
+    "correctAnswer": "C4H8O2"
+  },
+  {
+    "questionText": "Wer schrieb 'Die Reise zum Mittelpunkt der Erde'?",
+    "option1": "Jules Verne",
+    "option2": "H.G. Wells",
+    "option3": "Arthur C. Clarke",
+    "option4": "Isaac Asimov",
+    "correctAnswer": "Jules Verne"
+  },
+  {
+    "questionText": "Was ist die Hauptstadt von Kanada?",
+    "option1": "Ottawa",
+    "option2": "Toronto",
+    "option3": "Vancouver",
+    "option4": "Montreal",
+    "correctAnswer": "Ottawa"
+  },
+  {
+    "questionText": "Welches Element hat das chemische Symbol 'Ca'?",
+    "option1": "Kalzium",
+    "option2": "Cäsium",
+    "option3": "Californium",
+    "option4": "Cadmium",
+    "correctAnswer": "Kalzium"
+  },
+  {
+    "questionText": "Was ist die chemische Formel für Benzol?",
+    "option1": "C6H6",
+    "option2": "C6H5",
+    "option3": "C6H4",
+    "option4": "C6H3",
+    "correctAnswer": "C6H6"
+  },
+  {
+    "questionText": "Wer schrieb 'Die Insel des Dr. Moreau'?",
+    "option1": "H.G. Wells",
+    "option2": "Jules Verne",
+    "option3": "Arthur C. Clarke",
+    "option4": "Isaac Asimov",
+    "correctAnswer": "H.G. Wells"
+  },
+  {
+    "questionText": "Was ist die Hauptstadt von Argentinien?",
+    "option1": "Buenos Aires",
+    "option2": "Córdoba",
+    "option3": "Rosario",
+    "option4": "Mendoza",
+    "correctAnswer": "Buenos Aires"
+  },
+  {
+    "questionText": "Welches Element hat das chemische Symbol 'Mn'?",
+    "option1": "Mangan",
+    "option2": "Magnesium",
+    "option3": "Molybdän",
+    "option4": "Merkurium",
+    "correctAnswer": "Mangan"
+  },
+  {
+    "questionText": "Was ist die chemische Formel für Formaldehyd?",
+    "option1": "CH2O",
+    "option2": "C2H4O",
+    "option3": "C3H6O",
+    "option4": "C4H8O",
+    "correctAnswer": "CH2O"
+  },
+  {
+    "questionText": "Wer schrieb 'Der Krieg der Welten'?",
+    "option1": "H.G. Wells",
+    "option2": "Jules Verne",
+    "option3": "Arthur C. Clarke",
+    "option4": "Isaac Asimov",
+    "correctAnswer": "H.G. Wells"
+  },
+  {
+    "questionText": "Was ist die Hauptstadt von Mexiko?",
+    "option1": "Mexiko-Stadt",
+    "option2": "Guadalajara",
+    "option3": "Monterrey",
+    "option4": "Puebla",
+    "correctAnswer": "Mexiko-Stadt"
+  },
+  {
+    "questionText": "Welches Element hat das chemische Symbol 'Ti'?",
+    "option1": "Titan",
+    "option2": "Tellur",
+    "option3": "Thulium",
+    "option4": "Terbium",
+    "correctAnswer": "Titan"
+  },
+  {
+    "questionText": "Was ist die chemische Formel für Phosphorsäure?",
+    "option1": "H3PO4",
+    "option2": "H3PO3",
+    "option3": "H3PO2",
+    "option4": "H3P",
+    "correctAnswer": "H3PO4"
+  },
+  {
+    "questionText": "Wer schrieb 'Die Zeitmaschine'?",
+    "option1": "H.G. Wells",
+    "option2": "Jules Verne",
+    "option3": "Arthur C. Clarke",
+    "option4": "Isaac Asimov",
+    "correctAnswer": "H.G. Wells"
+  },
+  {
+    "questionText": "Was ist die Hauptstadt von Kolumbien?",
+    "option1": "Bogotá",
+    "option2": "Medellín",
+    "option3": "Cali",
+    "option4": "Cartagena",
+    "correctAnswer": "Bogotá"
+  },
+  {
+    "questionText": "Welches Element hat das chemische Symbol 'Cr'?",
+    "option1": "Chrom",
+    "option2": "Cäsium",
+    "option3": "Calcium",
+    "option4": "Curium",
+    "correctAnswer": "Chrom"
+  },
+  {
+    "questionText": "Was ist die chemische Formel für Salzsäure?",
+    "option1": "HCl",
+    "option2": "H2Cl",
+    "option3": "HClO4",
+    "option4": "HClO3",
+    "correctAnswer": "HCl"
+  },
+  {
+    "questionText": "Wer schrieb 'Die Unsichtbare'?",
+    "option1": "H.G. Wells",
+    "option2": "Jules Verne",
+    "option3": "Arthur C. Clarke",
+    "option4": "Isaac Asimov",
+    "correctAnswer": "H.G. Wells"
+  },
+  {
+    "questionText": "Was ist die Hauptstadt von Peru?",
+    "option1": "Lima",
+    "option2": "Cusco",
+    "option3": "Arequipa",
+    "option4": "Trujillo",
+    "correctAnswer": "Lima"
+  },
+  {
+    "questionText": "Welches Element hat das chemische Symbol 'Co'?",
+    "option1": "Kobalt",
+    "option2": "Cobalt",
+    "option3": "Chrom",
+    "option4": "Calcium",
+    "correctAnswer": "Kobalt"
+  },
+  {
+    "questionText": "Was ist die chemische Formel für Essigsäure?",
+    "option1": "CH3COOH",
+    "option2": "C2H5OH",
+    "option3": "C2H4O",
+    "option4": "C3H6O",
+    "correctAnswer": "CH3COOH"
+  },
+  {
+    "questionText": "Wer schrieb 'Ulysses'?",
+    "option1": "James Joyce",
+    "option2": "William Faulkner",
+    "option3": "F. Scott Fitzgerald",
+    "option4": "Ernest Hemingway",
+    "correctAnswer": "James Joyce"
+  },
+  {
+    "questionText": "Was ist die Hauptstadt von Venezuela?",
+    "option1": "Caracas",
+    "option2": "Maracaibo",
+    "option3": "Valencia",
+    "option4": "Barquisimeto",
+    "correctAnswer": "Caracas"
+  },
+  {
+    "questionText": "Welches Element hat das chemische Symbol 'Cu'?",
+    "option1": "Kupfer",
+    "option2": "Kalium",
+    "option3": "Calcium",
+    "option4": "Cäsium",
+    "correctAnswer": "Kupfer"
+  },
+  {
+    "questionText": "Was ist die chemische Formel für Kohlenmonoxid?",
+    "option1": "CO",
+    "option2": "CO2",
+    "option3": "C2O",
+    "option4": "C2O2",
+    "correctAnswer": "CO"
+  },
+  {
+    "questionText": "Wer schrieb 'Das Bildnis des Dorian Gray'?",
+    "option1": "Oscar Wilde",
+    "option2": "James Joyce",
+    "option3": "Virginia Woolf",
+    "option4": "Mark Twain",
+    "correctAnswer": "Oscar Wilde"
+  },
+  {
+    "questionText": "Was ist die Hauptstadt von Chile?",
+    "option1": "Santiago",
+    "option2": "Valparaíso",
+    "option3": "Concepción",
+    "option4": "La Serena",
+    "correctAnswer": "Santiago"
+  },
+  {
+    "questionText": "Welches Element hat das chemische Symbol 'Pt'?",
+    "option1": "Platin",
+    "option2": "Palladium",
+    "option3": "Polonium",
+    "option4": "Phosphor",
+    "correctAnswer": "Platin"
+  },
+  {
+    "questionText": "Was ist die chemische Formel für Natriumchlorid?",
+    "option1": "NaCl",
+    "option2": "Na2Cl",
+    "option3": "NaCl2",
+    "option4": "Na2Cl2",
+    "correctAnswer": "NaCl"
+  },
+  {
+    "questionText": "Wer schrieb 'Robinson Crusoe'?",
+    "option1": "Daniel Defoe",
+    "option2": "Jonathan Swift",
+    "option3": "Alexander Pope",
+    "option4": "Henry Fielding",
+    "correctAnswer": "Daniel Defoe"
+  },
+  {
+    "questionText": "Was ist die Hauptstadt von Ecuador?",
+    "option1": "Quito",
+    "option2": "Guayaquil",
+    "option3": "Cuenca",
+    "option4": "Santo Domingo",
+    "correctAnswer": "Quito"
+  },
+  {
+    "questionText": "Welches Element hat das chemische Symbol 'Ag'?",
+    "option1": "Silber",
+    "option2": "Gold",
+    "option3": "Platin",
+    "option4": "Palladium",
+    "correctAnswer": "Silber"
+  },
+  {
+    "questionText": "Was ist die chemische Formel für Wasserstoffperoxid?",
+    "option1": "H2O2",
+    "option2": "H2O",
+    "option3": "H3O2",
+    "option4": "H2O3",
+    "correctAnswer": "H2O2"
+  },
+  {
+    "questionText": "Wer schrieb 'Gullivers Reisen'?",
+    "option1": "Jonathan Swift",
+    "option2": "Daniel Defoe",
+    "option3": "Henry Fielding",
+    "option4": "Samuel Richardson",
+    "correctAnswer": "Jonathan Swift"
+  },
+  {
+    "questionText": "Was ist die Hauptstadt von Bolivien?",
+    "option1": "Sucre",
+    "option2": "La Paz",
+    "option3": "Santa Cruz de la Sierra",
+    "option4": "Cochabamba",
+    "correctAnswer": "Sucre"
+  },
+  {
+    "questionText": "Welches Element hat das chemische Symbol 'Ni'?",
+    "option1": "Nickel",
+    "option2": "Neon",
+    "option3": "Natrium",
+    "option4": "Neodym",
+    "correctAnswer": "Nickel"
+  },
+  {
+    "questionText": "Was ist die chemische Formel für Ammoniak?",
+    "option1": "NH3",
+    "option2": "NH4",
+    "option3": "N2H4",
+    "option4": "N2H2",
+    "correctAnswer": "NH3"
+  },
+  {
+    "questionText": "Wer schrieb 'Don Quijote'?",
+    "option1": "Miguel de Cervantes",
+    "option2": "Gabriel García Márquez",
+    "option3": "Mario Vargas Llosa",
+    "option4": "Jorge Luis Borges",
+    "correctAnswer": "Miguel de Cervantes"
+  },
+  {
+    "questionText": "Was ist die Hauptstadt von Paraguay?",
+    "option1": "Asunción",
+    "option2": "Ciudad del Este",
+    "option3": "Encarnación",
+    "option4": "San Lorenzo",
+    "correctAnswer": "Asunción"
+  },
+  {
+    "questionText": "Welches Element hat das chemische Symbol 'Mg'?",
+    "option1": "Magnesium",
+    "option2": "Mangan",
+    "option3": "Molybdän",
+    "option4": "Mercury",
+    "correctAnswer": "Magnesium"
+  },
+  {
+    "questionText": "Was ist die chemische Formel für Methan?",
+    "option1": "CH4",
+    "option2": "C2H6",
+    "option3": "C3H8",
+    "option4": "C4H10",
+    "correctAnswer": "CH4"
+  },
+  {
+    "questionText": "Wer schrieb 'Moby Dick'?",
+    "option1": "Herman Melville",
+    "option2": "Nathaniel Hawthorne",
+    "option3": "Mark Twain",
+    "option4": "James Fenimore Cooper",
+    "correctAnswer": "Herman Melville"
+  },
+  {
+    "questionText": "Was ist die Hauptstadt von Uruguay?",
+    "option1": "Montevideo",
+    "option2": "Punta del Este",
+    "option3": "Salto",
+    "option4": "Maldonado",
+    "correctAnswer": "Montevideo"
+  },
+  {
+    "questionText": "Welches Element hat das chemische Symbol 'Zn'?",
+    "option1": "Zink",
+    "option2": "Zirconium",
+    "option3": "Zinn",
+    "option4": "Zeolith",
+    "correctAnswer": "Zink"
+  },
+  {
+    "questionText": "Was ist die chemische Formel für Propan?",
+    "option1": "C3H8",
+    "option2": "C2H6",
+    "option3": "C4H10",
+    "option4": "C5H12",
+    "correctAnswer": "C3H8"
+  },
+  {
+    "questionText": "Wer schrieb 'Faust'?",
+    "option1": "Johann Wolfgang von Goethe",
+    "option2": "Friedrich Schiller",
+    "option3": "Heinrich Heine",
+    "option4": "Gotthold Ephraim Lessing",
+    "correctAnswer": "Johann Wolfgang von Goethe"
+  },
+  {
+    "questionText": "Was ist die Hauptstadt von Panama?",
+    "option1": "Panama-Stadt",
+    "option2": "Colón",
+    "option3": "David",
+    "option4": "La Chorrera",
+    "correctAnswer": "Panama-Stadt"
+  },
+  {
+    "questionText": "Welches Element hat das chemische Symbol 'B'?",
+    "option1": "Bor",
+    "option2": "Beryllium",
+    "option3": "Bismut",
+    "option4": "Brom",
+    "correctAnswer": "Bor"
+  },
+  {
+    "questionText": "Was ist die chemische Formel für Butan?",
+    "option1": "C4H10",
+    "option2": "C3H8",
+    "option3": "C2H6",
+    "option4": "C5H12",
+    "correctAnswer": "C4H10"
+  },
+  {
+    "questionText": "Wer schrieb 'Der Graf von Monte Cristo'?",
+    "option1": "Alexandre Dumas",
+    "option2": "Victor Hugo",
+    "option3": "Jules Verne",
+    "option4": "Honoré de Balzac",
+    "correctAnswer": "Alexandre Dumas"
+  },
+  {
+    "questionText": "Was ist die Hauptstadt von Costa Rica?",
+    "option1": "San José",
+    "option2": "Limón",
+    "option3": "Puntarenas",
+    "option4": "Alajuela",
+    "correctAnswer": "San José"
+  },
+  {
+    "questionText": "Welches Element hat das chemische Symbol 'F'?",
+    "option1": "Fluor",
+    "option2": "Francium",
+    "option3": "Fermium",
+    "option4": "Fluorine",
+    "correctAnswer": "Fluor"
+  },
+  {
+    "questionText": "Was ist die chemische Formel für Ethanol?",
+    "option1": "C2H5OH",
+    "option2": "C2H4O",
+    "option3": "C2H6O",
+    "option4": "C2H3OH",
+    "correctAnswer": "C2H5OH"
+  },
+  {
+    "questionText": "Wer schrieb 'Die drei Musketiere'?",
+    "option1": "Alexandre Dumas",
+    "option2": "Victor Hugo",
+    "option3": "Jules Verne",
+    "option4": "Honoré de Balzac",
+    "correctAnswer": "Alexandre Dumas"
+  },
+  {
+    "questionText": "Was ist die Hauptstadt von Nicaragua?",
+    "option1": "Managua",
+    "option2": "León",
+    "option3": "Granada",
+    "option4": "Masaya",
+    "correctAnswer": "Managua"
+  },
+  {
+    "questionText": "Welches Element hat das chemische Symbol 'S'?",
+    "option1": "Schwefel",
+    "option2": "Silizium",
+    "option3": "Strontium",
+    "option4": "Selen",
+    "correctAnswer": "Schwefel"
+  },
+  {
+    "questionText": "Was ist die chemische Formel für Aceton?",
+    "option1": "C3H6O",
+    "option2": "C3H8O",
+    "option3": "C3H4O",
+    "option4": "C3H2O",
+    "correctAnswer": "C3H6O"
+  },
+  {
+    "questionText": "Wer schrieb 'Die Leiden des jungen Werther'?",
+    "option1": "Johann Wolfgang von Goethe",
+    "option2": "Friedrich Schiller",
+    "option3": "Heinrich Heine",
+    "option4": "Gotthold Ephraim Lessing",
+    "correctAnswer": "Johann Wolfgang von Goethe"
+  },
+  {
+    "questionText": "Was ist die Hauptstadt von Honduras?",
+    "option1": "Tegucigalpa",
+    "option2": "San Pedro Sula",
+    "option3": "La Ceiba",
+    "option4": "Choloma",
+    "correctAnswer": "Tegucigalpa"
+  },
+  {
+    "questionText": "Welches Element hat das chemische Symbol 'Cl'?",
+    "option1": "Chlor",
+    "option2": "Kalzium",
+    "option3": "Cobalt",
+    "option4": "Cäsium",
+    "correctAnswer": "Chlor"
+  },
+  {
+    "questionText": "Was ist die chemische Formel für Propan?",
+    "option1": "C3H8",
+    "option2": "C3H6",
+    "option3": "C3H10",
+    "option4": "C3H4",
+    "correctAnswer": "C3H8"
+  },
+  {
+    "questionText": "Wer schrieb 'Die Elenden'?",
+    "option1": "Victor Hugo",
+    "option2": "Alexandre Dumas",
+    "option3": "Jules Verne",
+    "option4": "Honoré de Balzac",
+    "correctAnswer": "Victor Hugo"
+  },
+  {
+    "questionText": "Was ist die Hauptstadt von El Salvador?",
+    "option1": "San Salvador",
+    "option2": "Santa Ana",
+    "option3": "San Miguel",
+    "option4": "La Libertad",
+    "correctAnswer": "San Salvador"
+  },
+  {
+    "questionText": "Welches Element hat das chemische Symbol 'Br'?",
+    "option1": "Brom",
+    "option2": "Bor",
+    "option3": "Beryllium",
+    "option4": "Bismut",
+    "correctAnswer": "Brom"
+  },
+  {
+    "questionText": "Was ist die chemische Formel für Methan?",
+    "option1": "CH4",
+    "option2": "C2H6",
+    "option3": "C3H8",
+    "option4": "C4H10",
+    "correctAnswer": "CH4"
+  },
+  {
+    "questionText": "Wer schrieb 'Der Glöckner von Notre-Dame'?",
+    "option1": "Victor Hugo",
+    "option2": "Alexandre Dumas",
+    "option3": "Jules Verne",
+    "option4": "Honoré de Balzac",
+    "correctAnswer": "Victor Hugo"
+  },
+  {
+    "questionText": "Was ist die Hauptstadt von Guatemala?",
+    "option1": "Guatemala-Stadt",
+    "option2": "Antigua Guatemala",
+    "option3": "Quetzaltenango",
+    "option4": "Escuintla",
+    "correctAnswer": "Guatemala-Stadt"
+  },
+  {
+    "questionText": "Welches Element hat das chemische Symbol 'I'?",
+    "option1": "Iod",
+    "option2": "Indium",
+    "option3": "Iridium",
+    "option4": "Eisen",
+    "correctAnswer": "Iod"
+  },
+  {
+    "questionText": "Was ist die chemische Formel für Ethanol?",
+    "option1": "C2H5OH",
+    "option2": "C2H4O",
+    "option3": "C2H6O",
+    "option4": "C2H3OH",
+    "correctAnswer": "C2H5OH"
+  },
+  {
+    "questionText": "Wer schrieb 'Der Graf von Monte Christo'?",
+    "option1": "Alexandre Dumas",
+    "option2": "Victor Hugo",
+    "option3": "Jules Verne",
+    "option4": "Honoré de Balzac",
+    "correctAnswer": "Alexandre Dumas"
+  },
+  {
+    "questionText": "Was ist die Hauptstadt von Zypern?",
+    "option1": "Nikosia",
+    "option2": "Limassol",
+    "option3": "Larnaca",
+    "option4": "Famagusta",
+    "correctAnswer": "Nikosia"
+  },
+  {
+    "questionText": "Welches Element hat das chemische Symbol 'F'?",
+    "option1": "Fluor",
+    "option2": "Francium",
+    "option3": "Fluorine",
+    "option4": "Fermium",
+    "correctAnswer": "Fluor"
+  },
+  {
+    "questionText": "Was ist die chemische Formel für Salpetersäure?",
+    "option1": "HNO3",
+    "option2": "H2SO4",
+    "option3": "HCl",
+    "option4": "H2SO3",
+    "correctAnswer": "HNO3"
+  },
+  {
+    "questionText": "Wer schrieb 'Die drei Musketiere'?",
+    "option1": "Alexandre Dumas",
+    "option2": "Victor Hugo",
+    "option3": "Jules Verne",
+    "option4": "Honoré de Balzac",
+    "correctAnswer": "Alexandre Dumas"
+  },
+  {
+    "questionText": "Was ist die Hauptstadt von Malta?",
+    "option1": "Valletta",
+    "option2": "Sliema",
+    "option3": "Mosta",
+    "option4": "Birkirkara",
+    "correctAnswer": "Valletta"
+  },
+  {
+    "questionText": "Welches Element hat das chemische Symbol 'Lv'?",
+    "option1": "Livermorium",
+    "option2": "Lanthan",
+    "option3": "Lutetium",
+    "option4": "Lithium",
+    "correctAnswer": "Livermorium"
+  },
+  {
+    "questionText": "Was ist die chemische Formel für Glutarsäureanhydrid?",
+    "option1": "C5H6O3",
+    "option2": "C6H6O3",
+    "option3": "C7H6O3",
+    "option4": "C8H6O3",
+    "correctAnswer": "C5H6O3"
+  },
+  {
+    "questionText": "Wer schrieb 'Der Archipel in Flammen'?",
+    "option1": "Jules Verne",
+    "option2": "H.G. Wells",
+    "option3": "Arthur C. Clarke",
+    "option4": "Isaac Asimov",
+    "correctAnswer": "Jules Verne"
+  },
+  {
+    "questionText": "Was ist die Hauptstadt von Monaco?",
+    "option1": "Monaco",
+    "option2": "Monte Carlo",
+    "option3": "La Condamine",
+    "option4": "Fontvieille",
+    "correctAnswer": "Monaco"
+  },
+  {
+    "questionText": "Welches Element hat das chemische Symbol 'Ts'?",
+    "option1": "Tennessine",
+    "option2": "Tellur",
+    "option3": "Technetium",
+    "option4": "Tantal",
+    "correctAnswer": "Tennessine"
+  },
+  {
+    "questionText": "Was ist die chemische Formel für Adipinsäure?",
+    "option1": "C6H10O4",
+    "option2": "C7H10O4",
+    "option3": "C8H10O4",
+    "option4": "C9H10O4",
+    "correctAnswer": "C6H10O4"
+  },
+  {
+    "questionText": "Wer schrieb 'Die Reise zum Mittelpunkt der Erde'?",
+    "option1": "Jules Verne",
+    "option2": "H.G. Wells",
+    "option3": "Arthur C. Clarke",
+    "option4": "Isaac Asimov",
+    "correctAnswer": "Jules Verne"
+  },
+  {
+    "questionText": "Was ist die Hauptstadt von San Marino?",
+    "option1": "San Marino",
+    "option2": "Serravalle",
+    "option3": "Borgo Maggiore",
+    "option4": "Domagnano",
+    "correctAnswer": "San Marino"
+  },
+  {
+    "questionText": "Welches Element hat das chemische Symbol 'Og'?",
+    "option1": "Oganesson",
+    "option2": "Oxygen",
+    "option3": "Osmium",
+    "option4": "Oganesson",
+    "correctAnswer": "Oganesson"
+  },
+  {
+    "questionText": "Was ist die chemische Formel für Sebacinsäure?",
+    "option1": "C10H18O4",
+    "option2": "C11H18O4",
+    "option3": "C12H18O4",
+    "option4": "C13H18O4",
+    "correctAnswer": "C10H18O4"
+  },
+  {
+    "questionText": "Wer schrieb 'In 80 Tagen um die Welt'?",
+    "option1": "Jules Verne",
+    "option2": "H.G. Wells",
+    "option3": "Arthur C. Clarke",
+    "option4": "Isaac Asimov",
+    "correctAnswer": "Jules Verne"
+  },
+  {
+    "questionText": "Was ist die Hauptstadt von Vatikanstadt?",
+    "option1": "Vatikanstadt",
+    "option2": "Rom",
+    "option3": "Mailand",
+    "option4": "Neapel",
+    "correctAnswer": "Vatikanstadt"
+  },
+  {
+    "questionText": "Welches Element hat das chemische Symbol 'Mt'?",
+    "option1": "Meitnerium",
+    "option2": "Magnesium",
+    "option3": "Mangan",
+    "option4": "Molybdän",
+    "correctAnswer": "Meitnerium"
+  },
+  {
+    "questionText": "Was ist die chemische Formel für Malonsäureanhydrid?",
+    "option1": "C3H2O3",
+    "option2": "C4H2O3",
+    "option3": "C5H2O3",
+    "option4": "C6H2O3",
+    "correctAnswer": "C3H2O3"
+  },
+  {
+    "questionText": "Wer schrieb 'Der Graf von Monte Christo'?",
+    "option1": "Alexandre Dumas",
+    "option2": "Victor Hugo",
+    "option3": "Gustave Flaubert",
+    "option4": "Honoré de Balzac",
+    "correctAnswer": "Alexandre Dumas"
+  },
+  {
+    "questionText": "Was ist die Hauptstadt von Luxemburg?",
+    "option1": "Luxemburg-Stadt",
+    "option2": "Esch-sur-Alzette",
+    "option3": "Differdingen",
+    "option4": "Dudelange",
+    "correctAnswer": "Luxemburg-Stadt"
+  },
+  {
+    "questionText": "Welches Element hat das chemische Symbol 'Ds'?",
+    "option1": "Darmstadtium",
+    "option2": "Dubnium",
+    "option3": "Dysprosium",
+    "option4": "Dubnium",
+    "correctAnswer": "Darmstadtium"
+  },
+  {
+    "questionText": "Was ist die chemische Formel für Benzoesäureanhydrid?",
+    "option1": "C7H4O3",
+    "option2": "C8H4O3",
+    "option3": "C9H4O3",
+    "option4": "C10H4O3",
+    "correctAnswer": "C7H4O3"
+  },
+  {
+    "questionText": "Wer schrieb 'Die drei Musketiere'?",
+    "option1": "Alexandre Dumas",
+    "option2": "Victor Hugo",
+    "option3": "Gustave Flaubert",
+    "option4": "Honoré de Balzac",
+    "correctAnswer": "Alexandre Dumas"
+  },
+  {
+    "questionText": "Was ist die Hauptstadt von Malta?",
+    "option1": "Valletta",
+    "option2": "Sliema",
+    "option3": "Mosta",
+    "option4": "Birkirkara",
+    "correctAnswer": "Valletta"
+  },
+  {
+    "questionText": "Welches Element hat das chemische Symbol 'Rg'?",
+    "option1": "Roentgenium",
+    "option2": "Radium",
+    "option3": "Rhenium",
+    "option4": "Rubidium",
+    "correctAnswer": "Roentgenium"
+  },
+  {
+    "questionText": "Was ist die chemische Formel für Phthalsäureanhydrid?",
+    "option1": "C8H4O3",
+    "option2": "C9H4O3",
+    "option3": "C10H4O3",
+    "option4": "C11H4O3",
+    "correctAnswer": "C8H4O3"
+  }
+]

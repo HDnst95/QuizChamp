@@ -1,35 +1,45 @@
+// app/src/main/java/com/quizchamp/MainActivity.java
 package com.quizchamp;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.material.button.MaterialButton;
+
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.Executors;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView questionTextView;
+    private TextView questionTextView, frageTextView;
     private MaterialButton buttonAnswer1, buttonAnswer2, buttonAnswer3, buttonAnswer4, nextQuestionButton;
     private TextView playerTurnTextView;
     private int currentPlayer = 1;
-    private List<Question> questions;
+    private List<Question> questions = new ArrayList<>();
     private int currentQuestionIndex = 0;
     private int player1Score = 0;
     private int player2Score = 0;
     private int questionCount;
+    private String namePlayer1;
+    private String namePlayer2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        questionTextView = findViewById(R.id.questionTextView);
+        questionTextView = findViewById(R.id.questionTextView); // Ensure this line is correct
+        frageTextView = findViewById(R.id.textViewFrage);
         buttonAnswer1 = findViewById(R.id.buttonAnswer1);
         buttonAnswer2 = findViewById(R.id.buttonAnswer2);
         buttonAnswer3 = findViewById(R.id.buttonAnswer3);
@@ -39,27 +49,25 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         questionCount = intent.getIntExtra("QUESTION_COUNT", 10);
+        namePlayer1 = intent.getStringExtra("NAME_PLAYER_1");
+        namePlayer2 = intent.getStringExtra("NAME_PLAYER_2");
 
-        QuizDatabase db = QuizDatabase.getInstance(this);
+        // Setze den Namen der Spieler
+        playerTurnTextView.setText(String.format(getString(R.string.player_turn), namePlayer1));
+        // Lade die Fragen aus der JSON-Datei
+        questions = JsonLoader.loadQuestionsFromJson(this);
+        if (questions != null) {
+            Collections.shuffle(questions);
+            questions = questions.subList(0, Math.min(questionCount, questions.size()));
+            displayQuestion();
+        } else {
+            Toast.makeText(this, R.string.error_loading_questions, Toast.LENGTH_SHORT).show();
+        }
 
-        // Prepopulate the database if empty
-        prepopulateDatabase(db);
-
-        loadQuestions();
-        displayQuestion();
-
-        View.OnClickListener answerClickListener = new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                MaterialButton selectedButton = (MaterialButton) v;
-                String selectedAnswer = selectedButton.getText().toString();
-                checkAnswer(selectedAnswer);
-                if (currentPlayer == 2) {
-                    showCorrectAnswer();
-                } else {
-                    showNextPlayerToast();
-                }
-            }
+        // Setze Click-Listener für die Antwort-Buttons
+        View.OnClickListener answerClickListener = v -> {
+            checkAnswer((MaterialButton) v);
+            showCorrectAnswer();
         };
 
         buttonAnswer1.setOnClickListener(answerClickListener);
@@ -67,85 +75,29 @@ public class MainActivity extends AppCompatActivity {
         buttonAnswer3.setOnClickListener(answerClickListener);
         buttonAnswer4.setOnClickListener(answerClickListener);
 
-        nextQuestionButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                nextTurn();
-            }
-        });
-    }
-
-    private void loadQuestions() {
-        QuizDatabase db = QuizDatabase.getInstance(this);
-        List<Question> allQuestions = db.questionDao().getAllQuestions();
-        Collections.shuffle(allQuestions);
-        questions = allQuestions.subList(0, Math.min(questionCount, allQuestions.size()));
-    }
-
-    private void prepopulateDatabase(QuizDatabase db) {
-        Question[] questionsArray = new Question[] {
-                new Question("What is the capital of France?", "Paris", "Berlin", "Madrid", "Rome", "Paris"),
-                new Question("What is the largest planet in our solar system?", "Earth", "Mars", "Jupiter", "Saturn", "Jupiter"),
-                new Question("Who wrote 'Hamlet'?", "Charles Dickens", "William Shakespeare", "Jane Austen", "Mark Twain", "William Shakespeare"),
-                new Question("What is the smallest prime number?", "0", "1", "2", "3", "2"),
-                new Question("What is the square root of 64?", "6", "7", "8", "9", "8"),
-                new Question("What is the chemical symbol for water?", "HO", "OH", "H2O", "O2H", "H2O"),
-                new Question("What is the capital of Italy?", "Paris", "Berlin", "Rome", "Madrid", "Rome"),
-                new Question("What is the speed of light?", "299,792 km/s", "300,000 km/s", "150,000 km/s", "1,000 km/s", "299,792 km/s"),
-                new Question("Who painted the Mona Lisa?", "Vincent van Gogh", "Claude Monet", "Leonardo da Vinci", "Pablo Picasso", "Leonardo da Vinci"),
-                new Question("What is the tallest mountain in the world?", "K2", "Kangchenjunga", "Lhotse", "Mount Everest", "Mount Everest"),
-                new Question("What is the capital of Japan?", "Beijing", "Seoul", "Tokyo", "Bangkok", "Tokyo"),
-                new Question("Who developed the theory of relativity?", "Isaac Newton", "Galileo Galilei", "Nikola Tesla", "Albert Einstein", "Albert Einstein"),
-                new Question("What is the hardest natural substance?", "Gold", "Iron", "Diamond", "Platinum", "Diamond"),
-                new Question("What is the chemical symbol for gold?", "Au", "Ag", "Pb", "Pt", "Au"),
-                new Question("What is the capital of Australia?", "Sydney", "Melbourne", "Canberra", "Perth", "Canberra"),
-                new Question("What is the longest river in the world?", "Amazon River", "Nile River", "Yangtze River", "Mississippi River", "Nile River"),
-                new Question("Who wrote 'Pride and Prejudice'?", "Emily Bronte", "Charlotte Bronte", "Jane Austen", "Mary Shelley", "Jane Austen"),
-                new Question("What is the smallest country in the world?", "Monaco", "San Marino", "Liechtenstein", "Vatican City", "Vatican City"),
-                new Question("What is the largest ocean in the world?", "Atlantic Ocean", "Indian Ocean", "Southern Ocean", "Pacific Ocean", "Pacific Ocean"),
-                new Question("What is the capital of Canada?", "Toronto", "Vancouver", "Montreal", "Ottawa", "Ottawa"),
-                new Question("Who discovered penicillin?", "Marie Curie", "Alexander Fleming", "Isaac Newton", "Louis Pasteur", "Alexander Fleming"),
-                new Question("What is the chemical symbol for sodium?", "Na", "S", "Cl", "K", "Na"),
-                new Question("What is the largest desert in the world?", "Sahara Desert", "Gobi Desert", "Arabian Desert", "Kalahari Desert", "Sahara Desert"),
-                new Question("What is the capital of Russia?", "Moscow", "Saint Petersburg", "Novosibirsk", "Yekaterinburg", "Moscow"),
-                new Question("Who wrote '1984'?", "Aldous Huxley", "George Orwell", "Ray Bradbury", "Philip K. Dick", "George Orwell"),
-                new Question("What is the boiling point of water?", "50°C", "100°C", "200°C", "300°C", "100°C"),
-                new Question("What is the capital of China?", "Seoul", "Tokyo", "Beijing", "Bangkok", "Beijing"),
-                new Question("Who developed the first successful airplane?", "Thomas Edison", "Nikola Tesla", "Wright Brothers", "Henry Ford", "Wright Brothers"),
-                new Question("What is the chemical symbol for iron?", "Fe", "Ir", "In", "I", "Fe"),
-                new Question("What is the capital of Germany?", "Vienna", "Berlin", "Zurich", "Brussels", "Berlin"),
-                new Question("What is the largest mammal in the world?", "Elephant", "Blue Whale", "Giraffe", "Hippopotamus", "Blue Whale"),
-                new Question("Who wrote 'The Odyssey'?", "Socrates", "Plato", "Homer", "Aristotle", "Homer"),
-                new Question("What is the speed of sound?", "343 m/s", "299,792 m/s", "150 m/s", "1,000 m/s", "343 m/s"),
-                new Question("What is the capital of India?", "Islamabad", "Colombo", "Kathmandu", "New Delhi", "New Delhi"),
-                new Question("Who developed the telephone?", "Alexander Graham Bell", "Thomas Edison", "Nikola Tesla", "Samuel Morse", "Alexander Graham Bell"),
-                new Question("What is the chemical symbol for carbon?", "Ca", "C", "Cr", "Co", "C"),
-                new Question("What is the capital of Brazil?", "São Paulo", "Rio de Janeiro", "Brasília", "Salvador", "Brasília"),
-                new Question("What is the smallest planet in our solar system?", "Earth", "Mars", "Mercury", "Venus", "Mercury"),
-                new Question("Who wrote 'To Kill a Mockingbird'?", "Harper Lee", "J.D. Salinger", "F. Scott Fitzgerald", "Ernest Hemingway", "Harper Lee"),
-                new Question("What is the chemical symbol for oxygen?", "Ox", "O", "On", "Og", "O"),
-                new Question("What is the capital of Spain?", "Madrid", "Barcelona", "Valencia", "Seville", "Madrid"),
-                new Question("Who discovered gravity?", "Albert Einstein", "Isaac Newton", "Galileo Galilei", "Nikola Tesla", "Isaac Newton"),
-                new Question("What is the largest island in the world?", "Madagascar", "Greenland", "Borneo", "New Guinea", "Greenland"),
-                new Question("What is the chemical symbol for hydrogen?", "Hy", "H", "Hg", "Hd", "H"),
-                new Question("What is the capital of the United States?", "New York", "Los Angeles", "Chicago", "Washington D.C.", "Washington D.C."),
-                new Question("Who painted the Sistine Chapel?", "Leonardo da Vinci", "Raphael", "Michelangelo", "Donatello", "Michelangelo"),
-                new Question("What is the deepest ocean in the world?", "Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean", "Pacific Ocean"),
-                new Question("What is the chemical symbol for nitrogen?", "N", "Ni", "Ne", "Nn", "N"),
-                new Question("What is the capital of Argentina?", "Santiago", "Lima", "Buenos Aires", "Bogotá", "Buenos Aires")
-        };
-
-        db.questionDao().insertAll(questionsArray);
+        nextQuestionButton.setOnClickListener(v -> nextTurn());
     }
 
     private void displayQuestion() {
         if (currentQuestionIndex < questions.size()) {
+            frageTextView.setText("Frage " + (currentQuestionIndex + 1) + " von " + questions.size());
             Question currentQuestion = questions.get(currentQuestionIndex);
+
+            // Create a list of options and shuffle them
+            List<String> options = new ArrayList<>();
+            options.add(currentQuestion.getOption1());
+            options.add(currentQuestion.getOption2());
+            options.add(currentQuestion.getOption3());
+            options.add(currentQuestion.getOption4());
+            Collections.shuffle(options);
+
+            // Set the shuffled options to the buttons
             questionTextView.setText(currentQuestion.getQuestionText());
-            buttonAnswer1.setText(currentQuestion.getOption1());
-            buttonAnswer2.setText(currentQuestion.getOption2());
-            buttonAnswer3.setText(currentQuestion.getOption3());
-            buttonAnswer4.setText(currentQuestion.getOption4());
+            buttonAnswer1.setText(options.get(0));
+            buttonAnswer2.setText(options.get(1));
+            buttonAnswer3.setText(options.get(2));
+            buttonAnswer4.setText(options.get(3));
+
             resetButtonColors();
             nextQuestionButton.setVisibility(View.GONE);
         } else {
@@ -161,21 +113,18 @@ public class MainActivity extends AppCompatActivity {
         buttonAnswer4.setBackgroundColor(buttonColor);
     }
 
-    private void checkAnswer(String selectedAnswer) {
+    private void checkAnswer(MaterialButton selectedButton) {
         Question currentQuestion = questions.get(currentQuestionIndex);
-        if (currentQuestion.getCorrectAnswer().equals(selectedAnswer)) {
+        if (currentQuestion.getCorrectAnswer().equals(selectedButton.getText().toString())) {
+            selectedButton.setBackgroundColor(getResources().getColor(R.color.correctAnswerColor));
             if (currentPlayer == 1) {
                 player1Score++;
             } else {
                 player2Score++;
             }
+        } else {
+            selectedButton.setBackgroundColor(getResources().getColor(R.color.wrongAnswerColor));
         }
-    }
-
-    private void showNextPlayerToast() {
-        currentPlayer = 2;
-        Toast.makeText(this, "Player 2, it's your turn!", Toast.LENGTH_SHORT).show();
-        playerTurnTextView.setText(String.format("Player %d's Turn", currentPlayer));
     }
 
     private void showCorrectAnswer() {
@@ -194,22 +143,34 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void nextTurn() {
-        currentPlayer = 1;
-        currentQuestionIndex++;
+        if (currentPlayer == 1) {
+            currentPlayer = 2;
+            showNextPlayerToast();
+        } else {
+            currentPlayer = 1;
+            currentQuestionIndex++;
+            showNextPlayerToast();
+        }
         displayQuestion();
-        playerTurnTextView.setText(String.format("Player %d's Turn", currentPlayer));
+        playerTurnTextView.setText(String.format(getString(R.string.player_turn), currentPlayer == 1 ? namePlayer1 : namePlayer2));
+    }
+
+    private void showNextPlayerToast() {
+        String currentPlayerName = currentPlayer == 1 ? namePlayer1 : namePlayer2;
+        Toast.makeText(this, String.format(getString(R.string.player_turn_notification), currentPlayerName), Toast.LENGTH_SHORT).show();
     }
 
     private void endGame() {
+        nextQuestionButton.setText(R.string.end_game);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("Game Over");
-        builder.setMessage(String.format("Player 1: %d points\nPlayer 2: %d points", player1Score, player2Score));
-        builder.setPositiveButton("Restart", new DialogInterface.OnClickListener() {
+        builder.setTitle(R.string.game_over);
+        builder.setMessage(String.format(getString(R.string.player_1_score), player1Score) + "\n" + String.format(getString(R.string.player_2_score), player2Score));
+        builder.setPositiveButton(R.string.restart_game, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 restartGame();
             }
         });
-        builder.setNegativeButton("Close", new DialogInterface.OnClickListener() {
+        builder.setNegativeButton(R.string.close_game, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 dialog.dismiss();
             }
@@ -218,10 +179,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void restartGame() {
-        player1Score = 0;
-        player2Score = 0;
-        currentQuestionIndex = 0;
-        currentPlayer = 1;
-        displayQuestion();
+        Intent intent = new Intent(MainActivity.this, StartActivity.class);
+        intent.putExtra("NAME_PLAYER_1", namePlayer1);
+        intent.putExtra("NAME_PLAYER_2", namePlayer2);
+        startActivity(intent);
+        finish();
     }
 }

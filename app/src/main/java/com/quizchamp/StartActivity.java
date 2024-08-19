@@ -11,6 +11,8 @@ import com.google.android.material.button.MaterialButton;
 public class StartActivity extends AppCompatActivity {
 
     private EditText questionCountEditText;
+    private EditText namePlayer1;
+    private EditText namePlayer2;
     private MaterialButton startGameButton;
 
     @Override
@@ -19,7 +21,18 @@ public class StartActivity extends AppCompatActivity {
         setContentView(R.layout.activity_start);
 
         questionCountEditText = findViewById(R.id.questionCountEditText);
+        namePlayer1 = findViewById(R.id.namePlayer1);
+        namePlayer2 = findViewById(R.id.namePlayer2);
         startGameButton = findViewById(R.id.startGameButton);
+
+        // Check if player names are passed from MainActivity
+        Intent intent = getIntent();
+        if (intent.hasExtra("NAME_PLAYER_1")) {
+            namePlayer1.setText(intent.getStringExtra("NAME_PLAYER_1"));
+        }
+        if (intent.hasExtra("NAME_PLAYER_2")) {
+            namePlayer2.setText(intent.getStringExtra("NAME_PLAYER_2"));
+        }
 
         startGameButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -28,15 +41,33 @@ public class StartActivity extends AppCompatActivity {
                 if (!questionCountStr.isEmpty()) {
                     int questionCount = Integer.parseInt(questionCountStr);
                     if (questionCount > 0) {
-                        Intent intent = new Intent(StartActivity.this, MainActivity.class);
-                        intent.putExtra("QUESTION_COUNT", questionCount);
-                        startActivity(intent);
-                        finish();
-                    } else {
-                        Toast.makeText(StartActivity.this, "Please enter a positive number", Toast.LENGTH_SHORT).show();
-                    }
+                            if (namePlayer1.getText().toString().isEmpty()) {
+                                Intent intent = new Intent(StartActivity.this, MainActivity.class);
+                                intent.putExtra("QUESTION_COUNT", questionCount);
+                                intent.putExtra("NAME_PLAYER_1", "Spieler 1");
+                                intent.putExtra("NAME_PLAYER_2", namePlayer2.getText().toString());
+                                startActivity(intent);
+                                Toast.makeText(StartActivity.this, R.string.empty_player_names, Toast.LENGTH_LONG).show();
+                                finish();
+                            } else if (namePlayer2.getText().toString().isEmpty()) {
+                                Intent intent = new Intent(StartActivity.this, MainActivity.class);
+                                intent.putExtra("QUESTION_COUNT", questionCount);
+                                intent.putExtra("NAME_PLAYER_1", namePlayer1.getText().toString());
+                                intent.putExtra("NAME_PLAYER_2", "Spieler 2");
+                                startActivity(intent);
+                                Toast.makeText(StartActivity.this, R.string.empty_player_names, Toast.LENGTH_LONG).show();
+                                finish();
+                            } else {
+                                Intent intent = new Intent(StartActivity.this, MainActivity.class);
+                                intent.putExtra("QUESTION_COUNT", questionCount);
+                                intent.putExtra("NAME_PLAYER_1", namePlayer1.getText().toString());
+                                intent.putExtra("NAME_PLAYER_2", namePlayer2.getText().toString());
+                                startActivity(intent);
+                                finish();
+                            }
+                        }
                 } else {
-                    Toast.makeText(StartActivity.this, "Please enter the number of questions", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(StartActivity.this, R.string.enter_question_count, Toast.LENGTH_SHORT).show();
                 }
             }
         });

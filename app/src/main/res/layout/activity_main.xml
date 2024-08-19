@@ -4,112 +4,120 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:padding="16dp">
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textViewFrage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Frage "
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textColor="@color/design_default_color_secondary_variant"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.1"
+
+        />
 
     <TextView
         android:id="@+id/playerTurnTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Player 1's Turn"
-        android:textSize="20sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:text="Spieler 1 ist an der Reihe!"
         android:textColor="?attr/colorOnBackground"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintVertical_bias="0.1"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewFrage" />
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/questionCard"
+    <TextView
+        android:id="@+id/questionTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:textStyle="bold"
         android:padding="16dp"
-        app:cardCornerRadius="8dp"
-        app:cardElevation="4dp"
-        app:layout_constraintTop_toBottomOf="@id/playerTurnTextView"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="Question"
+        android:textColor="?attr/colorOnSurface"
+        android:textSize="28sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintVertical_bias="0.2">
-
-        <TextView
-            android:id="@+id/questionTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Question"
-            android:textSize="24sp"
-            android:textColor="?attr/colorOnSurface"
-            android:gravity="center"
-            android:padding="16dp"/>
-    </com.google.android.material.card.MaterialCardView>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/playerTurnTextView"
+        app:layout_constraintVertical_bias="0.1" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonAnswer1"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Answer 1"
         android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/questionCard"
+        android:backgroundTint="@color/buttonColor"
+        android:text="Answer 1"
+        android:textColor="@color/buttonTextColor"
+        app:layout_constraintEnd_toStartOf="@+id/buttonAnswer2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/buttonAnswer2"
-        app:layout_constraintHorizontal_bias="0.5"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintWidth_percent="0.5"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+        app:layout_constraintTop_toBottomOf="@id/questionTextView"
+        app:layout_constraintWidth_percent="0.45" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonAnswer2"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Answer 2"
         android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/questionCard"
-        app:layout_constraintStart_toEndOf="@id/buttonAnswer1"
+        android:backgroundTint="@color/buttonColor"
+        android:text="Answer 2"
+        android:textColor="@color/buttonTextColor"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        android:layout_marginStart="8dp"
-        app:layout_constraintWidth_percent="0.5"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+        app:layout_constraintStart_toEndOf="@+id/buttonAnswer1"
+        app:layout_constraintTop_toBottomOf="@id/questionTextView"
+        app:layout_constraintWidth_percent="0.45" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonAnswer3"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Answer 3"
         android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/buttonAnswer1"
+        android:backgroundTint="@color/buttonColor"
+        android:text="Answer 3"
+        android:textColor="@color/buttonTextColor"
+        app:layout_constraintEnd_toStartOf="@+id/buttonAnswer4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/buttonAnswer4"
-        app:layout_constraintHorizontal_bias="0.5"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintWidth_percent="0.5"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+        app:layout_constraintTop_toBottomOf="@id/buttonAnswer1"
+        app:layout_constraintWidth_percent="0.45" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonAnswer4"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="Answer 4"
         android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/buttonAnswer2"
-        app:layout_constraintStart_toEndOf="@id/buttonAnswer3"
+        android:backgroundTint="@color/buttonColor"
+        android:text="Answer 4"
+        android:textColor="@color/buttonTextColor"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        android:layout_marginStart="8dp"
-        app:layout_constraintWidth_percent="0.5"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+        app:layout_constraintStart_toEndOf="@+id/buttonAnswer3"
+        app:layout_constraintTop_toBottomOf="@id/buttonAnswer2"
+        app:layout_constraintWidth_percent="0.45" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/nextQuestionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text="Next Question"
         android:visibility="gone"
-        app:layout_constraintTop_toBottomOf="@id/buttonAnswer4"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        android:layout_marginTop="16dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/buttonAnswer4" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
