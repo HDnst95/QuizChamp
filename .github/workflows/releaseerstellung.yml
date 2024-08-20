@@ -20,6 +20,9 @@ jobs:
       - name: Set up JAVA_HOME
         run: echo "JAVA_HOME=$(dirname $(dirname $(readlink -f $(which java))))" >> $GITHUB_ENV         
 
+      - name: Set permissions for gradlew
+        run: chmod +x ./gradlew
+
       - name: Build APK
         run: ./gradlew assembleRelease  # Standardbefehl für den Release-Build
 
