@@ -12,6 +12,7 @@
         <item name="colorOnSecondary">@color/secondaryTextColor</item>
         <!-- Background color. -->
         <item name="android:colorBackground">@color/backgroundColor</item>
+        <item name="colorBackground">@color/backgroundColor</item>
         <!-- Surface color. -->
         <item name="colorSurface">@color/surfaceColor</item>
         <item name="colorOnSurface">@color/secondaryTextColor</item>

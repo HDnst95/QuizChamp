@@ -4,8 +4,8 @@
     <string name="enter_number">Gib eine Zahl ein</string>
     <string name="start_game">Spiel Starten</string>
     <string name="next_question">Nächste Frage</string>
-    <string name="player_turn">Spieler: %1$s</string>
-    <string name="player_turn_notification">%1$s, du bist dran!</string>
+    <string name="player_turn">%s\'s ist dran</string>
+    <string name="player_turn_notification">%s\'s ist dran</string>
     <string name="correct">Richtig</string>
     <string name="game_over">Spiel beendet</string>
     <string name="player_1_score">Spieler 1: %d Punkte</string>
