@@ -14,8 +14,8 @@ jobs:
       - name: Checkout the code
         uses: actions/checkout@v2
 
-      - name: Install JDK 11 manually
-        run: sudo apt-get update && sudo apt-get install -y openjdk-11-jdk
+      - name: Install JDK 17 manually
+        run: sudo apt-get update && sudo apt-get install -y openjdk-17-jdk
 
       - name: Set up JAVA_HOME
         run: echo "JAVA_HOME=$(dirname $(dirname $(readlink -f $(which java))))" >> $GITHUB_ENV         
