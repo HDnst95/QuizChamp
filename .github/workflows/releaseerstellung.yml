@@ -11,43 +11,49 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout the code
-      uses: actions/checkout@v2
+      - name: Checkout the code
+        uses: actions/checkout@v2
 
-    - name: Set up JDK 11
-      uses: actions/setup-java@v2
-      with:
-        java-version: '11'
+      - name: Set up JDK 11
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11'
 
-    - name: Build APK
-      run: ./gradlew assembleRelease
+      - name: Build APK
+        run: ./gradlew assembleRelease  # Standardbefehl für den Release-Build
 
-    - name: Get Version Name
-      id: get_version
-      run: |
-        VERSION_NAME=$(./gradlew -q printVersionName)
-        echo "VERSION_NAME=$VERSION_NAME" >> $GITHUB_ENV
+      - name: Find APK Name
+        id: find_apk
+        run: |
+          APK_NAME=$(ls app/build/outputs/apk/release/*.apk | xargs -n 1 basename)
+          echo "APK_NAME=$APK_NAME" >> $GITHUB_ENV
 
-    - name: Create GitHub Release
-      id: create_release
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        tag_name: ${{ github.ref_name }}  # Verwendet den aktuellen Tag als Release-Namen
-        release_name: Release ${{ github.ref_name }}
-        body: |
-          Standardbeschreibung: Diese Version enthält die neuesten Änderungen und Verbesserungen.
-          
-          ## Changelog
-          ${{ github.event.head_commit.message }}
-        draft: false  # Veröffentlichung ist keine Entwurfsversion
-        prerelease: false  # Veröffentlichung ist keine Vorabversion
+      - name: Get Version Name
+        id: get_version
+        run: |
+          VERSION_NAME=$(./gradlew -q printVersionName)
+          echo "VERSION_NAME=$VERSION_NAME" >> $GITHUB_ENV
 
-    - name: Upload APK to Release
-      uses: actions/upload-release-asset@v1
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: app/build/outputs/apk/release/app-release.apk
-        asset_name: QuizChamp-${{ env.VERSION_NAME }}.apk
-        asset_content_type: application/vnd.android.package-archive
+      - name: Create GitHub Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ github.ref_name }}  # Verwendet den aktuellen Tag als Release-Namen
+          release_name: Release ${{ github.ref_name }}
+          body: |
+            Standardbeschreibung: Diese Version enthält die neuesten Änderungen und Verbesserungen.
+            
+            ## Changelog
+            ${{ github.event.head_commit.message }}
+          draft: false  # Veröffentlichung ist keine Entwurfsversion
+          prerelease: false  # Veröffentlichung ist keine Vorabversion
+
+      - name: Upload APK to Release
+        uses: actions/upload-release-asset@v1
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: app/build/outputs/apk/release/${{ env.APK_NAME }}  # Dynamischer Pfad zur APK
+          asset_name: QuizChamp-${{ env.VERSION_NAME }}.apk
+          asset_content_type: application/vnd.android.package-archive
