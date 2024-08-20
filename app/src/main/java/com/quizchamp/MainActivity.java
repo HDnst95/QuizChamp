@@ -4,7 +4,9 @@ package com.quizchamp;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.TypedValue;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -12,7 +14,6 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.button.MaterialButton;
-import com.quizchamp.R;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -97,10 +98,49 @@ public class MainActivity extends AppCompatActivity {
             buttonAnswer3.setText(options.get(2));
             buttonAnswer4.setText(options.get(3));
 
+            List<MaterialButton> buttons = new ArrayList<>();
+            buttons.add(buttonAnswer1);
+            buttons.add(buttonAnswer2);
+            buttons.add(buttonAnswer3);
+            buttons.add(buttonAnswer4);
+
+            // Adjust button heights
+            setButtonHeights(buttons);
+
             resetButtonColors();
             nextQuestionButton.setVisibility(View.GONE);
         } else {
             endGame();
+        }
+    }
+
+    private int getMaxButtonHeight(List<MaterialButton> buttons) {
+        int maxHeight = 0;
+        for (MaterialButton button : buttons) {
+            int textHeight = measureTextHeight(button.getText().toString());
+            if (textHeight > maxHeight) {
+                maxHeight = textHeight + 6;
+            }
+        }
+        return maxHeight;
+    }
+
+    private int measureTextHeight(String text) {
+        TextView textView = new TextView(this);
+        textView.setText(text);
+        textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 24); // Ensure consistent text size
+        int widthMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED);
+        int heightMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED);
+        textView.measure(widthMeasureSpec, heightMeasureSpec);
+        return textView.getMeasuredHeight();
+    }
+
+    private void setButtonHeights(List<MaterialButton> buttons) {
+        int maxHeight = getMaxButtonHeight(buttons);
+        for (MaterialButton button : buttons) {
+            ViewGroup.LayoutParams params = button.getLayoutParams();
+            params.height = maxHeight + button.getPaddingTop() + button.getPaddingBottom(); // Add padding to ensure text is fully visible
+            button.setLayoutParams(params);
         }
     }
 

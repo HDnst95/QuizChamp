@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context="com.android.quizchamp.quizchamp.MainActivity">
+    tools:context="com.quizchamp.MainActivity">
 
     <TextView
         android:id="@+id/textViewFrage"
@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="8dp"
-        android:text="Spieler 1 ist an der Reihe!"
+        android:text="Reihenfolge!"
         android:textColor="@color/colorOnBackground"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -53,6 +53,7 @@
         app:layout_constraintTop_toBottomOf="@id/playerTurnTextView"
         app:layout_constraintVertical_bias="0.1" />
 
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonAnswer1"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
@@ -64,8 +65,7 @@
         android:textColor="@color/buttonTextColor"
         app:layout_constraintEnd_toStartOf="@+id/buttonAnswer2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/questionTextView"
-        app:layout_constraintWidth_percent="0.45" />
+        app:layout_constraintTop_toBottomOf="@id/questionTextView" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonAnswer2"
@@ -78,8 +78,7 @@
         android:textColor="@color/buttonTextColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/buttonAnswer1"
-        app:layout_constraintTop_toBottomOf="@id/questionTextView"
-        app:layout_constraintWidth_percent="0.45" />
+        app:layout_constraintTop_toBottomOf="@id/questionTextView" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonAnswer3"
@@ -92,8 +91,7 @@
         android:textColor="@color/buttonTextColor"
         app:layout_constraintEnd_toStartOf="@+id/buttonAnswer4"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/buttonAnswer1"
-        app:layout_constraintWidth_percent="0.45" />
+        app:layout_constraintTop_toBottomOf="@id/buttonAnswer1" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonAnswer4"
@@ -106,15 +104,14 @@
         android:textColor="@color/buttonTextColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/buttonAnswer3"
-        app:layout_constraintTop_toBottomOf="@id/buttonAnswer2"
-        app:layout_constraintWidth_percent="0.45" />
+        app:layout_constraintTop_toBottomOf="@id/buttonAnswer2" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/nextQuestionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Next Question"
+        android:text="Nächste Frage"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

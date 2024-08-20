@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
-    tools:context="com.android.quizchamp.quizchamp.StartActivity">
+    tools:context="com.quizchamp.StartActivity">
 
     <TextView
         android:id="@+id/selectQuestionCountTextView"
@@ -65,6 +65,7 @@
         android:hint="Player 1"
         android:inputType="text"
         android:textColor="@color/colorOnBackground"
+        android:textColorHint="@color/editTextColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.674"
         app:layout_constraintStart_toStartOf="parent"
@@ -80,6 +81,7 @@
         android:hint="Player 2"
         android:inputType="text"
         android:textColor="@color/colorOnBackground"
+        android:textColorHint="@color/editTextColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.674"
         app:layout_constraintStart_toStartOf="parent"
