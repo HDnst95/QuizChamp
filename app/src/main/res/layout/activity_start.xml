@@ -3,20 +3,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StartActivity"
-    android:padding="16dp">
+    android:padding="16dp"
+    tools:context="com.android.quizchamp.quizchamp.StartActivity">
 
     <TextView
         android:id="@+id/selectQuestionCountTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/select_number_of_questions"
-        android:textSize="20sp"
         android:textColor="@color/colorOnBackground"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.4"/>
 
     <EditText
@@ -26,6 +26,7 @@
         android:layout_marginTop="16dp"
         android:hint="@string/enter_number"
         android:inputType="number"
+        android:textColor="@color/colorOnBackground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -59,14 +60,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZäöüÄÖÜß "
         android:ems="10"
         android:hint="Player 1"
         android:inputType="text"
-        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZäöüÄÖÜß "
+        android:textColor="@color/colorOnBackground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.674"
         app:layout_constraintStart_toStartOf="parent"
-
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <EditText
@@ -74,10 +75,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="64dp"
+        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZäöüÄÖÜß "
         android:ems="10"
         android:hint="Player 2"
-        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZäöüÄÖÜß "
         android:inputType="text"
+        android:textColor="@color/colorOnBackground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.674"
         app:layout_constraintStart_toStartOf="parent"

@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 import com.google.android.material.button.MaterialButton;
+import com.quizchamp.R;
 
 public class StartActivity extends AppCompatActivity {
 
