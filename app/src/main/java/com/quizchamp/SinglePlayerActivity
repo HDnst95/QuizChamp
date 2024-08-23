@@ -1,0 +1,113 @@
+package com.quizchamp;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.button.MaterialButton;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class SinglePlayerActivity extends AppCompatActivity {
+
+        private TextView questionTextView, textViewFrage;
+            private MaterialButton buttonAnswer1, buttonAnswer2, buttonAnswer3, buttonAnswer4, nextQuestionButton;
+                private List<Question> questions = new ArrayList<>();
+                    private int currentQuestionIndex = 0;
+                        private String playerName;
+                            private int playerScore = 0;
+                                private int botScore = 0;
+
+                                    @Override
+                                        protected void onCreate(Bundle savedInstanceState) {
+                                                    super.onCreate(savedInstanceState);
+                                                            setContentView(R.layout.activity_single_player);
+
+                                                                    // Initialisiere die UI-Komponenten
+                                                                            questionTextView = findViewById(R.id.questionTextView);
+                                                                                    textViewFrage = findViewById(R.id.textViewFrage);
+                                                                                            buttonAnswer1 = findViewById(R.id.buttonAnswer1);
+                                                                                                    buttonAnswer2 = findViewById(R.id.buttonAnswer2);
+                                                                                                            buttonAnswer3 = findViewById(R.id.buttonAnswer3);
+                                                                                                                    buttonAnswer4 = findViewById(R.id.buttonAnswer4);
+                                                                                                                            nextQuestionButton = findViewById(R.id.nextQuestionButton);
+
+                                                                                                                                    // Beispiel-Fragen hinzufügen
+                                                                                                                                            questions.add(new Question("Frage 1", "Antwort 1", "Antwort 2", "Antwort 3", "Antwort 4", 1));
+                                                                                                                                                    questions.add(new Question("Frage 2", "Antwort 1", "Antwort 2", "Antwort 3", "Antwort 4", 2));
+
+                                                                                                                                                            // Erste Frage anzeigen
+                                                                                                                                                                    displayQuestion();
+
+                                                                                                                                                                            // Setze OnClickListener für die Antwort-Buttons
+                                                                                                                                                                                    buttonAnswer1.setOnClickListener(v -> checkAnswer(1));
+                                                                                                                                                                                            buttonAnswer2.setOnClickListener(v -> checkAnswer(2));
+                                                                                                                                                                                                    buttonAnswer3.setOnClickListener(v -> checkAnswer(3));
+                                                                                                                                                                                                            buttonAnswer4.setOnClickListener(v -> checkAnswer(4));
+                                                                                                                                                                                                                    nextQuestionButton.setOnClickListener(v -> nextQuestion());
+                                        }
+
+                                            private void displayQuestion() {
+                                                        if (currentQuestionIndex < questions.size()) {
+                                                                        Question currentQuestion = questions.get(currentQuestionIndex);
+                                                                                    questionTextView.setText(currentQuestion.getQuestion());
+                                                                                                buttonAnswer1.setText(currentQuestion.getAnswer1());
+                                                                                                            buttonAnswer2.setText(currentQuestion.getAnswer2());
+                                                                                                                        buttonAnswer3.setText(currentQuestion.getAnswer3());
+                                                                                                                                    buttonAnswer4.setText(currentQuestion.getAnswer4());
+                                                        } else {
+                                                                        endGame();
+                                                        }
+                                            }
+
+                                                private void checkAnswer(int selectedAnswer) {
+                                                            Question currentQuestion = questions.get(currentQuestionIndex);
+                                                                    if (currentQuestion.getCorrectAnswer() == selectedAnswer) {
+                                                                                    playerScore++;
+                                                                                                Toast.makeText(this, "Richtig!", Toast.LENGTH_SHORT).show();
+                                                                    } else {
+                                                                                    Toast.makeText(this, "Falsch!", Toast.LENGTH_SHORT).show();
+                                                                    }
+                                                                            botPlay();
+                                                }
+
+                                                    private void botPlay() {
+                                                                // Simuliere eine Bot-Antwort
+                                                                        int botAnswer = (int) (Math.random() * 4) + 1;
+                                                                                Question currentQuestion = questions.get(currentQuestionIndex);
+                                                                                        if (currentQuestion.getCorrectAnswer() == botAnswer) {
+                                                                                                        botScore++;
+                                                                                        }
+                                                    }
+
+                                                        private void nextQuestion() {
+                                                                    currentQuestionIndex++;
+                                                                            displayQuestion();
+                                                        }
+
+                                                            private void endGame() {
+                                                                        // Spiel beenden und Ergebnis anzeigen
+                                                                                String resultMessage = "Spiel beendet! Dein Score: " + playerScore + ", Bot Score: " + botScore;
+                                                                                        Toast.makeText(this, resultMessage, Toast.LENGTH_LONG).show();
+                                                                                                // Zurück zur StartActivity
+                                                                                                        Intent intent = new Intent(this, StartActivity.class);
+                                                                                                                startActivity(intent);
+                                                            }
+}
+                                                            }
+                                                        }
+                                                                                        }
+                                                    }
+                                                                    }
+                                                                    }
+                                                }
+                                                        }
+                                                        }
+                                            }
+                                        }
+}
