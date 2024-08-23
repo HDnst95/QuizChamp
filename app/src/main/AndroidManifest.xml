@@ -17,7 +17,13 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name=".MultiActivity"
+            android:exported="true" />
+        <activity
+            android:name=".HighscoreActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ViewHighscoresActivity"
             android:exported="true"/>
     </application>
 

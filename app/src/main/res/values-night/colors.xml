@@ -5,6 +5,7 @@
     <color name="secondaryColor">#FF4081</color> <!-- Pink A200 -->
     <color name="primaryTextColor">#FFFFFF</color> <!-- White -->
     <color name="secondaryTextColor">#212121</color> <!-- Grey 900 -->
+    <color name="editTextColor">#818181</color> <!-- Black -->
     <color name="surfaceColor">#F5F5F5</color> <!-- Grey 100 -->
     <color name="buttonColor">#1E88E5</color> <!-- Blue 600 -->
     <color name="buttonTextColor">#FFFFFF</color> <!-- White -->
@@ -12,4 +13,6 @@
     <color name="wrongAnswerColor">#F44336</color> <!-- Green A700 -->
     <color name="backgroundColor">#FFFFFF</color> <!-- White -->
     <color name="colorOnBackground">#212121</color> <!-- Grey 900 -->
+    <color name="tableHeaderBackground">#FFDDDDDD</color>
+    <color name="tableHeaderTextColor">#FF000000</color>
 </resources>

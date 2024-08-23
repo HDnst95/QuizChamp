@@ -1,4 +1,4 @@
-// app/src/main/java/com/quizchamp/MainActivity.java
+// app/src/main/java/com/quizchamp/MultiActivity.java
 package com.quizchamp;
 
 import android.content.DialogInterface;
@@ -17,26 +17,29 @@ import com.google.android.material.button.MaterialButton;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
-public class MainActivity extends AppCompatActivity {
+public class MultiActivity extends AppCompatActivity {
 
     private TextView questionTextView, frageTextView;
     private MaterialButton buttonAnswer1, buttonAnswer2, buttonAnswer3, buttonAnswer4, nextQuestionButton;
-    private TextView playerTurnTextView;
-    private int currentPlayer = 1;
     private List<Question> questions = new ArrayList<>();
     private int currentQuestionIndex = 0;
+    private int questionCount;
+
+    private TextView playerTurnTextView;
+    private int currentPlayer = 1;
     private int player1Score = 0;
     private int player2Score = 0;
-    private int questionCount;
     private String namePlayer1;
     private String namePlayer2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_multi);
 
         questionTextView = findViewById(R.id.questionTextView); // Ensure this line is correct
         frageTextView = findViewById(R.id.textViewFrage);
@@ -67,7 +70,6 @@ public class MainActivity extends AppCompatActivity {
         // Setze Click-Listener für die Antwort-Buttons
         View.OnClickListener answerClickListener = v -> {
             checkAnswer((MaterialButton) v);
-            showCorrectAnswer();
         };
 
         buttonAnswer1.setOnClickListener(answerClickListener);
@@ -163,20 +165,15 @@ public class MainActivity extends AppCompatActivity {
             }
         } else {
             selectedButton.setBackgroundColor(getResources().getColor(R.color.wrongAnswerColor));
-        }
-    }
-
-    private void showCorrectAnswer() {
-        Question currentQuestion = questions.get(currentQuestionIndex);
-        int correctAnswerColor = getResources().getColor(R.color.correctAnswerColor);
-        if (buttonAnswer1.getText().toString().equals(currentQuestion.getCorrectAnswer())) {
-            buttonAnswer1.setBackgroundColor(correctAnswerColor);
-        } else if (buttonAnswer2.getText().toString().equals(currentQuestion.getCorrectAnswer())) {
-            buttonAnswer2.setBackgroundColor(correctAnswerColor);
-        } else if (buttonAnswer3.getText().toString().equals(currentQuestion.getCorrectAnswer())) {
-            buttonAnswer3.setBackgroundColor(correctAnswerColor);
-        } else if (buttonAnswer4.getText().toString().equals(currentQuestion.getCorrectAnswer())) {
-            buttonAnswer4.setBackgroundColor(correctAnswerColor);
+            if (buttonAnswer1.getText().toString().equals(currentQuestion.getCorrectAnswer())) {
+                buttonAnswer1.setBackgroundColor(getResources().getColor(R.color.correctAnswerColor));
+            } else if (buttonAnswer2.getText().toString().equals(currentQuestion.getCorrectAnswer())) {
+                buttonAnswer2.setBackgroundColor(getResources().getColor(R.color.correctAnswerColor));
+            } else if (buttonAnswer3.getText().toString().equals(currentQuestion.getCorrectAnswer())) {
+                buttonAnswer3.setBackgroundColor(getResources().getColor(R.color.correctAnswerColor));
+            } else if (buttonAnswer4.getText().toString().equals(currentQuestion.getCorrectAnswer())) {
+                buttonAnswer4.setBackgroundColor(getResources().getColor(R.color.correctAnswerColor));
+            }
         }
         nextQuestionButton.setVisibility(View.VISIBLE);
     }
@@ -209,16 +206,11 @@ public class MainActivity extends AppCompatActivity {
                 restartGame();
             }
         });
-        builder.setNegativeButton(R.string.close_game, new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                dialog.dismiss();
-            }
-        });
         builder.show();
     }
 
     private void restartGame() {
-        Intent intent = new Intent(MainActivity.this, StartActivity.class);
+        Intent intent = new Intent(MultiActivity.this, StartActivity.class);
         intent.putExtra("NAME_PLAYER_1", namePlayer1);
         intent.putExtra("NAME_PLAYER_2", namePlayer2);
         startActivity(intent);

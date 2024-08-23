@@ -4,17 +4,20 @@
     <string name="enter_number">Gib eine Zahl ein</string>
     <string name="start_game">Spiel Starten</string>
     <string name="next_question">Nächste Frage</string>
-    <string name="player_turn">%s\'s ist dran</string>
-    <string name="player_turn_notification">%s\'s ist dran</string>
+    <string name="player_turn">%s ist dran</string>
+    <string name="player_turn_notification">%s ist dran</string>
     <string name="correct">Richtig</string>
     <string name="game_over">Spiel beendet</string>
     <string name="player_1_score">Spieler 1: %d Punkte</string>
     <string name="player_2_score">Spieler 2: %d Punkte</string>
-    <string name="restart_game">Spiel neu starten</string>
+    <string name="player_score">%s: %d Punkte</string>
+    <string name="restart_game">Hauptmenü</string>
     <string name="close_game">Schließen</string>
     <string name="enter_positive_number">Bitte gib eine positive Zahl ein</string>
     <string name="enter_question_count">Bitte gib die Anzahl der Fragen ein</string>
     <string name="error_loading_questions">Fehler beim Laden der Fragen</string>
     <string name="empty_player_names">Leere Felder für Spielernamen wurden aufgefüllt</string>
     <string name="end_game">Spielende</string>
+    <string name="game_won">Gewonnen!</string>
+    <string name="highscore_updated">Der Highscore wurde geupdated!</string>
 </resources>
