@@ -1,4 +1,4 @@
-package com.quizchamp;
+package com.quizchamp.activity;
 
 import android.os.Bundle;
 import android.widget.TableLayout;
@@ -8,6 +8,9 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.button.MaterialButton;
+import com.quizchamp.R;
+import com.quizchamp.model.Highscore;
+import com.quizchamp.utils.HighscoreUtils;
 
 import java.util.List;
 
@@ -62,17 +65,20 @@ public class ViewHighscoresActivity extends AppCompatActivity {
             nameTextView.setText(highscore.getPlayerName());
             nameTextView.setPadding(16, 16, 16, 16);
             nameTextView.setTextSize(18);
+            nameTextView.setTextColor(getResources().getColor(android.R.color.black));
 
             TextView scoreTextView = new TextView(this);
             scoreTextView.setText(String.valueOf(highscore.getScore()));
             scoreTextView.setPadding(16, 16, 16, 16);
             scoreTextView.setTextSize(18);
+            scoreTextView.setTextColor(getResources().getColor(android.R.color.black));
 
 
             TextView dateTimeTextView = new TextView(this);
             dateTimeTextView.setText(highscore.getDateTime());
             dateTimeTextView.setPadding(16, 16, 16, 16);
             dateTimeTextView.setTextSize(18);
+            dateTimeTextView.setTextColor(getResources().getColor(android.R.color.black));
 
             row.addView(nameTextView);
             row.addView(scoreTextView);

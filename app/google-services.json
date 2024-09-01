@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "609811510822",
+    "project_id": "quizchamp-9655b",
+    "storage_bucket": "quizchamp-9655b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:609811510822:android:f49642ad3dc0aebd46d8e7",
+        "android_client_info": {
+          "package_name": "com.quizchamp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "609811510822-chifk1khim7ihnefih5eb5enhjchlfma.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.quizchamp",
+            "certificate_hash": "b10d468e2ffece4835be2bbda713cdf8dd229132"
+          }
+        },
+        {
+          "client_id": "609811510822-pm2pgainml0kqk7i6qjmhum4qrourt7q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBPkqphSCKuezLZopt5wVaXZ0RPAaOZiHI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "609811510822-pm2pgainml0kqk7i6qjmhum4qrourt7q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

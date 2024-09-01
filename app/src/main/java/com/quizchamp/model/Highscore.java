@@ -1,4 +1,4 @@
-package com.quizchamp;
+package com.quizchamp.model;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

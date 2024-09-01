@@ -1,5 +1,5 @@
-// app/src/main/java/com/quizchamp/MultiActivity.java
-package com.quizchamp;
+// app/src/main/java/com/quizchamp/MultiPlayerActivity.java
+package com.quizchamp.activity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -14,14 +14,17 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.button.MaterialButton;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.quizchamp.R;
+import com.quizchamp.model.Question;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
-public class MultiActivity extends AppCompatActivity {
+public class MultiPlayerActivity extends AppCompatActivity {
 
     private TextView questionTextView, frageTextView;
     private MaterialButton buttonAnswer1, buttonAnswer2, buttonAnswer3, buttonAnswer4, nextQuestionButton;
@@ -33,13 +36,12 @@ public class MultiActivity extends AppCompatActivity {
     private int currentPlayer = 1;
     private int player1Score = 0;
     private int player2Score = 0;
-    private String namePlayer1;
-    private String namePlayer2;
+    private FirebaseFirestore db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_multi);
+        setContentView(R.layout.activity_question);
 
         questionTextView = findViewById(R.id.questionTextView); // Ensure this line is correct
         frageTextView = findViewById(R.id.textViewFrage);
@@ -48,17 +50,14 @@ public class MultiActivity extends AppCompatActivity {
         buttonAnswer3 = findViewById(R.id.buttonAnswer3);
         buttonAnswer4 = findViewById(R.id.buttonAnswer4);
         nextQuestionButton = findViewById(R.id.nextQuestionButton);
-        playerTurnTextView = findViewById(R.id.playerTurnTextView);
 
         Intent intent = getIntent();
-        questionCount = intent.getIntExtra("QUESTION_COUNT", 10);
-        namePlayer1 = intent.getStringExtra("NAME_PLAYER_1");
-        namePlayer2 = intent.getStringExtra("NAME_PLAYER_2");
+        questionCount = Integer.parseInt(intent.getStringExtra("input_data"));
 
-        // Setze den Namen der Spieler
-        playerTurnTextView.setText(String.format(getString(R.string.player_turn), namePlayer1));
-        // Lade die Fragen aus der JSON-Datei
-        questions = JsonLoader.loadQuestionsFromJson(this);
+
+        db = FirebaseFirestore.getInstance();
+        fetchQuestionsFromDatabase();
+
         if (questions != null) {
             Collections.shuffle(questions);
             questions = questions.subList(0, Math.min(questionCount, questions.size()));
@@ -80,6 +79,22 @@ public class MultiActivity extends AppCompatActivity {
         nextQuestionButton.setOnClickListener(v -> nextTurn());
     }
 
+    private void fetchQuestionsFromDatabase() {
+        db.collection("questions")
+                .get()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        questions.clear();
+                        for (QueryDocumentSnapshot document : task.getResult()) {
+                            Question question = document.toObject(Question.class);
+                            questions.add(question);
+                        }
+                    } else {
+                        // Handle error
+                    }
+                });
+    }
+
     private void displayQuestion() {
         if (currentQuestionIndex < questions.size()) {
             frageTextView.setText("Frage " + (currentQuestionIndex + 1) + " von " + questions.size());
@@ -87,10 +102,10 @@ public class MultiActivity extends AppCompatActivity {
 
             // Create a list of options and shuffle them
             List<String> options = new ArrayList<>();
-            options.add(currentQuestion.getOption1());
-            options.add(currentQuestion.getOption2());
-            options.add(currentQuestion.getOption3());
-            options.add(currentQuestion.getOption4());
+            options.add(currentQuestion.getOptionA());
+            options.add(currentQuestion.getOptionB());
+            options.add(currentQuestion.getOptionC());
+            options.add(currentQuestion.getOptionD());
             Collections.shuffle(options);
 
             // Set the shuffled options to the buttons
@@ -181,20 +196,13 @@ public class MultiActivity extends AppCompatActivity {
     private void nextTurn() {
         if (currentPlayer == 1) {
             currentPlayer = 2;
-            showNextPlayerToast();
         } else {
             currentPlayer = 1;
             currentQuestionIndex++;
-            showNextPlayerToast();
         }
         displayQuestion();
-        playerTurnTextView.setText(String.format(getString(R.string.player_turn), currentPlayer == 1 ? namePlayer1 : namePlayer2));
     }
 
-    private void showNextPlayerToast() {
-        String currentPlayerName = currentPlayer == 1 ? namePlayer1 : namePlayer2;
-        Toast.makeText(this, String.format(getString(R.string.player_turn_notification), currentPlayerName), Toast.LENGTH_SHORT).show();
-    }
 
     private void endGame() {
         nextQuestionButton.setText(R.string.end_game);
@@ -210,9 +218,7 @@ public class MultiActivity extends AppCompatActivity {
     }
 
     private void restartGame() {
-        Intent intent = new Intent(MultiActivity.this, StartActivity.class);
-        intent.putExtra("NAME_PLAYER_1", namePlayer1);
-        intent.putExtra("NAME_PLAYER_2", namePlayer2);
+        Intent intent = new Intent(MultiPlayerActivity.this, MainMenuActivity.class);
         startActivity(intent);
         finish();
     }

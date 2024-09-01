@@ -1,9 +1,10 @@
-package com.quizchamp;
+package com.quizchamp.utils;
 
 import android.content.Context;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.quizchamp.model.Highscore;
 
 import java.io.File;
 import java.io.FileReader;

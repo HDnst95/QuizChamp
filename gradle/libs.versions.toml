@@ -5,7 +5,11 @@ appcompatVersion = "1.7.0"
 constraintlayout = "2.1.4"
 constraintlayoutVersion = "2.1.4"
 espressoCoreVersion = "3.6.1"
+firebaseAdmin = "9.2.0"
+firebaseBom = "33.2.0"
+firebaseDatabaseVersion = "20.0.5"
 googleMaterial = "1.12.0"
+googleServices = "4.4.2"
 gson = "2.11.0"
 junit = "4.13.2"
 junitVersion = "1.2.1"
@@ -13,13 +17,25 @@ espressoCore = "3.6.1"
 appcompat = "1.7.0"
 material = "1.12.0"
 materialVersion = "1.4.0"
+playServicesAuth = "21.2.0"
+playServicesIdentity = "18.1.0"
 roomRuntime = "2.6.1"
+googleGmsGoogleServices = "4.4.2"
+firebaseDatabase = "21.0.0"
+firebaseFirestore = "25.1.0"
+firebaseAuth = "23.0.0"
 
 [libraries]
 appcompat-v140 = { module = "androidx.appcompat:appcompat", version.ref = "appcompatVersion" }
 constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
 constraintlayout-v204 = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayoutVersion" }
 espresso-core-v340 = { module = "androidx.test.espresso:espresso-core", version.ref = "espressoCoreVersion" }
+firebase-admin = { module = "com.google.firebase:firebase-admin", version.ref = "firebaseAdmin" }
+firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
+firebase-database-v2005 = { module = "com.google.firebase:firebase-database", version.ref = "firebaseDatabaseVersion" }
+google-firebase-auth = { module = "com.google.firebase:firebase-auth" }
+google-firebase-database = { module = "com.google.firebase:firebase-database" }
+google-services = { module = "com.google.gms:google-services", version.ref = "googleServices" }
 gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
@@ -29,9 +45,15 @@ junit-v113 = { module = "androidx.test.ext:junit", version.ref = "androidxJunit"
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 material-v140 = { module = "com.google.android.material:material", version.ref = "materialVersion" }
 material-v190 = { module = "com.google.android.material:material", version.ref = "googleMaterial" }
+play-services-auth = { module = "com.google.android.gms:play-services-auth", version.ref = "playServicesAuth" }
+play-services-identity = { module = "com.google.android.gms:play-services-identity", version.ref = "playServicesIdentity" }
 room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomRuntime" }
 room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomRuntime" }
+firebase-database = { group = "com.google.firebase", name = "firebase-database", version.ref = "firebaseDatabase" }
+firebase-firestore = { group = "com.google.firebase", name = "firebase-firestore", version.ref = "firebaseFirestore" }
+firebase-auth = { group = "com.google.firebase", name = "firebase-auth", version.ref = "firebaseAuth" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
+google-gms-google-services = { id = "com.google.gms.google-services", version.ref = "googleGmsGoogleServices" }
 

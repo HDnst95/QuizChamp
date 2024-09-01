@@ -20,4 +20,6 @@
     <string name="end_game">Spielende</string>
     <string name="game_won">Gewonnen!</string>
     <string name="highscore_updated">Der Highscore wurde geupdated!</string>
+    <string name="default_web_client_id">609811510822-pm2pgainml0kqk7i6qjmhum4qrourt7q.apps.googleusercontent.com</string>
+    <string name="server_client_id">609811510822-pm2pgainml0kqk7i6qjmhum4qrourt7q.apps.googleusercontent.com</string>
 </resources>

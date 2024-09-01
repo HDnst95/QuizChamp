@@ -1,6 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.quizchamp">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
     android:allowBackup="true"
     android:icon="@mipmap/ic_launcher"
@@ -9,22 +11,39 @@
     android:supportsRtl="true"
     android:theme="@style/Theme.QuizChamp">
         <activity
-            android:name=".StartActivity"
+            android:name=".activity.LoginRegisterActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
-            android:name=".MultiActivity"
+            android:name=".activity.SinglePlayerActivity"
             android:exported="true" />
+
         <activity
-            android:name=".HighscoreActivity"
+            android:name=".activity.HighscoreActivity"
             android:exported="true" />
+
         <activity
-            android:name=".ViewHighscoresActivity"
-            android:exported="true"/>
+            android:name=".activity.MultiPlayerActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".activity.ViewHighscoresActivity"
+            android:exported="true" />
+
+        <activity
+            android:name=".activity.MainMenuActivity"
+            android:exported="true" />
+
+        <!-- Inside <application> tag -->
+        <meta-data
+            android:name="com.google.android.gms.google-services"
+            android:value="@string/server_client_id" />
+
     </application>
 
 </manifest>
