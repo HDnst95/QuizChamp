@@ -18,6 +18,7 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.button.MaterialButton;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -104,10 +105,19 @@ public class HighscoreActivity extends AppCompatActivity {
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
                 if (task.isSuccessful()) {
                     int randomIndex = new Random().nextInt(task.getResult().size());
-                    DocumentSnapshot randomDocument = task.getResult().getDocuments().get(randomIndex);
-                    Question randomQuestion = randomDocument.toObject(Question.class);
-                    question = randomQuestion;
-                    callback.onQuestionFetched(randomQuestion);
+                    DocumentReference randomDocument = task.getResult().getDocuments().get(randomIndex).getReference();
+                    randomDocument.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                            Question randomQuestion = task.getResult().toObject(Question.class);
+                            question = randomQuestion;
+                            callback.onQuestionFetched(randomQuestion);
+                        }
+                    });
+//                    DocumentSnapshot randomDocument = task.getResult().getDocuments().get(randomIndex);
+//                    Question randomQuestion = randomDocument.toObject(Question.class);
+//                    question = randomQuestion;
+//                    callback.onQuestionFetched(randomQuestion);
                 } else {
                     callback.onError(task.getException());
                 }

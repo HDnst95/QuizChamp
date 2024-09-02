@@ -76,8 +76,11 @@ public class MainMenuActivity extends AppCompatActivity {
             }
         });
 
-        singlePlayerButton.setVisibility(View.GONE);
-        multiPlayerButton.setVisibility(View.GONE);
+
+        singlePlayerButton.setEnabled(false);
+        singlePlayerButton.setTextColor(getResources().getColor(R.color.disabledButtonTextColor));
+        multiPlayerButton.setEnabled(false);
+        multiPlayerButton.setTextColor(getResources().getColor(R.color.disabledButtonTextColor));
 
         checkUser();
     }
@@ -91,7 +94,6 @@ public class MainMenuActivity extends AppCompatActivity {
         }
     }
 
-
     // MainMenuActivity.java
     private void showInputDialog(final String mode) {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -103,13 +105,8 @@ public class MainMenuActivity extends AppCompatActivity {
         final TextView comStrengthValue = dialogView.findViewById(R.id.comStrengthValue);
         final EditText questionsField = dialogView.findViewById(R.id.questionsField);
         final EditText playerNameField = dialogView.findViewById(R.id.playerNameField);
+        playerNameField.setText(playerNameEditText.getText().toString());
         final TextView seekBarDescription = dialogView.findViewById(R.id.seekBarDescription);
-
-
-        Intent intent = getIntent();
-        if (intent.hasExtra("PLAYER_NAME")) {
-            playerNameField.setText(intent.getStringExtra("PLAYER_NAME"));
-        }
 
         if (mode.equals("SinglePlayer")) {
             comStrengthSeekBar.setVisibility(View.VISIBLE);

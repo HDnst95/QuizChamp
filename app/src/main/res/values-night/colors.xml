@@ -11,8 +11,10 @@
     <color name="buttonTextColor">#FFFFFF</color> <!-- White -->
     <color name="correctAnswerColor">#00C853</color> <!-- Green A700 -->
     <color name="wrongAnswerColor">#F44336</color> <!-- Green A700 -->
-    <color name="backgroundColor">#FFFFFF</color> <!-- White -->
-    <color name="colorOnBackground">#212121</color> <!-- Grey 900 -->
+    <color name="backgroundColor">#93AFC0</color> <!-- White -->
+    <color name="colorOnBackground">#C3212121</color> <!-- Grey 900 -->
     <color name="tableHeaderBackground">#FFDDDDDD</color>
     <color name="tableHeaderTextColor">#FF000000</color>
+    <color name="disabledButtonTextColor">#888888</color>
+    <color name="black">#FF000000</color>
 </resources>
