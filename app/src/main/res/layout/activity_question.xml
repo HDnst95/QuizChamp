@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:text="Frage "
         android:textAlignment="center"
-        android:textColor="@color/design_default_color_secondary_variant"
+        android:textColor="@color/primaryDarkColor"
         android:textSize="30sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"

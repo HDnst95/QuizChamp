@@ -19,3 +19,15 @@
 # If you keep the line number information, uncomment this to
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
+
+# Firebase Auth
+-keep class com.google.firebase.** { *; }
+-dontwarn com.google.firebase.**
+
+# Firebase Firestore
+-keep class com.google.firebase.firestore.** { *; }
+-dontwarn com.google.firebase.firestore.**
+
+# GSON (wird von Firebase verwendet)
+-keep class com.google.gson.** { *; }
+-dontwarn com.google.gson.**

@@ -65,7 +65,7 @@ public class HighscoreActivity extends AppCompatActivity {
         nextQuestionButton = findViewById(R.id.nextQuestionButton);
 
 
-        FirebaseApp.initializeApp(this);
+//        FirebaseApp.initializeApp(this);
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
 

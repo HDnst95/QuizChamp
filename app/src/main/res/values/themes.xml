@@ -11,14 +11,15 @@
         <item name="colorSecondaryVariant">@color/primaryLightColor</item>
         <item name="colorOnSecondary">@color/secondaryTextColor</item>
         <!-- Background color. -->
-        <item name="android:colorBackground">@color/backgroundColor</item>
-        <item name="colorBackground">@color/backgroundColor</item>
+        <item name="android:colorBackground">#92AFC0</item>
+        <item name="colorBackground">#92AFC0</item>
         <!-- Surface color. -->
         <item name="colorSurface">@color/surfaceColor</item>
         <item name="colorOnSurface">@color/secondaryTextColor</item>
-        <!-- Status bar color. -->
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
     </style>
 
 </resources>
