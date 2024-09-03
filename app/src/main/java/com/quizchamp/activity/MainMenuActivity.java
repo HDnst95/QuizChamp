@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,7 +17,6 @@ import android.widget.TextView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.quizchamp.R;
 import com.quizchamp.model.Question;
 
@@ -25,49 +25,76 @@ import java.util.List;
 
 public class MainMenuActivity extends AppCompatActivity {
 
+    private Button savePlayerNameButton;
     private Button singlePlayerButton;
     private Button highscoreButton;
     private Button multiPlayerButton;
+    private Button multiPlayerOnDeviceButton;
     private Button viewHighscoreButton;
     private EditText playerNameEditText;
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
     private List<Question> questionsList = new ArrayList<>();
+    private SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
 
-        singlePlayerButton = findViewById(R.id.singlePlayerButton);
-        highscoreButton = findViewById(R.id.highscoreButton);
-        multiPlayerButton = findViewById(R.id.multiPlayerButton);
-        viewHighscoreButton = findViewById(R.id.viewHighscoreButton);
-        playerNameEditText = findViewById(R.id.playerNameEditText);
         mAuth = FirebaseAuth.getInstance();
+        db = FirebaseFirestore.getInstance();
+
+        savePlayerNameButton = findViewById(R.id.savePlayerNameButton);
+        playerNameEditText = findViewById(R.id.playerNameEditText);
 
 
+        singlePlayerButton = findViewById(R.id.singlePlayerButton);
+
+        multiPlayerButton = findViewById(R.id.multiPlayerButton);
+        multiPlayerOnDeviceButton = findViewById(R.id.multiPlayerOnScreenButton);
+
+        highscoreButton = findViewById(R.id.highscoreButton);
+        viewHighscoreButton = findViewById(R.id.viewHighscoreButton);
+
+        sharedPreferences = getSharedPreferences("QuizChampPrefs", MODE_PRIVATE);
+        // Load player name from SharedPreferences
+        String savedPlayerName = sharedPreferences.getString("PLAYER_NAME", "");
+        playerNameEditText.setText(savedPlayerName);
+
+
+        savePlayerNameButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("PLAYER_NAME", playerNameEditText.getText().toString());
+                editor.apply();
+            }
+        });
         singlePlayerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showInputDialog("SinglePlayer");
             }
         });
-
         multiPlayerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showInputDialog("Multiplayer");
             }
         });
-
+        multiPlayerOnDeviceButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showInputDialog("MultiplayerOnDevice");
+            }
+        });
         highscoreButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showInputDialog("Highscore");
             }
         });
-
         viewHighscoreButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -81,6 +108,8 @@ public class MainMenuActivity extends AppCompatActivity {
         singlePlayerButton.setTextColor(getResources().getColor(R.color.disabledButtonTextColor));
         multiPlayerButton.setEnabled(false);
         multiPlayerButton.setTextColor(getResources().getColor(R.color.disabledButtonTextColor));
+        multiPlayerOnDeviceButton.setEnabled(false);
+        multiPlayerOnDeviceButton.setTextColor(getResources().getColor(R.color.disabledButtonTextColor));
 
         checkUser();
     }
@@ -106,6 +135,8 @@ public class MainMenuActivity extends AppCompatActivity {
         final EditText questionsField = dialogView.findViewById(R.id.questionsField);
         final EditText playerNameField = dialogView.findViewById(R.id.playerNameField);
         playerNameField.setText(playerNameEditText.getText().toString());
+        final EditText playerNameMulti1Field = dialogView.findViewById(R.id.playerNameMulti1Field);
+        final EditText playerNameMulti2Field = dialogView.findViewById(R.id.playerNameMulti2Field);
         final TextView seekBarDescription = dialogView.findViewById(R.id.seekBarDescription);
 
         if (mode.equals("SinglePlayer")) {
@@ -134,8 +165,14 @@ public class MainMenuActivity extends AppCompatActivity {
             comStrengthSeekBar.setVisibility(View.GONE);
             comStrengthValue.setVisibility(View.GONE);
             seekBarDescription.setVisibility(View.GONE);
+            questionsField.setVisibility(View.GONE);
+            playerNameField.setVisibility(View.VISIBLE);
+        } else if (mode.equals("MultiplayerOnDevice")) {
+            comStrengthSeekBar.setVisibility(View.GONE);
+            comStrengthValue.setVisibility(View.GONE);
+            seekBarDescription.setVisibility(View.GONE);
             questionsField.setVisibility(View.VISIBLE);
-            playerNameField.setVisibility(View.GONE);
+            playerNameField.setVisibility(View.VISIBLE);
         } else if (mode.equals("Highscore")) {
             comStrengthSeekBar.setVisibility(View.GONE);
             comStrengthValue.setVisibility(View.GONE);
@@ -143,19 +180,26 @@ public class MainMenuActivity extends AppCompatActivity {
             questionsField.setVisibility(View.GONE);
             playerNameField.setVisibility(View.VISIBLE);
         }
-
         builder.setTitle(mode)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        String inputData = "";
+                        String playerName = "";
+                        String playerMultiName1 = "";
+                        String playerMultiName2 = "";
+                        int questionCount = 0;
+                        int comStrength = 0;
                         if (mode.equals("SinglePlayer")) {
-                            inputData = comStrengthValue.getText().toString();
+                            comStrength = comStrengthSeekBar.getProgress();
                         } else if (mode.equals("Multiplayer")) {
-                            inputData = questionsField.getText().toString();
+                            questionCount = questionsField.getText().toString().isEmpty() ? 0 : Integer.parseInt(questionsField.getText().toString());
+                        } else if (mode.equals("MultiplayerOnDevice")) {
+                            playerMultiName1 = playerNameMulti1Field.getText().toString();
+                            playerMultiName2 = playerNameMulti2Field.getText().toString();
+                            questionCount = questionsField.getText().toString().isEmpty() ? 0 : Integer.parseInt(questionsField.getText().toString());
                         } else if (mode.equals("Highscore")) {
-                            inputData = playerNameField.getText().toString();
+                            playerName = playerNameField.getText().toString();
                         }
-                        startGameActivity(mode, inputData);
+                        startGameActivity(mode, comStrength, playerName, questionCount, playerMultiName1, playerMultiName2);
                     }
                 })
                 .setNegativeButton("Abbrechen", new DialogInterface.OnClickListener() {
@@ -167,20 +211,27 @@ public class MainMenuActivity extends AppCompatActivity {
         alertDialog.show();
     }
 
-    private void startGameActivity(String mode, String inputData) {
+    private void startGameActivity(String mode, int comStrength, String playerName, int questionCount, String playerMultiName1, String playerMultiName2) {
         Intent intent;
         switch (mode) {
             case "SinglePlayer":
                 intent = new Intent(MainMenuActivity.this, SinglePlayerActivity.class);
-                intent.putExtra("input_data", inputData);
+                intent.putExtra("DIFFICULTY", comStrength);
+                intent.putExtra("PLAYER_NAME", playerName);
                 break;
             case "Multiplayer":
-                intent = new Intent(MainMenuActivity.this, MultiPlayerActivity.class);
-                intent.putExtra("input_data", inputData);
+                intent = new Intent(MainMenuActivity.this, MatchmakingActivity.class);
+                intent.putExtra("PLAYER_NAME", playerName);
+                break;
+            case "MultiplayerOnDevice":
+                intent = new Intent(MainMenuActivity.this, MultiPlayerOnDeviceActivity.class);
+                intent.putExtra("PLAYER_1", playerMultiName1);
+                intent.putExtra("PLAYER_2", playerMultiName2);
+                intent.putExtra("QUESTION_COUNT", questionCount);
                 break;
             case "Highscore":
                 intent = new Intent(MainMenuActivity.this, HighscoreActivity.class);
-                intent.putExtra("input_data", inputData);
+                intent.putExtra("PLAYER_NAME", playerName);
                 break;
             default:
                 return;

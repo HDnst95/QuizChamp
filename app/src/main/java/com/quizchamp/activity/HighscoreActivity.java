@@ -55,7 +55,7 @@ public class HighscoreActivity extends AppCompatActivity {
         setContentView(R.layout.activity_question);
 
         Intent intent = getIntent();
-        playerName = intent.getStringExtra("input_data");
+        playerName = intent.getStringExtra("PLAYER_NAME");
 
         textViewFrage = findViewById(R.id.textViewFrage);
         questionTextView = findViewById(R.id.questionTextView);
@@ -114,10 +114,6 @@ public class HighscoreActivity extends AppCompatActivity {
                             callback.onQuestionFetched(randomQuestion);
                         }
                     });
-//                    DocumentSnapshot randomDocument = task.getResult().getDocuments().get(randomIndex);
-//                    Question randomQuestion = randomDocument.toObject(Question.class);
-//                    question = randomQuestion;
-//                    callback.onQuestionFetched(randomQuestion);
                 } else {
                     callback.onError(task.getException());
                 }

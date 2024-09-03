@@ -34,9 +34,12 @@ public class MultiPlayerActivity extends AppCompatActivity {
 
     private TextView playerTurnTextView;
     private int currentPlayer = 1;
+    String player1Name;
+    String player2Name;
     private int player1Score = 0;
     private int player2Score = 0;
     private FirebaseFirestore db;
+    private String opponentId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,19 +55,10 @@ public class MultiPlayerActivity extends AppCompatActivity {
         nextQuestionButton = findViewById(R.id.nextQuestionButton);
 
         Intent intent = getIntent();
-        questionCount = Integer.parseInt(intent.getStringExtra("input_data"));
-
+        opponentId = intent.getStringExtra("OPPONENT_ID");
 
         db = FirebaseFirestore.getInstance();
         fetchQuestionsFromDatabase();
-
-        if (questions != null) {
-            Collections.shuffle(questions);
-            questions = questions.subList(0, Math.min(questionCount, questions.size()));
-            displayQuestion();
-        } else {
-            Toast.makeText(this, R.string.error_loading_questions, Toast.LENGTH_SHORT).show();
-        }
 
         // Setze Click-Listener für die Antwort-Buttons
         View.OnClickListener answerClickListener = v -> {

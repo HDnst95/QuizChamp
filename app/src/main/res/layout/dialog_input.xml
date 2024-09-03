@@ -42,4 +42,19 @@
         android:layout_height="wrap_content"
         android:hint="Spielernamen eingeben"
         android:visibility="gone" />
+
+    <EditText
+        android:id="@+id/playerNameMulti1Field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Name des 1. Spielers eingeben"
+        android:visibility="gone" />
+
+    <EditText
+        android:id="@+id/playerNameMulti2Field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Name des 2. Spielers eingebenn"
+        android:visibility="gone" />
+
 </LinearLayout>

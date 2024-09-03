@@ -9,13 +9,13 @@ android {
         applicationId "com.quizchamp"
         minSdk 29
         targetSdk 34
-        versionCode 10
-        versionName "1.7.0"
+        versionCode 12
+        versionName "1.8.1"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     signingConfigs {
         release {
-            storeFile file("release.keystore")
+            storeFile file("H:/Programmierung/keystores/quizchamp2.jks")
             storePassword "hdienst2024"
             keyAlias "QuizChampKey"
             keyPassword "quizchamp-2024"

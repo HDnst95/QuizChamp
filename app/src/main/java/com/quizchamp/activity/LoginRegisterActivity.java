@@ -1,5 +1,7 @@
+// LoginRegisterActivity.java
 package com.quizchamp.activity;
 
+import android.app.PendingIntent;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -8,10 +10,11 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.gms.auth.api.signin.GoogleSignIn;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.auth.api.signin.GoogleSignInClient;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.auth.api.identity.BeginSignInRequest;
+import com.google.android.gms.auth.api.identity.BeginSignInResult;
+import com.google.android.gms.auth.api.identity.Identity;
+import com.google.android.gms.auth.api.identity.SignInClient;
+import com.google.android.gms.auth.api.identity.SignInCredential;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -41,7 +44,8 @@ public class LoginRegisterActivity extends AppCompatActivity {
     private com.google.android.gms.common.SignInButton googleSignInButton;
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
-    private GoogleSignInClient mGoogleSignInClient;
+    private SignInClient oneTapClient;
+    private BeginSignInRequest signInRequest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,14 +63,16 @@ public class LoginRegisterActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
-        // Google Sign-In Optionen konfigurieren
-        GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.default_web_client_id))  // Default_web_client_id aus google-services.json
-                .requestEmail()
+        // Configure Google Sign-In
+        signInRequest = BeginSignInRequest.builder()
+                .setGoogleIdTokenRequestOptions(BeginSignInRequest.GoogleIdTokenRequestOptions.builder()
+                        .setSupported(true)
+                        .setServerClientId(getString(R.string.default_web_client_id))
+                        .setFilterByAuthorizedAccounts(false)
+                        .build())
                 .build();
 
-        // GoogleSignInClient erstellen
-        mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
+        oneTapClient = Identity.getSignInClient(this);
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -118,8 +124,22 @@ public class LoginRegisterActivity extends AppCompatActivity {
     }
 
     private void signInWithGoogle() {
-        Intent signInIntent = mGoogleSignInClient.getSignInIntent();
-        startActivityForResult(signInIntent, RC_SIGN_IN);
+        oneTapClient.beginSignIn(signInRequest)
+                .addOnCompleteListener(this, new OnCompleteListener<BeginSignInResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<BeginSignInResult> task) {
+                        if (task.isSuccessful()) {
+                            try {
+                                PendingIntent signInIntent = task.getResult().getPendingIntent();
+                                startIntentSenderForResult(signInIntent.getIntentSender(), RC_SIGN_IN, null, 0, 0, 0);
+                            } catch (Exception e) {
+                                Toast.makeText(LoginRegisterActivity.this, "Google sign in failed: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                            }
+                        } else {
+                            Toast.makeText(LoginRegisterActivity.this, "Google sign in failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
     }
 
     private void signOut() {
@@ -127,7 +147,7 @@ public class LoginRegisterActivity extends AppCompatActivity {
         mAuth.signOut();
 
         // Google sign out
-        mGoogleSignInClient.signOut().addOnCompleteListener(this, new OnCompleteListener<Void>() {
+        oneTapClient.signOut().addOnCompleteListener(this, new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
                 // Update UI after sign out
@@ -155,7 +175,6 @@ public class LoginRegisterActivity extends AppCompatActivity {
                 });
     }
 
-
     private void saveUserToDatabase(FirebaseUser user) {
         User newUser = new User(user.getUid(), user.getEmail());
         mDatabase.child("users").child(user.getUid()).setValue(newUser);
@@ -166,10 +185,14 @@ public class LoginRegisterActivity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
 
         if (requestCode == RC_SIGN_IN) {
-            Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             try {
-                GoogleSignInAccount account = task.getResult(ApiException.class);
-                firebaseAuthWithGoogle(account.getIdToken());
+                SignInCredential credential = oneTapClient.getSignInCredentialFromIntent(data);
+                String idToken = credential.getGoogleIdToken();
+                if (idToken != null) {
+                    firebaseAuthWithGoogle(idToken);
+                } else {
+                    Toast.makeText(this, "Google sign in failed: No ID token", Toast.LENGTH_SHORT).show();
+                }
             } catch (ApiException e) {
                 Toast.makeText(this, "Google sign in failed: " + e.getMessage(), Toast.LENGTH_SHORT).show();
             }

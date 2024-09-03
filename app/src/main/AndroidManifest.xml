@@ -39,11 +39,17 @@
             android:name=".activity.MainMenuActivity"
             android:exported="true" />
 
+        <activity
+            android:name=".activity.MatchmakingActivity"
+            android:exported="true" />
+
         <!-- Inside <application> tag -->
         <meta-data
             android:name="com.google.android.gms.google-services"
             android:value="@string/server_client_id" />
-
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
     </application>
 
 </manifest>
