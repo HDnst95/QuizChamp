@@ -1,53 +1,75 @@
-// app/src/main/java/com/quizchamp/MultiPlayerActivity.java
+// src/main/java/com/quizchamp/activity/MultiPlayerActivity.java
 package com.quizchamp.activity;
 
-import android.content.DialogInterface;
+import static android.content.ContentValues.TAG;
+
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.TypedValue;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.GridLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AlertDialog;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.button.MaterialButton;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.quizchamp.R;
 import com.quizchamp.model.Question;
 
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 public class MultiPlayerActivity extends AppCompatActivity {
 
-    private TextView questionTextView, frageTextView;
+    private TextView questionTextView, player1ScoreTextView, player2ScoreTextView, player1NameTextView, player2NameTextView;
+    private GridLayout spielstandAnzeigeScore, spielstandAnzeigeName;
     private MaterialButton buttonAnswer1, buttonAnswer2, buttonAnswer3, buttonAnswer4, nextQuestionButton;
     private List<Question> questions = new ArrayList<>();
     private int currentQuestionIndex = 0;
-    private int questionCount;
-
-    private TextView playerTurnTextView;
     private int currentPlayer = 1;
-    String player1Name;
-    String player2Name;
     private int player1Score = 0;
     private int player2Score = 0;
+    private String playerName, matchID;
+    private FirebaseAuth mAuth;
     private FirebaseFirestore db;
-    private String opponentId;
+    private DocumentReference matchRef;
+    private Question question;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
 
-        questionTextView = findViewById(R.id.questionTextView); // Ensure this line is correct
-        frageTextView = findViewById(R.id.textViewFrage);
+        db = FirebaseFirestore.getInstance();
+        mAuth = FirebaseAuth.getInstance();
+
+        questionTextView = findViewById(R.id.questionTextView);
+
+        spielstandAnzeigeScore = findViewById(R.id.spielstandAnzeigeScore);
+        spielstandAnzeigeName = findViewById(R.id.spielstandAnzeigeName);
+        player1NameTextView = findViewById(R.id.player1NameTextView);
+        player2NameTextView = findViewById(R.id.player2NameTextView);
+        player1ScoreTextView = findViewById(R.id.player1ScoreTextView);
+        player2ScoreTextView = findViewById(R.id.player2ScoreTextView);
+        spielstandAnzeigeScore.setVisibility(View.VISIBLE);
+        spielstandAnzeigeName.setVisibility(View.VISIBLE);
+
         buttonAnswer1 = findViewById(R.id.buttonAnswer1);
         buttonAnswer2 = findViewById(R.id.buttonAnswer2);
         buttonAnswer3 = findViewById(R.id.buttonAnswer3);
@@ -55,16 +77,21 @@ public class MultiPlayerActivity extends AppCompatActivity {
         nextQuestionButton = findViewById(R.id.nextQuestionButton);
 
         Intent intent = getIntent();
-        opponentId = intent.getStringExtra("OPPONENT_ID");
+        playerName = intent.getStringExtra("PLAYER_NAME");
+        matchID = intent.getStringExtra("MATCH_ID");
 
-        db = FirebaseFirestore.getInstance();
-        fetchQuestionsFromDatabase();
+        matchRef = db.collection("matches").document(matchID);
+
+        loadMatchData();
+        displayQuestion();
 
         // Setze Click-Listener für die Antwort-Buttons
         View.OnClickListener answerClickListener = v -> {
             checkAnswer((MaterialButton) v);
         };
 
+        player1NameTextView.setText(playerName);
+//        player2NameTextView.setText(opponentName);
         buttonAnswer1.setOnClickListener(answerClickListener);
         buttonAnswer2.setOnClickListener(answerClickListener);
         buttonAnswer3.setOnClickListener(answerClickListener);
@@ -73,56 +100,111 @@ public class MultiPlayerActivity extends AppCompatActivity {
         nextQuestionButton.setOnClickListener(v -> nextTurn());
     }
 
-    private void fetchQuestionsFromDatabase() {
-        db.collection("questions")
-                .get()
-                .addOnCompleteListener(task -> {
-                    if (task.isSuccessful()) {
-                        questions.clear();
-                        for (QueryDocumentSnapshot document : task.getResult()) {
-                            Question question = document.toObject(Question.class);
-                            questions.add(question);
-                        }
+    private void loadMatchData() {
+        matchRef.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+            @Override
+            public void onEvent(@NonNull DocumentSnapshot snapshot, @NonNull FirebaseFirestoreException e) {
+                if (e != null) {
+                    Toast.makeText(MultiPlayerActivity.this, "Error loading match data", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (snapshot.exists()) {
+                    // Update UI based on match data
+                    if (snapshot.getLong("currentPlayer") != null) {
+                        currentPlayer = snapshot.getLong("currentPlayer").intValue();
                     } else {
-                        // Handle error
+                        Log.e("MultiPlayerActivity", "currentPlayer is null");
+                        currentPlayer = 1; // or any default value
                     }
-                });
+                    if (snapshot.getLong("currentQuestionIndex") != null) {
+                        currentQuestionIndex = snapshot.getLong("currentQuestionIndex").intValue();
+                    } else {
+                        Log.e("MultiPlayerActivity", "currentQuestionIndex is null");
+                        currentQuestionIndex = 0; // or any default value
+                    }
+                    if (snapshot.getLong("player1Score") != null) {
+                        player1Score = snapshot.getLong("player1Score").intValue();
+                    } else {
+                        Log.e("MultiPlayerActivity", "player1Score is null");
+                        player1Score = 0; // or any default value
+                    }
+                    if (snapshot.getLong("player2Score") != null) {
+                        player2Score = snapshot.getLong("player2Score").intValue();
+                    } else {
+                        Log.e("MultiPlayerActivity", "player2Score is null");
+                        player2Score = 0; // or any default value
+                    }
+                    updateUI();
+                }
+            }
+        });
     }
 
     private void displayQuestion() {
-        if (currentQuestionIndex < questions.size()) {
-            frageTextView.setText("Frage " + (currentQuestionIndex + 1) + " von " + questions.size());
-            Question currentQuestion = questions.get(currentQuestionIndex);
+        fetchRandomQuestionFromDatabase(new HighscoreActivity.QuestionFetchCallback() {
+            @Override
+            public void onQuestionFetched(Question fetchedQuestion) {
+                showQuestion(fetchedQuestion);
+            }
 
-            // Create a list of options and shuffle them
-            List<String> options = new ArrayList<>();
-            options.add(currentQuestion.getOptionA());
-            options.add(currentQuestion.getOptionB());
-            options.add(currentQuestion.getOptionC());
-            options.add(currentQuestion.getOptionD());
-            Collections.shuffle(options);
+            @Override
+            public void onError(Exception e) {
+                Log.e(TAG, "Error fetching question: ", e);
+            }
+        });
+    }
 
-            // Set the shuffled options to the buttons
-            questionTextView.setText(currentQuestion.getQuestionText());
-            buttonAnswer1.setText(options.get(0));
-            buttonAnswer2.setText(options.get(1));
-            buttonAnswer3.setText(options.get(2));
-            buttonAnswer4.setText(options.get(3));
+    private void showQuestion(Question currentQuestion) {
+        List<String> options = new ArrayList<>();
+        options.add(currentQuestion.getOptionA());
+        options.add(currentQuestion.getOptionB());
+        options.add(currentQuestion.getOptionC());
+        options.add(currentQuestion.getOptionD());
+        Collections.shuffle(options);
 
-            List<MaterialButton> buttons = new ArrayList<>();
-            buttons.add(buttonAnswer1);
-            buttons.add(buttonAnswer2);
-            buttons.add(buttonAnswer3);
-            buttons.add(buttonAnswer4);
+        questionTextView.setText(currentQuestion.getQuestionText());
+        buttonAnswer1.setText(options.get(0));
+        buttonAnswer2.setText(options.get(1));
+        buttonAnswer3.setText(options.get(2));
+        buttonAnswer4.setText(options.get(3));
 
-            // Adjust button heights
-            setButtonHeights(buttons);
+        List<MaterialButton> buttons = new ArrayList<>();
+        buttons.add(buttonAnswer1);
+        buttons.add(buttonAnswer2);
+        buttons.add(buttonAnswer3);
+        buttons.add(buttonAnswer4);
 
-            resetButtonColors();
-            nextQuestionButton.setVisibility(View.GONE);
-        } else {
-            endGame();
-        }
+        setButtonHeights(buttons);
+
+        resetButtonColors();
+        nextQuestionButton.setVisibility(View.GONE);
+    }
+
+    private void fetchRandomQuestionFromDatabase(HighscoreActivity.QuestionFetchCallback callback) {
+        db.collection("questions").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if (task.isSuccessful()) {
+                    int randomIndex = new Random().nextInt(task.getResult().size());
+                    DocumentReference randomDocument = task.getResult().getDocuments().get(randomIndex).getReference();
+                    randomDocument.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                        @Override
+                        public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                            Question randomQuestion = task.getResult().toObject(Question.class);
+                            question = randomQuestion;
+                            callback.onQuestionFetched(randomQuestion);
+                        }
+                    });
+                } else {
+                    callback.onError(task.getException());
+                }
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                callback.onError(e);
+            }
+        });
     }
 
     private int getMaxButtonHeight(List<MaterialButton> buttons) {
@@ -139,20 +221,11 @@ public class MultiPlayerActivity extends AppCompatActivity {
     private int measureTextHeight(String text) {
         TextView textView = new TextView(this);
         textView.setText(text);
-        textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 24); // Ensure consistent text size
+        textView.setTextSize(24); // Ensure consistent text size
         int widthMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED);
         int heightMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED);
         textView.measure(widthMeasureSpec, heightMeasureSpec);
         return textView.getMeasuredHeight();
-    }
-
-    private void setButtonHeights(List<MaterialButton> buttons) {
-        int maxHeight = getMaxButtonHeight(buttons);
-        for (MaterialButton button : buttons) {
-            ViewGroup.LayoutParams params = button.getLayoutParams();
-            params.height = maxHeight + button.getPaddingTop() + button.getPaddingBottom(); // Add padding to ensure text is fully visible
-            button.setLayoutParams(params);
-        }
     }
 
     private void resetButtonColors() {
@@ -163,57 +236,54 @@ public class MultiPlayerActivity extends AppCompatActivity {
         buttonAnswer4.setBackgroundColor(buttonColor);
     }
 
+
     private void checkAnswer(MaterialButton selectedButton) {
         Question currentQuestion = questions.get(currentQuestionIndex);
         if (currentQuestion.getCorrectAnswer().equals(selectedButton.getText().toString())) {
-            selectedButton.setBackgroundColor(getResources().getColor(R.color.correctAnswerColor));
+            Toast.makeText(this, "Correct!", Toast.LENGTH_SHORT).show();
             if (currentPlayer == 1) {
                 player1Score++;
             } else {
                 player2Score++;
             }
         } else {
-            selectedButton.setBackgroundColor(getResources().getColor(R.color.wrongAnswerColor));
-            if (buttonAnswer1.getText().toString().equals(currentQuestion.getCorrectAnswer())) {
-                buttonAnswer1.setBackgroundColor(getResources().getColor(R.color.correctAnswerColor));
-            } else if (buttonAnswer2.getText().toString().equals(currentQuestion.getCorrectAnswer())) {
-                buttonAnswer2.setBackgroundColor(getResources().getColor(R.color.correctAnswerColor));
-            } else if (buttonAnswer3.getText().toString().equals(currentQuestion.getCorrectAnswer())) {
-                buttonAnswer3.setBackgroundColor(getResources().getColor(R.color.correctAnswerColor));
-            } else if (buttonAnswer4.getText().toString().equals(currentQuestion.getCorrectAnswer())) {
-                buttonAnswer4.setBackgroundColor(getResources().getColor(R.color.correctAnswerColor));
-            }
+            Toast.makeText(this, "Wrong!", Toast.LENGTH_SHORT).show();
         }
-        nextQuestionButton.setVisibility(View.VISIBLE);
+        currentQuestionIndex++;
+        updateMatchData();
+    }
+
+    private void updateMatchData() {
+        matchRef.update("currentPlayer", currentPlayer == 1 ? 2 : 1,
+                        "currentQuestionIndex", currentQuestionIndex,
+                        "player1Score", player1Score,
+                        "player2Score", player2Score)
+                .addOnSuccessListener(aVoid -> displayQuestion())
+                .addOnFailureListener(e -> Toast.makeText(MultiPlayerActivity.this, "Error updating match data", Toast.LENGTH_SHORT).show());
+    }
+
+    private void updateUI() {
+        player1ScoreTextView.setText("Player 1 Score: " + player1Score);
+        player2ScoreTextView.setText("Player 2 Score: " + player2Score);
+        nextQuestionButton.setVisibility(currentPlayer == 1 ? View.VISIBLE : View.GONE);
     }
 
     private void nextTurn() {
-        if (currentPlayer == 1) {
-            currentPlayer = 2;
-        } else {
-            currentPlayer = 1;
-            currentQuestionIndex++;
-        }
-        displayQuestion();
+        currentPlayer = currentPlayer == 1 ? 2 : 1;
+        updateMatchData();
     }
-
 
     private void endGame() {
-        nextQuestionButton.setText(R.string.end_game);
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle(R.string.game_over);
-        builder.setMessage(String.format(getString(R.string.player_1_score), player1Score) + "\n" + String.format(getString(R.string.player_2_score), player2Score));
-        builder.setPositiveButton(R.string.restart_game, new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int id) {
-                restartGame();
-            }
-        });
-        builder.show();
+        Toast.makeText(this, "Game Over", Toast.LENGTH_SHORT).show();
+        // Navigate to results screen or show results
     }
 
-    private void restartGame() {
-        Intent intent = new Intent(MultiPlayerActivity.this, MainMenuActivity.class);
-        startActivity(intent);
-        finish();
+    private void setButtonHeights(List<MaterialButton> buttons) {
+        int maxHeight = getMaxButtonHeight(buttons);
+        for (MaterialButton button : buttons) {
+            ViewGroup.LayoutParams params = button.getLayoutParams();
+            params.height = maxHeight + button.getPaddingTop() + button.getPaddingBottom(); // Add padding to ensure text is fully visible
+            button.setLayoutParams(params);
+        }
     }
 }

@@ -1,162 +1,156 @@
 package com.quizchamp.activity;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.quizchamp.R;
-import com.quizchamp.UUID.MatchNameGenerator;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Random;
 
 public class MatchmakingActivity extends AppCompatActivity {
 
-    private static final String TAG = "MatchmakingActivity";
+    private EditText playerEditText;
+    private EditText opponentMatchIdEditText;
+    private Button startButton;
+    private Button joinButton;
+    private Button backButton;
     private FirebaseAuth mAuth;
-    private DatabaseReference mDatabase;
-    private String playerId;
-    private String opponentId;
-    private TextView statusTextView;
-    private EditText specificOpponentEditText;
-    private Button startNamedMatchButton;
-    private Button findRandomOpponentButton;
-    private Button findSpecificOpponentButton;
+    private FirebaseFirestore db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_matchmaking);
 
+        playerEditText = findViewById(R.id.playerEditText);
+        Intent intent = getIntent();
+        playerEditText.setText(intent.getStringExtra("PLAYER_NAME"));
+        opponentMatchIdEditText = findViewById(R.id.opponentMatchIdEditText);
+        startButton = findViewById(R.id.startButton);
+        joinButton = findViewById(R.id.joinButton);
+        backButton = findViewById(R.id.backButton);
+
         mAuth = FirebaseAuth.getInstance();
-        mDatabase = FirebaseDatabase.getInstance().getReference();
+        db = FirebaseFirestore.getInstance();
 
-        statusTextView = findViewById(R.id.statusTextView);
-        specificOpponentEditText = findViewById(R.id.specificOpponentEditText);
-        startNamedMatchButton = findViewById(R.id.startNamedMatchButton);
-        findRandomOpponentButton = findViewById(R.id.findRandomOpponentButton);
-        findSpecificOpponentButton = findViewById(R.id.findSpecificOpponentButton);
-
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if (currentUser != null) {
-            playerId = currentUser.getUid();
-        } else {
-            Log.e(TAG, "User not authenticated");
-            finish();
-        }
-
-        startNamedMatchButton.setOnClickListener(new View.OnClickListener() {
+        startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startNamedMatch();
+                String playerName = playerEditText.getText().toString();
+                String matchID = generateMatchID();
+                saveMatchID(matchID, playerName); // Pass both matchID and playerName
+                startGame(playerName, matchID);
             }
         });
 
-        findRandomOpponentButton.setOnClickListener(new View.OnClickListener() {
+        joinButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                findRandomOpponent();
+                String playerName = playerEditText.getText().toString();
+                String matchID = opponentMatchIdEditText.getText().toString();
+                joinGame(playerName, matchID);
             }
         });
 
-        findSpecificOpponentButton.setOnClickListener(new View.OnClickListener() {
+        backButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                findSpecificOpponent();
+                finish();
             }
         });
     }
 
-    private void startNamedMatch() {
-        String matchName = MatchNameGenerator.generateRandomMatchName();
-        mDatabase.child("matches").child(matchName).child(playerId).setValue(true);
-        mDatabase.child("matches").child(matchName).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.getChildrenCount() == 2) {
-                    for (DataSnapshot playerSnapshot : snapshot.getChildren()) {
-                        String id = playerSnapshot.getKey();
-                        if (!id.equals(playerId)) {
-                            opponentId = id;
-                            mDatabase.child("matches").child(matchName).removeValue();
-                            statusTextView.setText("Opponent found: " + opponentId);
-                            startGame();
-                            break;
+    private String generateMatchID() {
+        String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        StringBuilder matchID = new StringBuilder();
+        Random random = new Random();
+        for (int i = 0; i < 6; i++) {
+            matchID.append(characters.charAt(random.nextInt(characters.length())));
+        }
+        return matchID.toString();
+    }
+
+    private void startGame(String playerName, String matchID) {
+        Intent intent = new Intent(MatchmakingActivity.this, MultiPlayerActivity.class);
+        intent.putExtra("PLAYER_NAME", playerName);
+        intent.putExtra("MATCH_ID", matchID);
+        intent.putExtra("IS_HOST", true);
+        startActivity(intent);
+    }
+
+    private void joinGame(String playerName, String matchID) {
+        db.collection("matches").document(matchID) // Ensure even number of segments
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                        if (task.isSuccessful()) {
+                            DocumentSnapshot document = task.getResult();
+                            if (document.exists()) {
+                                // Match ID exists, update with joining player
+                                db.collection("matches").document(matchID) // Ensure even number of segments
+                                        .update("joinedPlayer", playerName)
+                                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                            @Override
+                                            public void onSuccess(Void aVoid) {
+                                                // Start the game
+                                                Intent intent = new Intent(MatchmakingActivity.this, MultiPlayerActivity.class);
+                                                intent.putExtra("PLAYER_NAME", playerName);
+                                                intent.putExtra("MATCH_ID", matchID);
+                                                intent.putExtra("IS_HOST", false);
+                                                startActivity(intent);
+                                            }
+                                        })
+                                        .addOnFailureListener(new OnFailureListener() {
+                                            @Override
+                                            public void onFailure(@NonNull Exception e) {
+                                                // Handle the error
+                                            }
+                                        });
+                            } else {
+                                opponentMatchIdEditText.setError("Invalid Match ID");
+                            }
+                        } else {
+                            // Handle the error
                         }
                     }
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Log.e(TAG, "Error finding opponent", error.toException());
-            }
-        });
+                });
     }
 
-    private void findRandomOpponent() {
-        mDatabase.child("players").child(playerId).setValue(true);
-        mDatabase.child("players").addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for (DataSnapshot playerSnapshot : snapshot.getChildren()) {
-                    String id = playerSnapshot.getKey();
-                    if (!id.equals(playerId)) {
-                        opponentId = id;
-                        mDatabase.child("players").child(playerId).removeValue();
-                        mDatabase.child("players").child(opponentId).removeValue();
-                        statusTextView.setText("Opponent found: " + opponentId);
-                        startGame();
-                        break;
+    private void saveMatchID(String matchID, String playerName) {
+        Map<String, Object> matchData = new HashMap<>();
+        matchData.put("hostPlayer", playerName);
+        matchData.put("joinedPlayer", null);
+
+        db.collection("matches").document(matchID)
+                .set(matchData)
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        // Match ID saved successfully
                     }
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-                Log.e(TAG, "Error finding opponent", error.toException());
-            }
-        });
-    }
-
-    private void findSpecificOpponent() {
-        String specificOpponentId = specificOpponentEditText.getText().toString();
-        if (!specificOpponentId.isEmpty()) {
-            mDatabase.child("players").child(specificOpponentId).addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot snapshot) {
-                    if (snapshot.exists()) {
-                        opponentId = specificOpponentId;
-                        statusTextView.setText("Opponent found: " + opponentId);
-                        startGame();
-                    } else {
-                        statusTextView.setText("Opponent not found");
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        // Handle the error
                     }
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
-                    Log.e(TAG, "Error finding opponent", error.toException());
-                }
-            });
-        }
-    }
-
-    private void startGame() {
-        Intent intent = new Intent(MatchmakingActivity.this, MultiPlayerActivity.class);
-        intent.putExtra("OPPONENT_ID", opponentId);
-        startActivity(intent);
-        finish();
+                });
     }
 }

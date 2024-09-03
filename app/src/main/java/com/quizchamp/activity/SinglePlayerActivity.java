@@ -48,8 +48,10 @@ public class SinglePlayerActivity extends AppCompatActivity {
     private TextView questionTextView, textViewFrage;
     private String playerName;
     private int playerScore = 0;
+    private int comScore = 0;
     private FirebaseAuth mAuth;
-    private DifficultyLevel difficultyLevel = DifficultyLevel.VERY_EASY;
+    private DifficultyLevel difficultyLevel;
+    private int questionCount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +59,8 @@ public class SinglePlayerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_question);
 
         Intent intent = getIntent();
-        difficultyLevel = (DifficultyLevel) getIntent().getSerializableExtra("DIFFICULTY");
+        difficultyLevel = (DifficultyLevel) intent.getSerializableExtra("DIFFICULTY");
+        questionCount = intent.getIntExtra("QUESTION_COUNT", 10);
         playerName = intent.getStringExtra("PLAYER_NAME");
 
         textViewFrage = findViewById(R.id.textViewFrage);
@@ -161,6 +164,7 @@ public class SinglePlayerActivity extends AppCompatActivity {
             currentQuestionIndex++;
             playerScore++;
             nextQuestionButton.setVisibility(View.VISIBLE);
+            simulateAIAnswer();
         } else {
             selectedButton.setBackgroundColor(getResources().getColor(R.color.wrongAnswerColor));
             if (buttonAnswer1.getText().toString().equals(question.getCorrectAnswer())) {
@@ -175,6 +179,7 @@ public class SinglePlayerActivity extends AppCompatActivity {
             nextQuestionButton.setText(R.string.end_game);
             nextQuestionButton.setVisibility(View.VISIBLE);
             endGame();
+            simulateAIAnswer();
         }
     }
 
@@ -209,11 +214,47 @@ public class SinglePlayerActivity extends AppCompatActivity {
 
     private void simulateAIAnswer() {
         Random random = new Random();
-        boolean aiCorrect = random.nextDouble() < difficultyLevel.getAccuracy();
+        boolean aiCorrect = false;
+        if (difficultyLevel.equals(DifficultyLevel.VERY_EASY)) {
+            if (random.nextDouble() < 0.5) {
+                aiCorrect = true;
+                comScore++;
+            } else {
+                aiCorrect = false;
+            }
+        } else if (difficultyLevel.equals(DifficultyLevel.EASY)) {
+            if (random.nextDouble() < 0.75) {
+                aiCorrect = true;
+                comScore++;
+            } else {
+                aiCorrect = false;
+            }
+        } else if (difficultyLevel.equals(DifficultyLevel.MEDIUM)) {
+            if (random.nextDouble() < 0.83) {
+                aiCorrect = true;
+                comScore++;
+            } else {
+                aiCorrect = false;
+            }
+        } else if (difficultyLevel.equals(DifficultyLevel.HARD)) {
+            if (random.nextDouble() < 0.90) {
+                aiCorrect = true;
+                comScore++;
+            } else {
+                aiCorrect = false;
+            }
+        } else if (difficultyLevel.equals(DifficultyLevel.VERY_HARD)) {
+            if (random.nextDouble() < 0.98) {
+                aiCorrect = true;
+                comScore++;
+            } else {
+                aiCorrect = false;
+            }
+        }
         if (aiCorrect) {
-            Toast.makeText(this, "AI answered correctly!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Die AI hat richtig geantwortet!", Toast.LENGTH_SHORT).show();
         } else {
-            Toast.makeText(this, "AI answered incorrectly!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Die AI hat falsch geantwortet!", Toast.LENGTH_SHORT).show();
         }
         nextQuestionButton.setVisibility(View.VISIBLE);
     }
@@ -221,7 +262,9 @@ public class SinglePlayerActivity extends AppCompatActivity {
     private void endGame() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(R.string.game_over);
-        builder.setMessage(String.format(getString(R.string.player_score), playerName, playerScore));
+        String message = String.format(getString(R.string.player_score), playerName, playerScore) + "\n" +
+                String.format(getString(R.string.com_score), comScore);
+        builder.setMessage(message);
         builder.setPositiveButton(R.string.restart_game, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 backToMainMenu();
@@ -232,7 +275,11 @@ public class SinglePlayerActivity extends AppCompatActivity {
     }
 
     private void nextTurn() {
+        if (currentQuestionIndex > questionCount) {
+            endGame();
+        } else {
         displayQuestion();
+        }
     }
 
     private void backToMainMenu() {

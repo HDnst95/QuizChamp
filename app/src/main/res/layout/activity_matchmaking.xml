@@ -4,34 +4,33 @@
     android:orientation="vertical"
     android:padding="16dp">
 
-    <TextView
-        android:id="@+id/statusTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Choose a matchmaking option"
-        android:textSize="18sp" />
-
-    <Button
-        android:id="@+id/startNamedMatchButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Start Named Match" />
-
-    <Button
-        android:id="@+id/findRandomOpponentButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Find Random Opponent" />
-
     <EditText
-        android:id="@+id/specificOpponentEditText"
+        android:id="@+id/playerEditText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter opponent ID" />
+        android:hint="Player Name" />
+
+    <EditText
+        android:id="@+id/opponentMatchIdEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Match ID" />
 
     <Button
-        android:id="@+id/findSpecificOpponentButton"
-        android:layout_width="wrap_content"
+        android:id="@+id/startButton"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Find Specific Opponent" />
+        android:text="Host Game" />
+
+    <Button
+        android:id="@+id/joinButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Join Game" />
+
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Back" />
 </LinearLayout>

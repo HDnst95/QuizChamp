@@ -40,7 +40,6 @@ import java.util.Random;
 public class HighscoreActivity extends AppCompatActivity {
 
     private static final String TAG = "HighscoreActivity";
-    FirebaseFirestore db;
     private Question question = new Question();
     private int currentQuestionIndex = 1;
     private MaterialButton buttonAnswer1, buttonAnswer2, buttonAnswer3, buttonAnswer4, nextQuestionButton;
@@ -48,6 +47,7 @@ public class HighscoreActivity extends AppCompatActivity {
     private String playerName;
     private int playerScore = 0;
     private FirebaseAuth mAuth;
+    FirebaseFirestore db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

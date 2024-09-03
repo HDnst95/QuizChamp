@@ -61,6 +61,13 @@ public class LoginRegisterActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
+        // Check if user is already signed in
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if (currentUser != null) {
+            updateUI(currentUser);
+            return;
+        }
+
         // Configure Google Sign-In
         signInRequest = BeginSignInRequest.builder()
                 .setGoogleIdTokenRequestOptions(BeginSignInRequest.GoogleIdTokenRequestOptions.builder()
@@ -98,6 +105,7 @@ public class LoginRegisterActivity extends AppCompatActivity {
         });
 
     }
+
 
     private void signInWithEmail(String email, String password) {
         mAuth.signInWithEmailAndPassword(email, password)

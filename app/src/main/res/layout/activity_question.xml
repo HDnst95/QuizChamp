@@ -12,6 +12,7 @@
         android:id="@+id/textViewFrage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:text="Frage "
         android:textAlignment="center"
         android:textColor="@color/primaryDarkColor"
@@ -21,14 +22,70 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.1"
-
         />
+
+    <GridLayout
+        android:id="@+id/spielstandAnzeigeName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewFrage">
+
+        <TextView
+            android:id="@+id/player1NameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/primaryDarkColor"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/player2NameTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="8dp"
+            android:textColor="@color/primaryDarkColor"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </GridLayout>
+
+    <GridLayout
+        android:id="@+id/spielstandAnzeigeScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:visibility="gone"
+        app:layout_constraintStart_toEndOf="@+id/spielstandAnzeigeName"
+        app:layout_constraintTop_toBottomOf="@+id/spielstandAnzeigeName">
+
+        <TextView
+            android:id="@+id/player1ScoreTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="16dp"
+            android:textColor="@color/primaryDarkColor"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/player2ScoreTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/primaryDarkColor"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </GridLayout>
 
     <TextView
         android:id="@+id/questionTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:gravity="center"
         android:padding="16dp"
         android:text="Question"
@@ -37,7 +94,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewFrage" />
+        app:layout_constraintTop_toBottomOf="@+id/spielstandAnzeigeScore" />
 
 
     <com.google.android.material.button.MaterialButton

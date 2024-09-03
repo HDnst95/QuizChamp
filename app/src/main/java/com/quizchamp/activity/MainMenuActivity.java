@@ -23,6 +23,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.quizchamp.R;
+import com.quizchamp.model.DifficultyLevel;
 import com.quizchamp.model.Question;
 
 import java.util.ArrayList;
@@ -42,11 +43,13 @@ public class MainMenuActivity extends AppCompatActivity {
     private FirebaseFirestore db;
     private List<Question> questionsList = new ArrayList<>();
     private SharedPreferences sharedPreferences;
+    private String playerName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
+
 
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
@@ -67,16 +70,18 @@ public class MainMenuActivity extends AppCompatActivity {
 
         sharedPreferences = getSharedPreferences("QuizChampPrefs", MODE_PRIVATE);
         // Load player name from SharedPreferences
-        String savedPlayerName = sharedPreferences.getString("PLAYER_NAME", "");
-        playerNameEditText.setText(savedPlayerName);
+        playerName = sharedPreferences.getString("PLAYER_NAME", "");
+        playerNameEditText.setText(playerName);
 
 
         savePlayerNameButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 SharedPreferences.Editor editor = sharedPreferences.edit();
+                playerName = playerNameEditText.getText().toString();
                 editor.putString("PLAYER_NAME", playerNameEditText.getText().toString());
                 editor.apply();
+                Toast.makeText(MainMenuActivity.this, "Spielername gespeichert", Toast.LENGTH_SHORT).show();
             }
         });
         singlePlayerButton.setOnClickListener(new View.OnClickListener() {
@@ -117,12 +122,12 @@ public class MainMenuActivity extends AppCompatActivity {
             }
         });
 
-        singlePlayerButton.setEnabled(false);
-        singlePlayerButton.setTextColor(getResources().getColor(R.color.disabledButtonTextColor));
+//        singlePlayerButton.setEnabled(false);
+//        singlePlayerButton.setTextColor(getResources().getColor(R.color.disabledButtonTextColor));
         multiPlayerButton.setEnabled(false);
         multiPlayerButton.setTextColor(getResources().getColor(R.color.disabledButtonTextColor));
-        multiPlayerOnDeviceButton.setEnabled(false);
-        multiPlayerOnDeviceButton.setTextColor(getResources().getColor(R.color.disabledButtonTextColor));
+//        multiPlayerOnDeviceButton.setEnabled(false);
+//        multiPlayerOnDeviceButton.setTextColor(getResources().getColor(R.color.disabledButtonTextColor));
 
         checkUser();
     }
@@ -174,13 +179,14 @@ public class MainMenuActivity extends AppCompatActivity {
             comStrengthValue.setVisibility(View.VISIBLE);
             seekBarDescription.setVisibility(View.VISIBLE);
             comStrengthSeekBar.setMax(4);
-            comStrengthValue.setText("sehr einfach");
-            questionsField.setVisibility(View.GONE);
+            comStrengthSeekBar.setProgress(0);
+            comStrengthValue.setText(DifficultyLevel.VERY_EASY.toString());
+            questionsField.setVisibility(View.VISIBLE);
             comStrengthSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
                 @Override
                 public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-                    String[] difficultyLevels = {"sehr einfach", "einfach", "mittel", "schwer", "sehr schwer"};
-                    comStrengthValue.setText(difficultyLevels[progress]);
+                    DifficultyLevel[] difficultyLevels = {DifficultyLevel.VERY_EASY, DifficultyLevel.EASY, DifficultyLevel.MEDIUM, DifficultyLevel.HARD, DifficultyLevel.VERY_HARD};
+                    comStrengthValue.setText(difficultyLevels[progress].toString());
                 }
 
                 @Override
@@ -217,11 +223,14 @@ public class MainMenuActivity extends AppCompatActivity {
                         String playerMultiName1 = "";
                         String playerMultiName2 = "";
                         int questionCount = 0;
-                        int comStrength = 0;
+                        DifficultyLevel comStrength = DifficultyLevel.VERY_EASY;
                         if (mode.equals("SinglePlayer")) {
-                            comStrength = comStrengthSeekBar.getProgress();
+                            questionCount = questionsField.getText().toString().isEmpty() ? 0 : Integer.parseInt(questionsField.getText().toString());
+                            comStrength = DifficultyLevel.values()[comStrengthSeekBar.getProgress()];
+                            playerName = playerNameField.getText().toString();
                         } else if (mode.equals("Multiplayer")) {
                             questionCount = questionsField.getText().toString().isEmpty() ? 0 : Integer.parseInt(questionsField.getText().toString());
+                            playerName = playerNameField.getText().toString();
                         } else if (mode.equals("MultiplayerOnDevice")) {
                             playerMultiName1 = playerNameMulti1Field.getText().toString();
                             playerMultiName2 = playerNameMulti2Field.getText().toString();
@@ -241,11 +250,12 @@ public class MainMenuActivity extends AppCompatActivity {
         alertDialog.show();
     }
 
-    private void startGameActivity(String mode, int comStrength, String playerName, int questionCount, String playerMultiName1, String playerMultiName2) {
+    private void startGameActivity(String mode, DifficultyLevel comStrength, String playerName, int questionCount, String playerMultiName1, String playerMultiName2) {
         Intent intent;
         switch (mode) {
             case "SinglePlayer":
                 intent = new Intent(MainMenuActivity.this, SinglePlayerActivity.class);
+                intent.putExtra("QUESTION_COUNT", questionCount);
                 intent.putExtra("DIFFICULTY", comStrength);
                 intent.putExtra("PLAYER_NAME", playerName);
                 break;

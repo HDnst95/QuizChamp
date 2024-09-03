@@ -11,6 +11,7 @@
     <string name="player_1_score">Spieler 1: %d Punkte</string>
     <string name="player_2_score">Spieler 2: %d Punkte</string>
     <string name="player_score">%s: %d Punkte</string>
+    <string name="com_score">AI: %d Punkte</string>
     <string name="restart_game">Hauptmenü</string>
     <string name="close_game">Schließen</string>
     <string name="enter_positive_number">Bitte gib eine positive Zahl ein</string>
