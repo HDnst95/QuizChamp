@@ -1,5 +1,6 @@
 package com.quizchamp.activity;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -13,7 +14,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SeekBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.gms.auth.api.identity.Identity;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -31,6 +36,7 @@ public class MainMenuActivity extends AppCompatActivity {
     private Button multiPlayerButton;
     private Button multiPlayerOnDeviceButton;
     private Button viewHighscoreButton;
+    private Button logoutButton;
     private EditText playerNameEditText;
     private FirebaseAuth mAuth;
     private FirebaseFirestore db;
@@ -56,6 +62,8 @@ public class MainMenuActivity extends AppCompatActivity {
 
         highscoreButton = findViewById(R.id.highscoreButton);
         viewHighscoreButton = findViewById(R.id.viewHighscoreButton);
+
+        logoutButton = findViewById(R.id.logoutButton);
 
         sharedPreferences = getSharedPreferences("QuizChampPrefs", MODE_PRIVATE);
         // Load player name from SharedPreferences
@@ -102,7 +110,12 @@ public class MainMenuActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+        logoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                signOut();
+            }
+        });
 
         singlePlayerButton.setEnabled(false);
         singlePlayerButton.setTextColor(getResources().getColor(R.color.disabledButtonTextColor));
@@ -112,6 +125,23 @@ public class MainMenuActivity extends AppCompatActivity {
         multiPlayerOnDeviceButton.setTextColor(getResources().getColor(R.color.disabledButtonTextColor));
 
         checkUser();
+    }
+
+    private void signOut() {
+        // Firebase sign out
+        mAuth.signOut();
+
+        // Google sign out
+        Identity.getSignInClient(this).signOut().addOnCompleteListener(this, new OnCompleteListener<Void>() {
+            @Override
+            public void onComplete(@NonNull Task<Void> task) {
+                // Update UI after sign out
+                Toast.makeText(MainMenuActivity.this, "Signed out successfully", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainMenuActivity.this, LoginRegisterActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 
     private void checkUser() {

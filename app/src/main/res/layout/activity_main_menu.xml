@@ -101,4 +101,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/highscoreButton" />
 
+    <!-- activity_main_menu.xml -->
+    <!-- Füge einen Logout-Button zum Layout der MainMenuActivity hinzu -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/logoutButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="16dp"
+        android:text="Logout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viewHighscoreButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -40,7 +40,6 @@ public class LoginRegisterActivity extends AppCompatActivity {
     private TextInputEditText passwordEditText;
     private MaterialButton loginButton;
     private MaterialButton registerButton;
-    private MaterialButton logoutButton;
     private com.google.android.gms.common.SignInButton googleSignInButton;
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
@@ -57,7 +56,6 @@ public class LoginRegisterActivity extends AppCompatActivity {
         loginButton = findViewById(R.id.loginButton);
         registerButton = findViewById(R.id.registerButton);
         googleSignInButton = findViewById(R.id.googleSignInButton);
-        logoutButton = findViewById(R.id.logoutButton);
 
         FirebaseApp.initializeApp(this);
         mAuth = FirebaseAuth.getInstance();
@@ -99,12 +97,6 @@ public class LoginRegisterActivity extends AppCompatActivity {
             }
         });
 
-        logoutButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                signOut();
-            }
-        });
     }
 
     private void signInWithEmail(String email, String password) {
@@ -140,21 +132,6 @@ public class LoginRegisterActivity extends AppCompatActivity {
                         }
                     }
                 });
-    }
-
-    private void signOut() {
-        // Firebase sign out
-        mAuth.signOut();
-
-        // Google sign out
-        oneTapClient.signOut().addOnCompleteListener(this, new OnCompleteListener<Void>() {
-            @Override
-            public void onComplete(@NonNull Task<Void> task) {
-                // Update UI after sign out
-                updateUI(null);
-                Toast.makeText(LoginRegisterActivity.this, "Signed out successfully", Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 
     private void registerUserEmail(String email, String password) {
