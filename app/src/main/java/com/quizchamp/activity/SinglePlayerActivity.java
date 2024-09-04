@@ -74,6 +74,8 @@ public class SinglePlayerActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
 
+        elementeAusblenden();
+
         displayQuestion();
 
         // Setze Click-Listener für die Antwort-Buttons
@@ -89,11 +91,33 @@ public class SinglePlayerActivity extends AppCompatActivity {
         nextQuestionButton.setOnClickListener(v -> nextTurn());
     }
 
+    private void elementeAusblenden() {
+        textViewFrage.setVisibility(View.GONE);
+        questionTextView.setVisibility(View.GONE);
+        buttonAnswer1.setVisibility(View.GONE);
+        buttonAnswer2.setVisibility(View.GONE);
+        buttonAnswer3.setVisibility(View.GONE);
+        buttonAnswer4.setVisibility(View.GONE);
+        nextQuestionButton.setVisibility(View.GONE);
+    }
+
+    private void elementeEinblenden() {
+        textViewFrage.setVisibility(View.VISIBLE);
+        questionTextView.setVisibility(View.VISIBLE);
+        buttonAnswer1.setVisibility(View.VISIBLE);
+        buttonAnswer2.setVisibility(View.VISIBLE);
+        buttonAnswer3.setVisibility(View.VISIBLE);
+        buttonAnswer4.setVisibility(View.VISIBLE);
+        nextQuestionButton.setVisibility(View.VISIBLE);
+    }
+
     private void displayQuestion() {
-        fetchRandomQuestionFromDatabase(new HighscoreActivity.QuestionFetchCallback() {
+        fetchRandomQuestionFromDatabase(new SinglePlayerActivity.QuestionFetchCallback() {
             @Override
             public void onQuestionFetched(Question fetchedQuestion) {
                 showQuestion(fetchedQuestion);
+                elementeEinblenden();
+
             }
 
             @Override
@@ -103,7 +127,7 @@ public class SinglePlayerActivity extends AppCompatActivity {
         });
     }
 
-    private void fetchRandomQuestionFromDatabase(HighscoreActivity.QuestionFetchCallback callback) {
+    private void fetchRandomQuestionFromDatabase(SinglePlayerActivity.QuestionFetchCallback callback) {
         db.collection("questions").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
@@ -161,9 +185,7 @@ public class SinglePlayerActivity extends AppCompatActivity {
     private void checkAnswer(MaterialButton selectedButton) {
         if (question.getCorrectAnswer().equals(selectedButton.getText().toString())) {
             selectedButton.setBackgroundColor(getResources().getColor(R.color.correctAnswerColor));
-            currentQuestionIndex++;
             playerScore++;
-            nextQuestionButton.setVisibility(View.VISIBLE);
             simulateAIAnswer();
         } else {
             selectedButton.setBackgroundColor(getResources().getColor(R.color.wrongAnswerColor));
@@ -176,11 +198,9 @@ public class SinglePlayerActivity extends AppCompatActivity {
             } else if (buttonAnswer4.getText().toString().equals(question.getCorrectAnswer())) {
                 buttonAnswer4.setBackgroundColor(getResources().getColor(R.color.correctAnswerColor));
             }
-            nextQuestionButton.setText(R.string.end_game);
-            nextQuestionButton.setVisibility(View.VISIBLE);
-            endGame();
             simulateAIAnswer();
         }
+        nextQuestionButton.setVisibility(View.VISIBLE);
     }
 
     private int getMaxButtonHeight(List<MaterialButton> buttons) {
@@ -275,10 +295,15 @@ public class SinglePlayerActivity extends AppCompatActivity {
     }
 
     private void nextTurn() {
-        if (currentQuestionIndex > questionCount) {
+        if (currentQuestionIndex == questionCount) {
             endGame();
         } else {
-        displayQuestion();
+            if (currentQuestionIndex == questionCount - 1) {
+                nextQuestionButton.setText(R.string.end_game);
+                nextQuestionButton.setVisibility(View.VISIBLE);
+            }
+            currentQuestionIndex++;
+            displayQuestion();
         }
     }
 
@@ -290,12 +315,6 @@ public class SinglePlayerActivity extends AppCompatActivity {
         finish();
     }
 
-    // Callback-Interface zur Übergabe der Ergebnisse
-    public interface QuestionFetchCallback {
-        void onQuestionFetched(Question fetchedQuestion);
-
-        void onError(Exception e);
-    }
 
     private void setButtonHeights(List<MaterialButton> buttons) {
         int maxHeight = getMaxButtonHeight(buttons);
@@ -304,5 +323,12 @@ public class SinglePlayerActivity extends AppCompatActivity {
             params.height = maxHeight + button.getPaddingTop() + button.getPaddingBottom(); // Add padding to ensure text is fully visible
             button.setLayoutParams(params);
         }
+    }
+
+    // Callback-Interface zur Übergabe der Ergebnisse
+    public interface QuestionFetchCallback {
+        void onQuestionFetched(Question fetchedQuestion);
+
+        void onError(Exception e);
     }
 }

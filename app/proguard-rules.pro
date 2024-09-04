@@ -31,3 +31,9 @@
 # GSON (wird von Firebase verwendet)
 -keep class com.google.gson.** { *; }
 -dontwarn com.google.gson.**
+
+# Keep the Question class and its fields
+-keepclassmembers class com.quizchamp.model.Question {
+    <fields>;
+    <methods>;
+}

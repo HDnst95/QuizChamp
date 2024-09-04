@@ -9,7 +9,6 @@ import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -19,10 +18,10 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.button.MaterialButton;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.quizchamp.R;
 import com.quizchamp.model.Question;
@@ -36,8 +35,9 @@ public class MultiPlayerOnDeviceActivity extends AppCompatActivity {
 
     private static final String TAG = "HighscoreActivity";
     FirebaseFirestore db;
+    private FirebaseAuth mAuth;
 
-    private TextView questionTextView, frageTextView;
+    private TextView questionTextView, textViewFrage;
     private MaterialButton buttonAnswer1, buttonAnswer2, buttonAnswer3, buttonAnswer4, nextQuestionButton;
     private List<Question> questions = new ArrayList<>();
     private int currentQuestionIndex = 0;
@@ -62,14 +62,18 @@ public class MultiPlayerOnDeviceActivity extends AppCompatActivity {
         questionCount = Integer.parseInt(intent.getStringExtra("QUESTION_COUNT"));
 
         questionTextView = findViewById(R.id.questionTextView); // Ensure this line is correct
-        frageTextView = findViewById(R.id.textViewFrage);
+        textViewFrage = findViewById(R.id.textViewFrage);
         buttonAnswer1 = findViewById(R.id.buttonAnswer1);
         buttonAnswer2 = findViewById(R.id.buttonAnswer2);
         buttonAnswer3 = findViewById(R.id.buttonAnswer3);
         buttonAnswer4 = findViewById(R.id.buttonAnswer4);
         nextQuestionButton = findViewById(R.id.nextQuestionButton);
 
+        mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
+
+        elementeAusblenden();
+
         displayQuestion();
 
         // Setze Click-Listener für die Antwort-Buttons
@@ -85,11 +89,32 @@ public class MultiPlayerOnDeviceActivity extends AppCompatActivity {
         nextQuestionButton.setOnClickListener(v -> nextTurn());
     }
 
+    private void elementeAusblenden() {
+        textViewFrage.setVisibility(View.GONE);
+        questionTextView.setVisibility(View.GONE);
+        buttonAnswer1.setVisibility(View.GONE);
+        buttonAnswer2.setVisibility(View.GONE);
+        buttonAnswer3.setVisibility(View.GONE);
+        buttonAnswer4.setVisibility(View.GONE);
+        nextQuestionButton.setVisibility(View.GONE);
+    }
+
+    private void elementeEinblenden() {
+        textViewFrage.setVisibility(View.VISIBLE);
+        questionTextView.setVisibility(View.VISIBLE);
+        buttonAnswer1.setVisibility(View.VISIBLE);
+        buttonAnswer2.setVisibility(View.VISIBLE);
+        buttonAnswer3.setVisibility(View.VISIBLE);
+        buttonAnswer4.setVisibility(View.VISIBLE);
+        nextQuestionButton.setVisibility(View.VISIBLE);
+    }
+
     private void displayQuestion() {
         fetchRandomQuestionFromDatabase(new HighscoreActivity.QuestionFetchCallback() {
             @Override
             public void onQuestionFetched(Question fetchedQuestion) {
                 showQuestion(fetchedQuestion);
+                elementeEinblenden();
             }
 
             @Override

@@ -69,8 +69,9 @@ public class HighscoreActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
 
+        elementeAusblenden();
 
-        displayQuestion();
+        erstesFragenLaden();
 
         // Setze Click-Listener für die Antwort-Buttons
         View.OnClickListener answerClickListener = v -> {
@@ -85,11 +86,46 @@ public class HighscoreActivity extends AppCompatActivity {
         nextQuestionButton.setOnClickListener(v -> nextTurn());
     }
 
+    private void elementeAusblenden() {
+        textViewFrage.setVisibility(View.GONE);
+        questionTextView.setVisibility(View.GONE);
+        buttonAnswer1.setVisibility(View.GONE);
+        buttonAnswer2.setVisibility(View.GONE);
+        buttonAnswer3.setVisibility(View.GONE);
+        buttonAnswer4.setVisibility(View.GONE);
+        nextQuestionButton.setVisibility(View.GONE);
+    }
+
+    private void elementeEinblenden() {
+        textViewFrage.setVisibility(View.VISIBLE);
+        questionTextView.setVisibility(View.VISIBLE);
+        buttonAnswer1.setVisibility(View.VISIBLE);
+        buttonAnswer2.setVisibility(View.VISIBLE);
+        buttonAnswer3.setVisibility(View.VISIBLE);
+        buttonAnswer4.setVisibility(View.VISIBLE);
+        nextQuestionButton.setVisibility(View.VISIBLE);
+    }
+
     private void displayQuestion() {
         fetchRandomQuestionFromDatabase(new QuestionFetchCallback() {
             @Override
             public void onQuestionFetched(Question fetchedQuestion) {
                 showQuestion(fetchedQuestion);
+            }
+
+            @Override
+            public void onError(Exception e) {
+                Log.e(TAG, "Error fetching question: ", e);
+            }
+        });
+    }
+
+    private void erstesFragenLaden() {
+        fetchRandomQuestionFromDatabase(new QuestionFetchCallback() {
+            @Override
+            public void onQuestionFetched(Question fetchedQuestion) {
+                showQuestion(fetchedQuestion);
+                elementeEinblenden();
             }
 
             @Override
@@ -157,7 +193,6 @@ public class HighscoreActivity extends AppCompatActivity {
     private void checkAnswer(MaterialButton selectedButton) {
         if (question.getCorrectAnswer().equals(selectedButton.getText().toString())) {
             selectedButton.setBackgroundColor(getResources().getColor(R.color.correctAnswerColor));
-            currentQuestionIndex++;
             playerScore++;
             nextQuestionButton.setVisibility(View.VISIBLE);
         } else {
@@ -220,6 +255,7 @@ public class HighscoreActivity extends AppCompatActivity {
     }
 
     private void nextTurn() {
+        currentQuestionIndex++;
         displayQuestion();
     }
 

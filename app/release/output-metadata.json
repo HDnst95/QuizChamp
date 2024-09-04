@@ -11,9 +11,9 @@
       "type": "SINGLE",
       "filters": [],
       "attributes": [],
-      "versionCode": 12,
-      "versionName": "1.8.1",
-      "outputFile": "QuizChamp-1.8.1.apk"
+      "versionCode": 14,
+      "versionName": "2.0.0",
+      "outputFile": "QuizChamp-2.0.0.apk"
     }
   ],
   "elementType": "File",
@@ -22,14 +22,14 @@
       "minApi": 28,
       "maxApi": 30,
       "baselineProfiles": [
-        "baselineProfiles/1/QuizChamp-1.8.1.dm"
+        "baselineProfiles/1/QuizChamp-2.0.0.dm"
       ]
     },
     {
       "minApi": 31,
       "maxApi": 2147483647,
       "baselineProfiles": [
-        "baselineProfiles/0/QuizChamp-1.8.1.dm"
+        "baselineProfiles/0/QuizChamp-2.0.0.dm"
       ]
     }
   ],

@@ -14,7 +14,7 @@
     <string name="com_score">AI: %d Punkte</string>
     <string name="restart_game">Hauptmenü</string>
     <string name="close_game">Schließen</string>
-    <string name="enter_positive_number">Bitte gib eine positive Zahl ein</string>
+    <string name="enter_positive_number">Bitte giyb eine positive Zahl ein</string>
     <string name="enter_question_count">Bitte gib die Anzahl der Fragen ein</string>
     <string name="error_loading_questions">Fehler beim Laden der Fragen</string>
     <string name="empty_player_names">Leere Felder für Spielernamen wurden aufgefüllt</string>

@@ -126,8 +126,8 @@ public class MainMenuActivity extends AppCompatActivity {
 //        singlePlayerButton.setTextColor(getResources().getColor(R.color.disabledButtonTextColor));
         multiPlayerButton.setEnabled(false);
         multiPlayerButton.setTextColor(getResources().getColor(R.color.disabledButtonTextColor));
-//        multiPlayerOnDeviceButton.setEnabled(false);
-//        multiPlayerOnDeviceButton.setTextColor(getResources().getColor(R.color.disabledButtonTextColor));
+        multiPlayerOnDeviceButton.setEnabled(false);
+        multiPlayerOnDeviceButton.setTextColor(getResources().getColor(R.color.disabledButtonTextColor));
 
         checkUser();
     }
@@ -182,6 +182,7 @@ public class MainMenuActivity extends AppCompatActivity {
             comStrengthSeekBar.setProgress(0);
             comStrengthValue.setText(DifficultyLevel.VERY_EASY.toString());
             questionsField.setVisibility(View.VISIBLE);
+            questionsField.setText("10");
             comStrengthSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
                 @Override
                 public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
@@ -208,7 +209,11 @@ public class MainMenuActivity extends AppCompatActivity {
             comStrengthValue.setVisibility(View.GONE);
             seekBarDescription.setVisibility(View.GONE);
             questionsField.setVisibility(View.VISIBLE);
-            playerNameField.setVisibility(View.VISIBLE);
+            questionsField.setText("10");
+            playerNameField.setVisibility(View.GONE);
+            playerNameMulti1Field.setVisibility(View.VISIBLE);
+            playerNameMulti1Field.setText(playerNameEditText.getText().toString());
+            playerNameMulti2Field.setVisibility(View.VISIBLE);
         } else if (mode.equals("Highscore")) {
             comStrengthSeekBar.setVisibility(View.GONE);
             comStrengthValue.setVisibility(View.GONE);
