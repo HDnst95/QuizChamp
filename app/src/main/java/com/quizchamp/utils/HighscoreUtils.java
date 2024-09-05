@@ -63,5 +63,6 @@ public class HighscoreUtils {
             highscores = highscores.subList(0, MAX_HIGHSCORES);
         }
         saveHighscores(context, highscores);
+
     }
 }

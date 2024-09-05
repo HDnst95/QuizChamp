@@ -177,7 +177,7 @@ public class MultiPlayerActivity extends AppCompatActivity {
         setButtonHeights(buttons);
 
         resetButtonColors();
-        nextQuestionButton.setVisibility(View.GONE);
+        nextQuestionButton.setVisibility(View.INVISIBLE);
     }
 
     private void fetchRandomQuestionFromDatabase(HighscoreActivity.QuestionFetchCallback callback) {

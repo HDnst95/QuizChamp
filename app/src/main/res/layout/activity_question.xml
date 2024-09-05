@@ -88,7 +88,6 @@
         android:layout_marginTop="16dp"
         android:gravity="center"
         android:padding="16dp"
-        android:text="Question"
         android:textColor="@color/colorOnBackground"
         android:textSize="28sp"
         android:textStyle="bold"
@@ -103,6 +102,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
         android:backgroundTint="@color/buttonColor"
         android:text="Answer 1"
         android:textColor="@color/buttonTextColor"
@@ -116,6 +116,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:layout_marginStart="8dp"
         android:backgroundTint="@color/buttonColor"
         android:text="Answer 2"
         android:textColor="@color/buttonTextColor"
@@ -129,6 +130,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
         android:backgroundTint="@color/buttonColor"
         android:text="Answer 3"
         android:textColor="@color/buttonTextColor"
@@ -142,6 +144,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:layout_marginStart="8dp"
         android:backgroundTint="@color/buttonColor"
         android:text="Answer 4"
         android:textColor="@color/buttonTextColor"
@@ -153,11 +156,21 @@
         android:id="@+id/nextQuestionButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="36dp"
         android:text="Nächste Frage"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/buttonAnswer4" />
+        android:visibility="visible"
+        app:layout_constraintEnd_toEndOf="@id/buttonAnswer4"
+        app:layout_constraintStart_toStartOf="@id/buttonAnswer3"
+        app:layout_constraintTop_toBottomOf="@id/buttonAnswer3" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/backToMainMenuButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Hauptmenü"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/nextQuestionButton"
+        app:layout_constraintStart_toStartOf="@id/nextQuestionButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

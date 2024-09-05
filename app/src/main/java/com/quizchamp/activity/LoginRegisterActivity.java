@@ -106,15 +106,51 @@ public class LoginRegisterActivity extends AppCompatActivity {
 
     }
 
+    private boolean isValidEmail(String email) {
+        return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
+    }
+
+    private String getPasswordValidationError(String password) {
+        if (password.length() < 8) {
+            return "Password must be at least 8 characters";
+        }
+        if (password.equals(password.toLowerCase())) {
+            return "Password must contain at least one uppercase letter";
+        }
+        if (password.equals(password.toUpperCase())) {
+            return "Password must contain at least one lowercase letter";
+        }
+        if (!password.matches(".*\\d.*")) {
+            return "Password must contain at least one digit";
+        }
+        if (!password.matches(".*[!@#$%^&*(),.?\":{}|<>].*")) {
+            return "Password must contain at least one special character";
+        }
+        return null;
+    }
 
     private void signInWithEmail(String email, String password) {
+        if (!isValidEmail(email)) {
+            Toast.makeText(this, "Invalid email address", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        String passwordError = getPasswordValidationError(password);
+        if (passwordError != null) {
+            Toast.makeText(this, passwordError, Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         mAuth.signInWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             FirebaseUser user = mAuth.getCurrentUser();
-                            updateUI(user);
+                            if (user.isEmailVerified()) {
+                                updateUI(user);
+                            } else {
+                                Toast.makeText(LoginRegisterActivity.this, "Please verify your email address", Toast.LENGTH_SHORT).show();
+                            }
                         } else {
                             Toast.makeText(LoginRegisterActivity.this, "Authentication failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             updateUI(null);
@@ -143,15 +179,38 @@ public class LoginRegisterActivity extends AppCompatActivity {
     }
 
     private void registerUserEmail(String email, String password) {
+        if (!isValidEmail(email)) {
+            Toast.makeText(this, "Invalid email address", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        String passwordError = getPasswordValidationError(password);
+        if (passwordError != null) {
+            Toast.makeText(this, passwordError, Toast.LENGTH_SHORT).show();
+            return;
+        }
+
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             FirebaseUser user = mAuth.getCurrentUser();
+                            if (user != null) {
+                                user.sendEmailVerification()
+                                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<Void> task) {
+                                                if (task.isSuccessful()) {
+                                                    Toast.makeText(LoginRegisterActivity.this, "Verification email sent", Toast.LENGTH_SHORT).show();
+                                                } else {
+                                                    Toast.makeText(LoginRegisterActivity.this, "Failed to send verification email", Toast.LENGTH_SHORT).show();
+                                                }
+                                            }
+                                        });
+                            }
                             saveUserToDatabase(user);
-                            Toast.makeText(LoginRegisterActivity.this, "Registration successful", Toast.LENGTH_SHORT).show();
-                            updateUI(user);
+                            Toast.makeText(LoginRegisterActivity.this, "Registration successful. Please verify your email address", Toast.LENGTH_SHORT).show();
+                            updateUI(null);
                         } else {
                             Toast.makeText(LoginRegisterActivity.this, "Registration failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             updateUI(null);

@@ -122,14 +122,27 @@ public class MainMenuActivity extends AppCompatActivity {
             }
         });
 
-//        singlePlayerButton.setEnabled(false);
-//        singlePlayerButton.setTextColor(getResources().getColor(R.color.disabledButtonTextColor));
         multiPlayerButton.setEnabled(false);
         multiPlayerButton.setTextColor(getResources().getColor(R.color.disabledButtonTextColor));
         multiPlayerOnDeviceButton.setEnabled(false);
         multiPlayerOnDeviceButton.setTextColor(getResources().getColor(R.color.disabledButtonTextColor));
 
         checkUser();
+        showInfoDialog();
+    }
+
+    private void showInfoDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Wichtiger Hinweis");
+        builder.setMessage("Hallo! Schön, dass du QuizChamp nutzt. Bitte beachte, dass QuizChamp noch in der Entwicklung ist und es zu Fehlern kommen kann. Falls du Fehler findest oder Verbesserungsvorschläge hast, gib mir bitte Bescheid! " + "\n\n" + "Für einige Spielmodi wird dein Spielername verwendet. Bitte trage diesen ein, um personalisierte Inhalte ordnungsgemäß anzuzeigen. " + "\n\n" + "Viel Spaß beim Spielen!");
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                dialog.dismiss();
+            }
+        });
+        builder.setCancelable(false);
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 
     private void signOut() {

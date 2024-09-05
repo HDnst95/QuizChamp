@@ -44,7 +44,7 @@ public class SinglePlayerActivity extends AppCompatActivity {
     FirebaseFirestore db;
     private Question question = new Question();
     private int currentQuestionIndex = 1;
-    private MaterialButton buttonAnswer1, buttonAnswer2, buttonAnswer3, buttonAnswer4, nextQuestionButton;
+    private MaterialButton buttonAnswer1, buttonAnswer2, buttonAnswer3, buttonAnswer4, nextQuestionButton, backToMainMenuButton;
     private TextView questionTextView, textViewFrage;
     private String playerName;
     private int playerScore = 0;
@@ -70,6 +70,7 @@ public class SinglePlayerActivity extends AppCompatActivity {
         buttonAnswer3 = findViewById(R.id.buttonAnswer3);
         buttonAnswer4 = findViewById(R.id.buttonAnswer4);
         nextQuestionButton = findViewById(R.id.nextQuestionButton);
+        backToMainMenuButton = findViewById(R.id.backToMainMenuButton);
 
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
@@ -89,6 +90,7 @@ public class SinglePlayerActivity extends AppCompatActivity {
         buttonAnswer4.setOnClickListener(answerClickListener);
 
         nextQuestionButton.setOnClickListener(v -> nextTurn());
+        backToMainMenuButton.setOnClickListener(v -> backToMainMenu());
     }
 
     private void elementeAusblenden() {
@@ -98,7 +100,8 @@ public class SinglePlayerActivity extends AppCompatActivity {
         buttonAnswer2.setVisibility(View.GONE);
         buttonAnswer3.setVisibility(View.GONE);
         buttonAnswer4.setVisibility(View.GONE);
-        nextQuestionButton.setVisibility(View.GONE);
+        nextQuestionButton.setVisibility(View.INVISIBLE);
+        backToMainMenuButton.setVisibility(View.INVISIBLE);
     }
 
     private void elementeEinblenden() {
@@ -108,7 +111,7 @@ public class SinglePlayerActivity extends AppCompatActivity {
         buttonAnswer2.setVisibility(View.VISIBLE);
         buttonAnswer3.setVisibility(View.VISIBLE);
         buttonAnswer4.setVisibility(View.VISIBLE);
-        nextQuestionButton.setVisibility(View.VISIBLE);
+        backToMainMenuButton.setVisibility(View.VISIBLE);
     }
 
     private void displayQuestion() {
@@ -179,7 +182,7 @@ public class SinglePlayerActivity extends AppCompatActivity {
         setButtonHeights(buttons);
 
         resetButtonColors();
-        nextQuestionButton.setVisibility(View.GONE);
+        nextQuestionButton.setVisibility(View.INVISIBLE);
     }
 
     private void checkAnswer(MaterialButton selectedButton) {

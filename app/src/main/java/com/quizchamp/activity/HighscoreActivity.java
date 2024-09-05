@@ -42,7 +42,7 @@ public class HighscoreActivity extends AppCompatActivity {
     private static final String TAG = "HighscoreActivity";
     private Question question = new Question();
     private int currentQuestionIndex = 1;
-    private MaterialButton buttonAnswer1, buttonAnswer2, buttonAnswer3, buttonAnswer4, nextQuestionButton;
+    private MaterialButton buttonAnswer1, buttonAnswer2, buttonAnswer3, buttonAnswer4, nextQuestionButton, backToMainMenuButton;
     private TextView questionTextView, textViewFrage;
     private String playerName;
     private int playerScore = 0;
@@ -64,6 +64,7 @@ public class HighscoreActivity extends AppCompatActivity {
         buttonAnswer3 = findViewById(R.id.buttonAnswer3);
         buttonAnswer4 = findViewById(R.id.buttonAnswer4);
         nextQuestionButton = findViewById(R.id.nextQuestionButton);
+        backToMainMenuButton = findViewById(R.id.backToMainMenuButton);
 
 
         mAuth = FirebaseAuth.getInstance();
@@ -84,6 +85,7 @@ public class HighscoreActivity extends AppCompatActivity {
         buttonAnswer4.setOnClickListener(answerClickListener);
 
         nextQuestionButton.setOnClickListener(v -> nextTurn());
+        backToMainMenuButton.setOnClickListener(v -> backToMainMenu());
     }
 
     private void elementeAusblenden() {
@@ -93,7 +95,8 @@ public class HighscoreActivity extends AppCompatActivity {
         buttonAnswer2.setVisibility(View.GONE);
         buttonAnswer3.setVisibility(View.GONE);
         buttonAnswer4.setVisibility(View.GONE);
-        nextQuestionButton.setVisibility(View.GONE);
+        nextQuestionButton.setVisibility(View.INVISIBLE);
+        backToMainMenuButton.setVisibility(View.INVISIBLE);
     }
 
     private void elementeEinblenden() {
@@ -103,7 +106,7 @@ public class HighscoreActivity extends AppCompatActivity {
         buttonAnswer2.setVisibility(View.VISIBLE);
         buttonAnswer3.setVisibility(View.VISIBLE);
         buttonAnswer4.setVisibility(View.VISIBLE);
-        nextQuestionButton.setVisibility(View.VISIBLE);
+        backToMainMenuButton.setVisibility(View.VISIBLE);
     }
 
     private void displayQuestion() {
@@ -187,7 +190,7 @@ public class HighscoreActivity extends AppCompatActivity {
         setButtonHeights(buttons);
 
         resetButtonColors();
-        nextQuestionButton.setVisibility(View.GONE);
+        nextQuestionButton.setVisibility(View.INVISIBLE);
     }
 
     private void checkAnswer(MaterialButton selectedButton) {
@@ -247,6 +250,7 @@ public class HighscoreActivity extends AppCompatActivity {
         builder.setMessage(String.format(getString(R.string.player_score), playerName, playerScore));
         builder.setPositiveButton(R.string.restart_game, new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int id) {
+                    updateHighscore();
                     backToMainMenu();
                 }
             });
@@ -259,7 +263,7 @@ public class HighscoreActivity extends AppCompatActivity {
         displayQuestion();
     }
 
-    private void backToMainMenu() {
+    private void updateHighscore() {
         // Update high scores
         if (playerScore > 0) {
             LocalDateTime now = LocalDateTime.now();
@@ -269,6 +273,8 @@ public class HighscoreActivity extends AppCompatActivity {
             HighscoreUtils.updateHighscores(this, new Highscore(playerName, playerScore, zeit));
             Toast.makeText(this, R.string.highscore_updated, Toast.LENGTH_SHORT).show();
         }
+    }
+    private void backToMainMenu() {
         Intent intent = new Intent(HighscoreActivity.this, MainMenuActivity.class);
         intent.putExtra("PLAYER_NAME", playerName);
         startActivity(intent);

@@ -96,7 +96,7 @@ public class MultiPlayerOnDeviceActivity extends AppCompatActivity {
         buttonAnswer2.setVisibility(View.GONE);
         buttonAnswer3.setVisibility(View.GONE);
         buttonAnswer4.setVisibility(View.GONE);
-        nextQuestionButton.setVisibility(View.GONE);
+        nextQuestionButton.setVisibility(View.INVISIBLE);
     }
 
     private void elementeEinblenden() {
@@ -174,7 +174,7 @@ public class MultiPlayerOnDeviceActivity extends AppCompatActivity {
         setButtonHeights(buttons);
 
         resetButtonColors();
-        nextQuestionButton.setVisibility(View.GONE);
+        nextQuestionButton.setVisibility(View.INVISIBLE);
     }
 
     private int getMaxButtonHeight(List<MaterialButton> buttons) {
