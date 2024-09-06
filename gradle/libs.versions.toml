@@ -11,6 +11,8 @@ firebaseBom = "33.2.0"
 firebaseDatabaseVersion = "20.0.5"
 googleMaterial = "1.12.0"
 googleServices = "4.4.2"
+googleWebrtc = "1.0.0"
+googleWebrtcVersion = "1.0.32006"
 gson = "2.11.0"
 junit = "4.13.2"
 junitVersion = "1.2.1"
@@ -26,6 +28,10 @@ googleGmsGoogleServices = "4.4.2"
 firebaseDatabase = "21.0.0"
 firebaseFirestore = "25.1.0"
 firebaseAuth = "23.0.0"
+webrtc = "122.0.0-dev.362"
+webrtcGoogleWebrtc = "XXX"
+webrtcGoogleWebrtcVersion = "1.0.23995"
+gridlayout = "1.0.0"
 
 [libraries]
 appcompat-v140 = { module = "androidx.appcompat:appcompat", version.ref = "appcompatVersion" }
@@ -39,6 +45,10 @@ firebase-database-v2005 = { module = "com.google.firebase:firebase-database", ve
 google-firebase-auth = { module = "com.google.firebase:firebase-auth" }
 google-firebase-database = { module = "com.google.firebase:firebase-database" }
 google-services = { module = "com.google.gms:google-services", version.ref = "googleServices" }
+google-webrtc = { module = "org.webrtc:google-webrtc", version.ref = "googleWebrtc" }
+google-webrtc-v1023995 = { module = "org.webrtc:google-webrtc", version.ref = "webrtcGoogleWebrtcVersion" }
+google-webrtc-v1032006 = { module = "org.webrtc:google-webrtc", version.ref = "googleWebrtcVersion" }
+google-webrtc-vxxx = { module = "org.webrtc:google-webrtc", version.ref = "webrtcGoogleWebrtc" }
 gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
@@ -56,6 +66,8 @@ room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomRunti
 firebase-database = { group = "com.google.firebase", name = "firebase-database", version.ref = "firebaseDatabase" }
 firebase-firestore = { group = "com.google.firebase", name = "firebase-firestore", version.ref = "firebaseFirestore" }
 firebase-auth = { group = "com.google.firebase", name = "firebase-auth", version.ref = "firebaseAuth" }
+webrtc = { module = "com.vonage:webrtc", version.ref = "webrtc" }
+gridlayout = { group = "androidx.gridlayout", name = "gridlayout", version.ref = "gridlayout" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

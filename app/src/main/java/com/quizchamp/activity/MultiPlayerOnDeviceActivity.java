@@ -5,10 +5,11 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.GridLayout;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
@@ -36,14 +37,13 @@ public class MultiPlayerOnDeviceActivity extends AppCompatActivity {
     private static final String TAG = "HighscoreActivity";
     FirebaseFirestore db;
     private FirebaseAuth mAuth;
-
-    private TextView questionTextView, textViewFrage;
-    private MaterialButton buttonAnswer1, buttonAnswer2, buttonAnswer3, buttonAnswer4, nextQuestionButton;
+    private GridLayout spielstandAnzeigeName, spielstandAnzeigeScore;
+    private TextView questionTextView, textViewFrage, textViewPlayer1, textViewPlayer2, textViewPlayer1Score, textViewPlayer2Score;
+    private MaterialButton buttonAnswer1, buttonAnswer2, buttonAnswer3, buttonAnswer4, nextQuestionButton, backToMainMenuButton;
     private List<Question> questions = new ArrayList<>();
-    private int currentQuestionIndex = 0;
+    private int currentQuestionIndex = 1;
     private int questionCount;
 
-    private TextView playerTurnTextView;
     private int currentPlayer = 1;
     private String playerName1;
     private String playerName2;
@@ -59,7 +59,8 @@ public class MultiPlayerOnDeviceActivity extends AppCompatActivity {
         Intent intent = getIntent();
         playerName1 = intent.getStringExtra("PLAYER_1");
         playerName2 = intent.getStringExtra("PLAYER_2");
-        questionCount = Integer.parseInt(intent.getStringExtra("QUESTION_COUNT"));
+        questionCount = intent.getIntExtra("QUESTION_COUNT", 10);
+
 
         questionTextView = findViewById(R.id.questionTextView); // Ensure this line is correct
         textViewFrage = findViewById(R.id.textViewFrage);
@@ -68,6 +69,25 @@ public class MultiPlayerOnDeviceActivity extends AppCompatActivity {
         buttonAnswer3 = findViewById(R.id.buttonAnswer3);
         buttonAnswer4 = findViewById(R.id.buttonAnswer4);
         nextQuestionButton = findViewById(R.id.nextQuestionButton);
+        backToMainMenuButton = findViewById(R.id.backToMainMenuButton);
+
+        spielstandAnzeigeName = findViewById(R.id.spielstandAnzeigeName);
+        spielstandAnzeigeScore = findViewById(R.id.spielstandAnzeigeScore);
+        textViewPlayer1 = findViewById(R.id.player1NameTextView);
+        textViewPlayer2 = findViewById(R.id.player2NameTextView);
+        textViewPlayer1Score = findViewById(R.id.player1ScoreTextView);
+        textViewPlayer2Score = findViewById(R.id.player2ScoreTextView);
+
+        if (playerName1.isBlank()) {
+            playerName1 = "Spieler 1";
+        }
+        if (playerName2.isBlank()) {
+            playerName2 = "Spieler 2";
+        }
+        textViewPlayer1.setText(playerName1);
+        textViewPlayer2.setText(playerName2);
+        textViewPlayer1Score.setText(String.valueOf(player1Score));
+        textViewPlayer2Score.setText(String.valueOf(player2Score));
 
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
@@ -87,6 +107,8 @@ public class MultiPlayerOnDeviceActivity extends AppCompatActivity {
         buttonAnswer4.setOnClickListener(answerClickListener);
 
         nextQuestionButton.setOnClickListener(v -> nextTurn());
+        backToMainMenuButton.setOnClickListener(v -> backToMainMenu());
+
     }
 
     private void elementeAusblenden() {
@@ -97,6 +119,9 @@ public class MultiPlayerOnDeviceActivity extends AppCompatActivity {
         buttonAnswer3.setVisibility(View.GONE);
         buttonAnswer4.setVisibility(View.GONE);
         nextQuestionButton.setVisibility(View.INVISIBLE);
+        backToMainMenuButton.setVisibility(View.INVISIBLE);
+        spielstandAnzeigeName.setVisibility(View.GONE);
+        spielstandAnzeigeScore.setVisibility(View.GONE);
     }
 
     private void elementeEinblenden() {
@@ -107,10 +132,13 @@ public class MultiPlayerOnDeviceActivity extends AppCompatActivity {
         buttonAnswer3.setVisibility(View.VISIBLE);
         buttonAnswer4.setVisibility(View.VISIBLE);
         nextQuestionButton.setVisibility(View.VISIBLE);
+        backToMainMenuButton.setVisibility(View.VISIBLE);
+        spielstandAnzeigeName.setVisibility(View.VISIBLE);
+        spielstandAnzeigeScore.setVisibility(View.VISIBLE);
     }
 
     private void displayQuestion() {
-        fetchRandomQuestionFromDatabase(new HighscoreActivity.QuestionFetchCallback() {
+        fetchRandomQuestionFromDatabase(new MultiPlayerOnDeviceActivity.QuestionFetchCallback() {
             @Override
             public void onQuestionFetched(Question fetchedQuestion) {
                 showQuestion(fetchedQuestion);
@@ -124,7 +152,8 @@ public class MultiPlayerOnDeviceActivity extends AppCompatActivity {
         });
     }
 
-    private void fetchRandomQuestionFromDatabase(HighscoreActivity.QuestionFetchCallback callback) {
+
+    private void fetchRandomQuestionFromDatabase(MultiPlayerOnDeviceActivity.QuestionFetchCallback callback) {
         db.collection("questions").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
             public void onComplete(@NonNull Task<QuerySnapshot> task) {
@@ -152,6 +181,13 @@ public class MultiPlayerOnDeviceActivity extends AppCompatActivity {
     }
 
     private void showQuestion(Question currentQuestion) {
+        textViewFrage.setText("Frage " + (currentQuestionIndex));
+        textViewPlayer1.setText(playerName1);
+        textViewPlayer2.setText(playerName2);
+        textViewPlayer1Score.setText(String.valueOf(player1Score));
+        textViewPlayer2Score.setText(String.valueOf(player2Score));
+
+
         List<String> options = new ArrayList<>();
         options.add(currentQuestion.getOptionA());
         options.add(currentQuestion.getOptionB());
@@ -172,9 +208,6 @@ public class MultiPlayerOnDeviceActivity extends AppCompatActivity {
         buttons.add(buttonAnswer4);
 
         setButtonHeights(buttons);
-
-        resetButtonColors();
-        nextQuestionButton.setVisibility(View.INVISIBLE);
     }
 
     private int getMaxButtonHeight(List<MaterialButton> buttons) {
@@ -191,7 +224,7 @@ public class MultiPlayerOnDeviceActivity extends AppCompatActivity {
     private int measureTextHeight(String text) {
         TextView textView = new TextView(this);
         textView.setText(text);
-        textView.setTextSize(TypedValue.COMPLEX_UNIT_SP, 24); // Ensure consistent text size
+        textView.setTextSize(24); // Ensure consistent text size
         int widthMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED);
         int heightMeasureSpec = View.MeasureSpec.makeMeasureSpec(0, View.MeasureSpec.UNSPECIFIED);
         textView.measure(widthMeasureSpec, heightMeasureSpec);
@@ -207,53 +240,55 @@ public class MultiPlayerOnDeviceActivity extends AppCompatActivity {
     }
 
     private void checkAnswer(MaterialButton selectedButton) {
-        Question currentQuestion = questions.get(currentQuestionIndex);
-        if (currentQuestion.getCorrectAnswer().equals(selectedButton.getText().toString())) {
-            selectedButton.setBackgroundColor(getResources().getColor(R.color.correctAnswerColor));
-            if (currentPlayer == 1) {
-                player1Score++;
-            } else {
-                player2Score++;
-            }
-        } else {
-            selectedButton.setBackgroundColor(getResources().getColor(R.color.wrongAnswerColor));
-            if (buttonAnswer1.getText().toString().equals(currentQuestion.getCorrectAnswer())) {
-                buttonAnswer1.setBackgroundColor(getResources().getColor(R.color.correctAnswerColor));
-            } else if (buttonAnswer2.getText().toString().equals(currentQuestion.getCorrectAnswer())) {
-                buttonAnswer2.setBackgroundColor(getResources().getColor(R.color.correctAnswerColor));
-            } else if (buttonAnswer3.getText().toString().equals(currentQuestion.getCorrectAnswer())) {
-                buttonAnswer3.setBackgroundColor(getResources().getColor(R.color.correctAnswerColor));
-            } else if (buttonAnswer4.getText().toString().equals(currentQuestion.getCorrectAnswer())) {
-                buttonAnswer4.setBackgroundColor(getResources().getColor(R.color.correctAnswerColor));
-            }
+        selectedButton.setBackgroundColor(getResources().getColor(R.color.colorOnBackground));
+        if (question.getCorrectAnswer().equals(selectedButton.getText().toString())) {
+            if (currentPlayer == 1) player1Score++;
+            else player2Score++;
         }
+        textViewPlayer1Score.setText(String.valueOf(player1Score));
+        textViewPlayer2Score.setText(String.valueOf(player2Score));
         nextQuestionButton.setVisibility(View.VISIBLE);
     }
 
     private void nextTurn() {
-        if (currentPlayer == 1) {
+        if (currentQuestionIndex < questionCount) {
+            if (currentPlayer == 1) {
+                currentPlayer = 2;
+                resetButtonColors();
+                Toast.makeText(this, currentPlayer + " ist an der Reihe", Toast.LENGTH_SHORT).show();
+            } else {
+                currentPlayer = 1;
+                resetButtonColors();
+                Toast.makeText(this, currentPlayer + " ist an der Reihe", Toast.LENGTH_SHORT).show();
+                currentQuestionIndex++;
+                displayQuestion();
+            }
+        } else if (currentQuestionIndex == questionCount && currentPlayer == 1) {
             currentPlayer = 2;
-        } else {
-            currentPlayer = 1;
-            currentQuestionIndex++;
+            resetButtonColors();
+            Toast.makeText(this, currentPlayer + " ist an der Reihe", Toast.LENGTH_SHORT).show();
+        } else if (currentQuestionIndex == questionCount && currentPlayer == 2) {
+            endGame();
+            nextQuestionButton.setText(R.string.end_game);
+            nextQuestionButton.setVisibility(View.VISIBLE);
         }
-        displayQuestion();
+
     }
 
     private void endGame() {
-        nextQuestionButton.setText(R.string.end_game);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle(R.string.game_over);
         builder.setMessage(String.format(getString(R.string.player_1_score), player1Score) + "\n" + String.format(getString(R.string.player_2_score), player2Score));
         builder.setPositiveButton(R.string.restart_game, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
-                restartGame();
+                backToMainMenu();
             }
         });
+        builder.setCancelable(false);
         builder.show();
     }
 
-    private void restartGame() {
+    private void backToMainMenu() {
         Intent intent = new Intent(MultiPlayerOnDeviceActivity.this, MainMenuActivity.class);
         startActivity(intent);
         finish();
@@ -266,5 +301,11 @@ public class MultiPlayerOnDeviceActivity extends AppCompatActivity {
             params.height = maxHeight + button.getPaddingTop() + button.getPaddingBottom(); // Add padding to ensure text is fully visible
             button.setLayoutParams(params);
         }
+    }
+
+    private interface QuestionFetchCallback {
+        void onQuestionFetched(Question fetchedQuestion);
+
+        void onError(Exception e);
     }
 }

@@ -71,17 +71,25 @@ public class MainMenuActivity extends AppCompatActivity {
         sharedPreferences = getSharedPreferences("QuizChampPrefs", MODE_PRIVATE);
         // Load player name from SharedPreferences
         playerName = sharedPreferences.getString("PLAYER_NAME", "");
+        if (playerName.isEmpty()) {
+            showInfoDialog();
+        }
         playerNameEditText.setText(playerName);
+
 
 
         savePlayerNameButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 SharedPreferences.Editor editor = sharedPreferences.edit();
-                playerName = playerNameEditText.getText().toString();
-                editor.putString("PLAYER_NAME", playerNameEditText.getText().toString());
-                editor.apply();
-                Toast.makeText(MainMenuActivity.this, "Spielername gespeichert", Toast.LENGTH_SHORT).show();
+                if (playerNameEditText.getText().toString().isEmpty()) {
+                    Toast.makeText(MainMenuActivity.this, "Spielername ist leer bzw. wurde gelöscht", Toast.LENGTH_SHORT).show();
+                } else {
+                    playerName = playerNameEditText.getText().toString();
+                    editor.putString("PLAYER_NAME", playerNameEditText.getText().toString());
+                    editor.apply();
+                    Toast.makeText(MainMenuActivity.this, "Spielername gespeichert", Toast.LENGTH_SHORT).show();
+                }
             }
         });
         singlePlayerButton.setOnClickListener(new View.OnClickListener() {
@@ -124,14 +132,14 @@ public class MainMenuActivity extends AppCompatActivity {
 
         multiPlayerButton.setEnabled(false);
         multiPlayerButton.setTextColor(getResources().getColor(R.color.disabledButtonTextColor));
-        multiPlayerOnDeviceButton.setEnabled(false);
-        multiPlayerOnDeviceButton.setTextColor(getResources().getColor(R.color.disabledButtonTextColor));
+//        multiPlayerOnDeviceButton.setEnabled(false);
+//        multiPlayerOnDeviceButton.setTextColor(getResources().getColor(R.color.disabledButtonTextColor));
 
         checkUser();
-        showInfoDialog();
     }
 
     private void showInfoDialog() {
+
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Wichtiger Hinweis");
         builder.setMessage("Hallo! Schön, dass du QuizChamp nutzt. Bitte beachte, dass QuizChamp noch in der Entwicklung ist und es zu Fehlern kommen kann. Falls du Fehler findest oder Verbesserungsvorschläge hast, gib mir bitte Bescheid! " + "\n\n" + "Für einige Spielmodi wird dein Spielername verwendet. Bitte trage diesen ein, um personalisierte Inhalte ordnungsgemäß anzuzeigen. " + "\n\n" + "Viel Spaß beim Spielen!");
@@ -278,7 +286,7 @@ public class MainMenuActivity extends AppCompatActivity {
                 intent.putExtra("PLAYER_NAME", playerName);
                 break;
             case "Multiplayer":
-                intent = new Intent(MainMenuActivity.this, MatchmakingActivity.class);
+                intent = new Intent(MainMenuActivity.this, MultiPlayerActivity.class);
                 intent.putExtra("PLAYER_NAME", playerName);
                 break;
             case "MultiplayerOnDevice":

@@ -32,6 +32,10 @@
             android:exported="true" />
 
         <activity
+            android:name=".activity.MultiPlayerOnDeviceActivity"
+            android:exported="true" />
+
+        <activity
             android:name=".activity.ViewHighscoresActivity"
             android:exported="true" />
 
@@ -39,9 +43,6 @@
             android:name=".activity.MainMenuActivity"
             android:exported="true" />
 
-        <activity
-            android:name=".activity.MatchmakingActivity"
-            android:exported="true" />
 
         <!-- Inside <application> tag -->
         <meta-data

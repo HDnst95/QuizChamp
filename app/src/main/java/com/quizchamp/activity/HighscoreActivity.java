@@ -254,6 +254,7 @@ public class HighscoreActivity extends AppCompatActivity {
                     backToMainMenu();
                 }
             });
+        builder.setCancelable(false);
         builder.show();
 
     }
@@ -274,6 +275,7 @@ public class HighscoreActivity extends AppCompatActivity {
             Toast.makeText(this, R.string.highscore_updated, Toast.LENGTH_SHORT).show();
         }
     }
+
     private void backToMainMenu() {
         Intent intent = new Intent(HighscoreActivity.this, MainMenuActivity.class);
         intent.putExtra("PLAYER_NAME", playerName);

@@ -7,7 +7,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Menu;
 import android.content.Intent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,16 +22,11 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.quizchamp.R;
 import com.quizchamp.model.DifficultyLevel;
-import com.quizchamp.model.Highscore;
 import com.quizchamp.model.Question;
-import com.quizchamp.utils.HighscoreUtils;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -122,7 +116,6 @@ public class SinglePlayerActivity extends AppCompatActivity {
                 elementeEinblenden();
 
             }
-
             @Override
             public void onError(Exception e) {
                 Log.e(TAG, "Error fetching question: ", e);
@@ -293,8 +286,8 @@ public class SinglePlayerActivity extends AppCompatActivity {
                 backToMainMenu();
             }
         });
+        builder.setCancelable(false);
         builder.show();
-
     }
 
     private void nextTurn() {
@@ -311,9 +304,7 @@ public class SinglePlayerActivity extends AppCompatActivity {
     }
 
     private void backToMainMenu() {
-        // Update high scores
         Intent intent = new Intent(SinglePlayerActivity.this, MainMenuActivity.class);
-        intent.putExtra("PLAYER_NAME", playerName);
         startActivity(intent);
         finish();
     }

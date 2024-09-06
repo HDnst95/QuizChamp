@@ -9,8 +9,8 @@ android {
         applicationId "com.quizchamp"
         minSdk 29
         targetSdk 34
-        versionCode 15
-        versionName "2.1.0"
+        versionCode 16
+        versionName "2.2.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     signingConfigs {
@@ -40,8 +40,7 @@ android {
     }
 }
 dependencies {
-    implementation libs.material.v190 // Ensure this version or later is used
-    implementation libs.constraintlayout.v204
+    implementation libs.material // Ensure this version or later is used
     implementation libs.gson
     implementation libs.appcompat.v140
     implementation libs.constraintlayout
