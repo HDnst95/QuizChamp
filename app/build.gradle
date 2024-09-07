@@ -9,8 +9,8 @@ android {
         applicationId "com.quizchamp"
         minSdk 29
         targetSdk 34
-        versionCode 17
-        versionName "2.2.0"
+        versionCode 18
+        versionName "2.3.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     signingConfigs {
@@ -43,7 +43,6 @@ android {
             outputFileName = newFileName
         }
     }
-
 }
 dependencies {
     implementation libs.material // Ensure this version or later is used
