@@ -1,4 +1,3 @@
-<!-- src/main/res/layout/dialog_input.xml -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -43,7 +42,6 @@
         android:hint="Spielernamen eingeben"
         android:visibility="gone" />
 
-
     <EditText
         android:id="@+id/playerNameMulti1Field"
         android:layout_width="match_parent"
@@ -56,6 +54,49 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Name des 2. Spielers eingebenn"
+        android:visibility="gone" />
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible">
+
+        <Button
+            android:id="@+id/hostButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:text="Host"
+            android:visibility="visible" />
+
+        <Button
+            android:id="@+id/joinButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:text="Join"
+            android:visibility="visible" />
+    </GridLayout>
+
+    <TextView
+        android:id="@+id/gameIdTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Game ID"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/copyGameIdButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Copy Game ID"
+        android:visibility="gone" />
+
+    <EditText
+        android:id="@+id/matchIdField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Match ID"
         android:visibility="gone" />
 
 </LinearLayout>

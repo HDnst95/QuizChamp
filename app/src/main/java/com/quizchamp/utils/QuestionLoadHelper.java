@@ -1,9 +1,9 @@
 package com.quizchamp.utils;
 
-import com.quizchamp.activity.HighscoreActivity;
-import com.quizchamp.activity.MultiPlayerOnDeviceActivity;
-import com.quizchamp.activity.MultiPlayerActivity;
-import com.quizchamp.activity.SinglePlayerActivity;
+import com.quizchamp.activity.modus.HighscoreActivity;
+import com.quizchamp.activity.modus.MultiPlayerOnDeviceActivity;
+import com.quizchamp.activity.modus.MultiPlayerActivity;
+import com.quizchamp.activity.modus.SinglePlayerActivity;
 
 
 public class QuestionLoadHelper {

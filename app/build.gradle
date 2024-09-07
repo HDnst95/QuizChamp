@@ -34,10 +34,16 @@ android {
     }
     applicationVariants.all { variant ->
         variant.outputs.all { output ->
-            def apkName = "QuizChamp-${variant.versionName}.apk"
-            outputFileName = apkName
+            def newFileName
+            if (output.outputFile.name.endsWith(".aab")) {
+                newFileName = "QuizChamp-${variant.versionName}.aab"
+            } else if (output.outputFile.name.endsWith(".apk")) {
+                newFileName = "QuizChamp-${variant.versionName}.apk"
+            }
+            outputFileName = newFileName
         }
     }
+
 }
 dependencies {
     implementation libs.material // Ensure this version or later is used

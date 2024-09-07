@@ -11,7 +11,7 @@
     android:supportsRtl="true"
     android:theme="@style/Theme.QuizChamp">
         <activity
-            android:name=".activity.LoginRegisterActivity"
+            android:name=".activity.menu.LoginRegisterActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,27 +20,27 @@
         </activity>
 
         <activity
-            android:name=".activity.SinglePlayerActivity"
+            android:name=".activity.modus.SinglePlayerActivity"
             android:exported="true" />
 
         <activity
-            android:name=".activity.HighscoreActivity"
+            android:name=".activity.modus.HighscoreActivity"
             android:exported="true" />
 
         <activity
-            android:name=".activity.MultiPlayerActivity"
+            android:name=".activity.modus.MultiPlayerActivity"
             android:exported="true" />
 
         <activity
-            android:name=".activity.MultiPlayerOnDeviceActivity"
+            android:name=".activity.modus.MultiPlayerOnDeviceActivity"
             android:exported="true" />
 
         <activity
-            android:name=".activity.ViewHighscoresActivity"
+            android:name=".activity.view.ViewHighscoresActivity"
             android:exported="true" />
 
         <activity
-            android:name=".activity.MainMenuActivity"
+            android:name=".activity.menu.MainMenuActivity"
             android:exported="true" />
 
 
