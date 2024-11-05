@@ -1,6 +1,5 @@
 package com.quizchamp.activity.modus;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,17 +13,14 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.Task;
 import com.google.android.material.button.MaterialButton;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentSnapshot;
-import com.google.firebase.firestore.FirebaseFirestore;
 import com.quizchamp.R;
 import com.quizchamp.activity.menu.MainMenuActivity;
 import com.quizchamp.model.DifficultyLevel;
 import com.quizchamp.model.Question;
+import com.quizchamp.repository.QuestionRepository;
+import com.quizchamp.utils.JsonUtils;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -33,17 +29,20 @@ import java.util.Random;
 
 public class SinglePlayerActivity extends AppCompatActivity {
 
+    private FirebaseAuth mAuth;
+    private QuestionRepository questionRepository;
     private static final String TAG = "HighscoreActivity";
-    FirebaseFirestore db;
-    private Question question = new Question();
-    private int currentQuestionIndex = 1;
+
     private MaterialButton buttonAnswer1, buttonAnswer2, buttonAnswer3, buttonAnswer4, nextQuestionButton, backToMainMenuButton;
     private TextView questionTextView, textViewFrage;
+
+    private Question question = new Question();
+    private List<Question> gespielteFragen = new ArrayList<Question>();
+    private int currentQuestionIndex = 1;
+    private DifficultyLevel difficultyLevel;
     private String playerName;
     private int playerScore = 0;
     private int comScore = 0;
-    private FirebaseAuth mAuth;
-    private DifficultyLevel difficultyLevel;
     private int questionCount;
     private int anzahlFragen;
 
@@ -51,6 +50,14 @@ public class SinglePlayerActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
+        mAuth = FirebaseAuth.getInstance();
+
+        questionRepository = QuestionRepository.getInstance(this);
+        questionRepository.open(); // Open the database
+        // Clear the questions table and insert questions from JSON
+        questionRepository.clearQuestionsTable();
+        String json = JsonUtils.loadJSONFromAsset(this, "questions.json");
+        questionRepository.insertQuestionsFromJson(json);
 
         Intent intent = getIntent();
         difficultyLevel = (DifficultyLevel) intent.getSerializableExtra("DIFFICULTY");
@@ -67,12 +74,6 @@ public class SinglePlayerActivity extends AppCompatActivity {
         nextQuestionButton = findViewById(R.id.nextQuestionButton);
         backToMainMenuButton = findViewById(R.id.backToMainMenuButton);
 
-        mAuth = FirebaseAuth.getInstance();
-        db = FirebaseFirestore.getInstance();
-
-        elementeAusblenden();
-
-        erstesFragenLaden();
 
         // Setze Click-Listener für die Antwort-Buttons
         View.OnClickListener answerClickListener = v -> {
@@ -86,103 +87,72 @@ public class SinglePlayerActivity extends AppCompatActivity {
 
         nextQuestionButton.setOnClickListener(v -> nextTurn());
         backToMainMenuButton.setOnClickListener(v -> backToMainMenu());
+
+        anzahlFragen = questionRepository.getQuestionCount();
+        if (anzahlFragen < questionCount) {
+            questionCount = anzahlFragen;
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.setTitle("Nicht genügend Fragen");
+            String message = "Achtung: Es sind nur " + anzahlFragen + " Fragen in der Datenbank vorhanden. Daher wurden die zu spielenden Fragen auf " + anzahlFragen + " heruntergesetzt.";
+            builder.setMessage(message);
+            builder.setPositiveButton("Bestätigen", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int id) {
+                }
+            });
+            builder.setCancelable(false);
+            builder.show();
+        }
+        loadQuestion();
     }
 
-    private void elementeAusblenden() {
-        textViewFrage.setVisibility(View.GONE);
-        questionTextView.setVisibility(View.GONE);
-        buttonAnswer1.setVisibility(View.GONE);
-        buttonAnswer2.setVisibility(View.GONE);
-        buttonAnswer3.setVisibility(View.GONE);
-        buttonAnswer4.setVisibility(View.GONE);
-        nextQuestionButton.setVisibility(View.INVISIBLE);
-        backToMainMenuButton.setVisibility(View.INVISIBLE);
+    private void loadQuestion() {
+        prüfeFragendoppelung();
+        if (question != null) {
+            textViewFrage.setText("Frage " + (currentQuestionIndex));
+
+            List<String> options = new ArrayList<>();
+            options.add(question.getOptionA());
+            options.add(question.getOptionB());
+            options.add(question.getOptionC());
+            options.add(question.getOptionD());
+            Collections.shuffle(options);
+
+            questionTextView.setText(question.getQuestionText());
+            buttonAnswer1.setText(options.get(0));
+            buttonAnswer2.setText(options.get(1));
+            buttonAnswer3.setText(options.get(2));
+            buttonAnswer4.setText(options.get(3));
+
+            List<MaterialButton> buttons = new ArrayList<>();
+            buttons.add(buttonAnswer1);
+            buttons.add(buttonAnswer2);
+            buttons.add(buttonAnswer3);
+            buttons.add(buttonAnswer4);
+
+            setButtonHeights(buttons);
+
+            resetButtons();
+            nextQuestionButton.setVisibility(View.INVISIBLE);
+        } else {
+            Log.e(TAG, "No questions available in the database.");
+        }
     }
 
-    private void elementeEinblenden() {
-        textViewFrage.setVisibility(View.VISIBLE);
-        questionTextView.setVisibility(View.VISIBLE);
-        buttonAnswer1.setVisibility(View.VISIBLE);
-        buttonAnswer2.setVisibility(View.VISIBLE);
-        buttonAnswer3.setVisibility(View.VISIBLE);
-        buttonAnswer4.setVisibility(View.VISIBLE);
-        backToMainMenuButton.setVisibility(View.VISIBLE);
-    }
-
-    private void erstesFragenLaden() {
-        fetchRandomQuestionFromDatabase(new SinglePlayerActivity.QuestionFetchCallback() {
-            @Override
-            public void onQuestionFetched(Question fetchedQuestion) {
-                showQuestion(fetchedQuestion);
-                elementeEinblenden();
+    private void prüfeFragendoppelung() {
+        question = questionRepository.getRandomQuestion();
+        for (Question q : gespielteFragen) {
+            if (q.getId() == question.getId()) {
+                question = questionRepository.getRandomQuestion();
             }
-
-            @Override
-            public void onError(Exception e) {
-                Log.e(TAG, "Error fetching question: ", e);
-            }
-        });
-    }
-
-    private void displayQuestion() {
-        fetchRandomQuestionFromDatabase(new SinglePlayerActivity.QuestionFetchCallback() {
-            @Override
-            public void onQuestionFetched(Question fetchedQuestion) {
-                showQuestion(fetchedQuestion);
-            }
-            @Override
-            public void onError(Exception e) {
-                Log.e(TAG, "Error fetching question: ", e);
-            }
-        });
-    }
-
-    private void fetchRandomQuestionFromDatabase(QuestionFetchCallback callback) {
-        int randomIndex = new Random().nextInt(anzahlFragen);
-        db.collection("questions").document(String.valueOf(randomIndex)).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                Question randomQuestion = task.getResult().toObject(Question.class);
-                question = randomQuestion;
-                callback.onQuestionFetched(randomQuestion);
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                callback.onError(e);
-            }
-        });
-    }
-
-    private void showQuestion(Question currentQuestion) {
-        textViewFrage.setText("Frage " + (currentQuestionIndex));
-
-        List<String> options = new ArrayList<>();
-        options.add(currentQuestion.getOptionA());
-        options.add(currentQuestion.getOptionB());
-        options.add(currentQuestion.getOptionC());
-        options.add(currentQuestion.getOptionD());
-        Collections.shuffle(options);
-
-        questionTextView.setText(currentQuestion.getQuestionText());
-        buttonAnswer1.setText(options.get(0));
-        buttonAnswer2.setText(options.get(1));
-        buttonAnswer3.setText(options.get(2));
-        buttonAnswer4.setText(options.get(3));
-
-        List<MaterialButton> buttons = new ArrayList<>();
-        buttons.add(buttonAnswer1);
-        buttons.add(buttonAnswer2);
-        buttons.add(buttonAnswer3);
-        buttons.add(buttonAnswer4);
-
-        setButtonHeights(buttons);
-
-        resetButtonColors();
-        nextQuestionButton.setVisibility(View.INVISIBLE);
+        }
+        gespielteFragen.add(question);
     }
 
     private void checkAnswer(MaterialButton selectedButton) {
+        buttonAnswer1.setClickable(false);
+        buttonAnswer2.setClickable(false);
+        buttonAnswer3.setClickable(false);
+        buttonAnswer4.setClickable(false);
         if (question.getCorrectAnswer().equals(selectedButton.getText().toString())) {
             selectedButton.setBackgroundColor(getResources().getColor(R.color.correctAnswerColor));
             playerScore++;
@@ -224,12 +194,18 @@ public class SinglePlayerActivity extends AppCompatActivity {
         return textView.getMeasuredHeight();
     }
 
-    private void resetButtonColors() {
+    private void resetButtons() {
         int buttonColor = getResources().getColor(R.color.buttonColor);
         buttonAnswer1.setBackgroundColor(buttonColor);
         buttonAnswer2.setBackgroundColor(buttonColor);
         buttonAnswer3.setBackgroundColor(buttonColor);
         buttonAnswer4.setBackgroundColor(buttonColor);
+
+        buttonAnswer1.setClickable(true);
+        buttonAnswer2.setClickable(true);
+        buttonAnswer3.setClickable(true);
+        buttonAnswer4.setClickable(true);
+
     }
 
     private void simulateAIAnswer() {
@@ -285,7 +261,7 @@ public class SinglePlayerActivity extends AppCompatActivity {
         String message = String.format(getString(R.string.player_score), playerName, playerScore) + "\n" +
                 String.format(getString(R.string.com_score), comScore);
         builder.setMessage(message);
-        builder.setPositiveButton(R.string.restart_game, new DialogInterface.OnClickListener() {
+        builder.setPositiveButton(R.string.end_game, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 backToMainMenu();
             }
@@ -303,7 +279,7 @@ public class SinglePlayerActivity extends AppCompatActivity {
                 nextQuestionButton.setVisibility(View.VISIBLE);
             }
             currentQuestionIndex++;
-            displayQuestion();
+            loadQuestion();
         }
     }
 
@@ -313,7 +289,6 @@ public class SinglePlayerActivity extends AppCompatActivity {
         finish();
     }
 
-
     private void setButtonHeights(List<MaterialButton> buttons) {
         int maxHeight = getMaxButtonHeight(buttons);
         for (MaterialButton button : buttons) {
@@ -321,12 +296,5 @@ public class SinglePlayerActivity extends AppCompatActivity {
             params.height = maxHeight + button.getPaddingTop() + button.getPaddingBottom(); // Add padding to ensure text is fully visible
             button.setLayoutParams(params);
         }
-    }
-
-    // Callback-Interface zur Übergabe der Ergebnisse
-    public interface QuestionFetchCallback {
-        void onQuestionFetched(Question fetchedQuestion);
-
-        void onError(Exception e);
     }
 }

@@ -1,0 +1,3114 @@
+[
+  {
+    "questionText": "Was ist die Hauptstadt von Deutschland?",
+    "optionA": "Berlin",
+    "optionB": "München",
+    "optionC": "Hamburg",
+    "optionD": "Frankfurt",
+    "correctAnswer": "Berlin"
+  },
+  {
+    "questionText": "Wer schrieb den Roman 'Die Verwandlung'?",
+    "optionA": "Thomas Mann",
+    "optionB": "Franz Kafka",
+    "optionC": "Hermann Hesse",
+    "optionD": "Erich Kästner",
+    "correctAnswer": "Franz Kafka"
+  },
+  {
+    "questionText": "Welche Farbe entsteht durch das Mischen von Blau und Gelb?",
+    "optionA": "Grün",
+    "optionB": "Lila",
+    "optionC": "Orange",
+    "optionD": "Braun",
+    "correctAnswer": "Grün"
+  },
+  {
+    "questionText": "Welches Element hat das chemische Symbol 'O'?",
+    "optionA": "Gold",
+    "optionB": "Osmium",
+    "optionC": "Oxygen (Sauerstoff)",
+    "optionD": "Kupfer",
+    "correctAnswer": "Oxygen (Sauerstoff)"
+  },
+  {
+    "questionText": "In welchem Jahr begann der Erste Weltkrieg?",
+    "optionA": "1912",
+    "optionB": "1914",
+    "optionC": "1916",
+    "optionD": "1918",
+    "correctAnswer": "1914"
+  },
+  {
+    "questionText": "Wie viele Planeten gibt es in unserem Sonnensystem?",
+    "optionA": "7",
+    "optionB": "8",
+    "optionC": "9",
+    "optionD": "10",
+    "correctAnswer": "8"
+  },
+  {
+    "questionText": "Wer malte die Mona Lisa?",
+    "optionA": "Vincent van Gogh",
+    "optionB": "Leonardo da Vinci",
+    "optionC": "Pablo Picasso",
+    "optionD": "Claude Monet",
+    "correctAnswer": "Leonardo da Vinci"
+  },
+  {
+    "questionText": "Wie heißt der höchste Berg der Welt?",
+    "optionA": "K2",
+    "optionB": "Mount Everest",
+    "optionC": "Kangchendzönga",
+    "optionD": "Makalu",
+    "correctAnswer": "Mount Everest"
+  },
+  {
+    "questionText": "Welcher Planet ist der Sonne am nächsten?",
+    "optionA": "Venus",
+    "optionB": "Erde",
+    "optionC": "Merkur",
+    "optionD": "Mars",
+    "correctAnswer": "Merkur"
+  },
+  {
+    "questionText": "Welches Tier ist bekannt für seine langsame Bewegung und seinen Panzer?",
+    "optionA": "Schildkröte",
+    "optionB": "Faultier",
+    "optionC": "Schnecke",
+    "optionD": "Koala",
+    "correctAnswer": "Schildkröte"
+  },
+  {
+    "questionText": "Wer war der erste Bundeskanzler der Bundesrepublik Deutschland?",
+    "optionA": "Konrad Adenauer",
+    "optionB": "Willy Brandt",
+    "optionC": "Helmut Kohl",
+    "optionD": "Gerhard Schröder",
+    "correctAnswer": "Konrad Adenauer"
+  },
+  {
+    "questionText": "Wie viele Bundesländer hat Deutschland?",
+    "optionA": "14",
+    "optionB": "16",
+    "optionC": "18",
+    "optionD": "20",
+    "correctAnswer": "16"
+  },
+  {
+    "questionText": "Welches ist das größte Land der Welt nach Fläche?",
+    "optionA": "Kanada",
+    "optionB": "Russland",
+    "optionC": "China",
+    "optionD": "USA",
+    "correctAnswer": "Russland"
+  },
+  {
+    "questionText": "Welche chemische Verbindung ist in Wasser am häufigsten?",
+    "optionA": "H2O",
+    "optionB": "NaCl",
+    "optionC": "CO2",
+    "optionD": "O2",
+    "correctAnswer": "H2O"
+  },
+  {
+    "questionText": "Welche Stadt wird als 'Die ewige Stadt' bezeichnet?",
+    "optionA": "Athen",
+    "optionB": "Rom",
+    "optionC": "Jerusalem",
+    "optionD": "Kairo",
+    "correctAnswer": "Rom"
+  },
+  {
+    "questionText": "Wie heißt der längste Fluss der Welt?",
+    "optionA": "Nil",
+    "optionB": "Amazonas",
+    "optionC": "Yangtze",
+    "optionD": "Mississippi",
+    "correctAnswer": "Amazonas"
+  },
+  {
+    "questionText": "Was ist das Symbol für Gold im Periodensystem?",
+    "optionA": "Ag",
+    "optionB": "Au",
+    "optionC": "Pt",
+    "optionD": "Pb",
+    "correctAnswer": "Au"
+  },
+  {
+    "questionText": "Welches Land gewann die Fußballweltmeisterschaft 2014?",
+    "optionA": "Brasilien",
+    "optionB": "Spanien",
+    "optionC": "Deutschland",
+    "optionD": "Argentinien",
+    "correctAnswer": "Deutschland"
+  },
+  {
+    "questionText": "Wie viele Zähne hat ein erwachsener Mensch normalerweise?",
+    "optionA": "28",
+    "optionB": "30",
+    "optionC": "32",
+    "optionD": "34",
+    "correctAnswer": "32"
+  },
+  {
+    "questionText": "Wer komponierte die 9. Sinfonie?",
+    "optionA": "Johann Sebastian Bach",
+    "optionB": "Wolfgang Amadeus Mozart",
+    "optionC": "Ludwig van Beethoven",
+    "optionD": "Franz Schubert",
+    "correctAnswer": "Ludwig van Beethoven"
+  },
+  {
+    "questionText": "In welchem Jahr landeten die ersten Menschen auf dem Mond?",
+    "optionA": "1965",
+    "optionB": "1967",
+    "optionC": "1969",
+    "optionD": "1971",
+    "correctAnswer": "1969"
+  },
+  {
+    "questionText": "Was ist das kleinste Land der Welt?",
+    "optionA": "Monaco",
+    "optionB": "Vatican City",
+    "optionC": "San Marino",
+    "optionD": "Liechtenstein",
+    "correctAnswer": "Vatican City"
+  },
+  {
+    "questionText": "Wer malte das Gemälde 'Der Schrei'?",
+    "optionA": "Vincent van Gogh",
+    "optionB": "Edvard Munch",
+    "optionC": "Pablo Picasso",
+    "optionD": "Claude Monet",
+    "correctAnswer": "Edvard Munch"
+  },
+  {
+    "questionText": "Welches ist das größte Organ des menschlichen Körpers?",
+    "optionA": "Lunge",
+    "optionB": "Leber",
+    "optionC": "Haut",
+    "optionD": "Gehirn",
+    "correctAnswer": "Haut"
+  },
+  {
+    "questionText": "Wie heißt das kleinste Knochen im menschlichen Körper?",
+    "optionA": "Steigbügel",
+    "optionB": "Hammer",
+    "optionC": "Amboss",
+    "optionD": "Schlüsselbein",
+    "correctAnswer": "Steigbügel"
+  },
+  {
+    "questionText": "Welches Land ist bekannt für das Känguru?",
+    "optionA": "Australien",
+    "optionB": "Neuseeland",
+    "optionC": "Indien",
+    "optionD": "Südafrika",
+    "correctAnswer": "Australien"
+  },
+  {
+    "questionText": "In welcher Stadt befindet sich die Freiheitsstatue?",
+    "optionA": "San Francisco",
+    "optionB": "Washington, D.C.",
+    "optionC": "New York City",
+    "optionD": "Boston",
+    "correctAnswer": "New York City"
+  },
+  {
+    "questionText": "Welches ist das einzige Säugetier, das fliegen kann?",
+    "optionA": "Flughörnchen",
+    "optionB": "Fledermaus",
+    "optionC": "Känguru",
+    "optionD": "Murmeltier",
+    "correctAnswer": "Fledermaus"
+  },
+  {
+    "questionText": "Wer entdeckte die Relativitätstheorie?",
+    "optionA": "Isaac Newton",
+    "optionB": "Galileo Galilei",
+    "optionC": "Albert Einstein",
+    "optionD": "Marie Curie",
+    "correctAnswer": "Albert Einstein"
+  },
+  {
+    "questionText": "Was ist die Hauptstadt von Australien?",
+    "optionA": "Sydney",
+    "optionB": "Melbourne",
+    "optionC": "Canberra",
+    "optionD": "Perth",
+    "correctAnswer": "Canberra"
+  },
+  {
+    "questionText": "Wer schrieb das Drama 'Faust'?",
+    "optionA": "Friedrich Schiller",
+    "optionB": "Gotthold Ephraim Lessing",
+    "optionC": "Johann Wolfgang von Goethe",
+    "optionD": "Heinrich Heine",
+    "correctAnswer": "Johann Wolfgang von Goethe"
+  },
+  {
+    "questionText": "Welcher Planet wird oft als 'Roter Planet' bezeichnet?",
+    "optionA": "Jupiter",
+    "optionB": "Mars",
+    "optionC": "Saturn",
+    "optionD": "Venus",
+    "correctAnswer": "Mars"
+  },
+  {
+    "questionText": "In welchem Jahr fiel die Berliner Mauer?",
+    "optionA": "1987",
+    "optionB": "1988",
+    "optionC": "1989",
+    "optionD": "1990",
+    "correctAnswer": "1989"
+  },
+  {
+    "questionText": "Welches Land ist das bevölkerungsreichste der Welt?",
+    "optionA": "Indien",
+    "optionB": "China",
+    "optionC": "USA",
+    "optionD": "Indonesien",
+    "correctAnswer": "China"
+  },
+  {
+    "questionText": "Was ist der schwerste natürliche Element im Periodensystem?",
+    "optionA": "Uran",
+    "optionB": "Blei",
+    "optionC": "Gold",
+    "optionD": "Quecksilber",
+    "correctAnswer": "Uran"
+  },
+  {
+    "questionText": "Wer war der erste Mensch auf dem Mond?",
+    "optionA": "Neil Armstrong",
+    "optionB": "Buzz Aldrin",
+    "optionC": "Yuri Gagarin",
+    "optionD": "John Glenn",
+    "correctAnswer": "Neil Armstrong"
+  },
+  {
+    "questionText": "Welches Land baute die Chinesische Mauer?",
+    "optionA": "China",
+    "optionB": "Japan",
+    "optionC": "Mongolei",
+    "optionD": "Indien",
+    "correctAnswer": "China"
+  },
+  {
+    "questionText": "Was war der Auslöser für den Ersten Weltkrieg?",
+    "optionA": "Ermordung von Franz Ferdinand",
+    "optionB": "Angriff auf Pearl Harbor",
+    "optionC": "Krönung von Wilhelm II.",
+    "optionD": "Bau der Berliner Mauer",
+    "correctAnswer": "Ermordung von Franz Ferdinand"
+  },
+  {
+    "questionText": "Welcher Fluss fließt durch Paris?",
+    "optionA": "Seine",
+    "optionB": "Thames",
+    "optionC": "Rhein",
+    "optionD": "Elbe",
+    "correctAnswer": "Seine"
+  },
+  {
+    "questionText": "Welcher Planet ist für seine Ringe bekannt?",
+    "optionA": "Jupiter",
+    "optionB": "Mars",
+    "optionC": "Saturn",
+    "optionD": "Uranus",
+    "correctAnswer": "Saturn"
+  },
+  {
+    "questionText": "Wer schrieb 'Krieg und Frieden'?",
+    "optionA": "Leo Tolstoi",
+    "optionB": "Fyodor Dostoevsky",
+    "optionC": "Anton Chekhov",
+    "optionD": "Vladimir Nabokov",
+    "correctAnswer": "Leo Tolstoi"
+  },
+  {
+    "questionText": "In welchem Museum hängt die Mona Lisa?",
+    "optionA": "Louvre",
+    "optionB": "Metropolitan Museum of Art",
+    "optionC": "Rijksmuseum",
+    "optionD": "Prado",
+    "correctAnswer": "Louvre"
+  },
+  {
+    "questionText": "Welches Land hat die meisten Weltmeistertitel im Fußball gewonnen?",
+    "optionA": "Brasilien",
+    "optionB": "Deutschland",
+    "optionC": "Italien",
+    "optionD": "Argentinien",
+    "correctAnswer": "Brasilien"
+  },
+  {
+    "questionText": "Wer gewann den ersten Academy Award für Bester Film?",
+    "optionA": "Wings",
+    "optionB": "Gone with the Wind",
+    "optionC": "Casablanca",
+    "optionD": "All Quiet on the Western Front",
+    "correctAnswer": "Wings"
+  },
+  {
+    "questionText": "Was ist das Quadrat von 15?",
+    "optionA": "215",
+    "optionB": "225",
+    "optionC": "235",
+    "optionD": "245",
+    "correctAnswer": "225"
+  },
+  {
+    "questionText": "Wer war der Präsident der USA während des Zweiten Weltkriegs?",
+    "optionA": "Franklin D. Roosevelt",
+    "optionB": "Harry S. Truman",
+    "optionC": "Dwight D. Eisenhower",
+    "optionD": "Woodrow Wilson",
+    "correctAnswer": "Franklin D. Roosevelt"
+  },
+  {
+    "questionText": "Welches Land hat die größte Bevölkerung in Afrika?",
+    "optionA": "Ägypten",
+    "optionB": "Nigeria",
+    "optionC": "Südafrika",
+    "optionD": "Äthiopien",
+    "correctAnswer": "Nigeria"
+  },
+  {
+    "questionText": "Welche Teilchen haben eine negative Ladung?",
+    "optionA": "Protonen",
+    "optionB": "Elektronen",
+    "optionC": "Neutronen",
+    "optionD": "Ionen",
+    "correctAnswer": "Elektronen"
+  },
+  {
+    "questionText": "Wer schrieb 'Der Herr der Ringe'?",
+    "optionA": "J.R.R. Tolkien",
+    "optionB": "C.S. Lewis",
+    "optionC": "George R.R. Martin",
+    "optionD": "J.K. Rowling",
+    "correctAnswer": "J.R.R. Tolkien"
+  },
+  {
+    "questionText": "Wer malte 'Die Geburt der Venus'?",
+    "optionA": "Leonardo da Vinci",
+    "optionB": "Sandro Botticelli",
+    "optionC": "Michelangelo",
+    "optionD": "Raphael",
+    "correctAnswer": "Sandro Botticelli"
+  },
+  {
+    "questionText": "Wie viele Spieler hat ein Fußballteam auf dem Platz?",
+    "optionA": "9",
+    "optionB": "10",
+    "optionC": "11",
+    "optionD": "12",
+    "correctAnswer": "11"
+  },
+  {
+    "questionText": "Welcher Film gewann den Oscar für Bester Film im Jahr 2020?",
+    "optionA": "1917",
+    "optionB": "Joker",
+    "optionC": "Parasite",
+    "optionD": "Once Upon a Time in Hollywood",
+    "correctAnswer": "Parasite"
+  },
+  {
+    "questionText": "Was ist der Wert von Pi bis zur zweiten Dezimalstelle?",
+    "optionA": "3.12",
+    "optionB": "3.14",
+    "optionC": "3.16",
+    "optionD": "3.18",
+    "correctAnswer": "3.14"
+  },
+  {
+    "questionText": "In welchem Jahr begann der Zweite Weltkrieg?",
+    "optionA": "1937",
+    "optionB": "1938",
+    "optionC": "1939",
+    "optionD": "1940",
+    "correctAnswer": "1939"
+  },
+  {
+    "questionText": "Welches ist das größte Binnenland der Welt?",
+    "optionA": "Kasachstan",
+    "optionB": "Mongolei",
+    "optionC": "Schweiz",
+    "optionD": "Bolivien",
+    "correctAnswer": "Kasachstan"
+  },
+  {
+    "questionText": "Wer ist bekannt für die Entwicklung der allgemeinen Relativitätstheorie?",
+    "optionA": "Isaac Newton",
+    "optionB": "Galileo Galilei",
+    "optionC": "Albert Einstein",
+    "optionD": "Niels Bohr",
+    "correctAnswer": "Albert Einstein"
+  },
+  {
+    "questionText": "Wer schrieb 'Don Quijote'?",
+    "optionA": "Miguel de Cervantes",
+    "optionB": "Gabriel Garcia Marquez",
+    "optionC": "Jorge Luis Borges",
+    "optionD": "Pablo Neruda",
+    "correctAnswer": "Miguel de Cervantes"
+  },
+  {
+    "questionText": "Welche Kunstrichtung wird mit Pablo Picasso in Verbindung gebracht?",
+    "optionA": "Impressionismus",
+    "optionB": "Expressionismus",
+    "optionC": "Kubismus",
+    "optionD": "Surrealismus",
+    "correctAnswer": "Kubismus"
+  },
+  {
+    "questionText": "In welchem Sport gewann Michael Phelps die meisten Medaillen?",
+    "optionA": "Laufen",
+    "optionB": "Schwimmen",
+    "optionC": "Turnen",
+    "optionD": "Radfahren",
+    "correctAnswer": "Schwimmen"
+  },
+  {
+    "questionText": "Welcher Künstler veröffentlichte das Album 'Thriller'?",
+    "optionA": "Prince",
+    "optionB": "Elton John",
+    "optionC": "Michael Jackson",
+    "optionD": "Madonna",
+    "correctAnswer": "Michael Jackson"
+  },
+  {
+    "questionText": "Was ist die Lösung für die Gleichung 5x + 3 = 23?",
+    "optionA": "4",
+    "optionB": "5",
+    "optionC": "6",
+    "optionD": "7",
+    "correctAnswer": "4"
+  },
+  {
+    "questionText": "Wer war der erste Kaiser des Römischen Reiches?",
+    "optionA": "Julius Caesar",
+    "optionB": "Augustus",
+    "optionC": "Nero",
+    "optionD": "Trajan",
+    "correctAnswer": "Augustus"
+  },
+  {
+    "questionText": "Welches ist der längste Fluss in Afrika?",
+    "optionA": "Kongo",
+    "optionB": "Niger",
+    "optionC": "Nil",
+    "optionD": "Zambezi",
+    "correctAnswer": "Nil"
+  },
+  {
+    "questionText": "Was ist das stärkste bekannte Säure?",
+    "optionA": "Schwefelsäure",
+    "optionB": "Fluorwasserstoffsäure",
+    "optionC": "Fluorantimonsäure",
+    "optionD": "Salpetersäure",
+    "correctAnswer": "Fluorantimonsäure"
+  },
+  {
+    "questionText": "Wer schrieb 'Die Brüder Karamasow'?",
+    "optionA": "Leo Tolstoi",
+    "optionB": "Anton Tschechow",
+    "optionC": "Fyodor Dostojewski",
+    "optionD": "Maxim Gorki",
+    "correctAnswer": "Fyodor Dostojewski"
+  },
+  {
+    "questionText": "Wer malte 'Die Sternennacht'?",
+    "optionA": "Claude Monet",
+    "optionB": "Vincent van Gogh",
+    "optionC": "Pablo Picasso",
+    "optionD": "Edvard Munch",
+    "correctAnswer": "Vincent van Gogh"
+  },
+  {
+    "questionText": "Welches Land hat die Olympischen Sommerspiele 2008 ausgerichtet?",
+    "optionA": "Brasilien",
+    "optionB": "China",
+    "optionC": "Japan",
+    "optionD": "Griechenland",
+    "correctAnswer": "China"
+  },
+  {
+    "questionText": "Wer ist der Hauptcharakter in der TV-Serie 'Breaking Bad'?",
+    "optionA": "Walter White",
+    "optionB": "Tony Soprano",
+    "optionC": "Don Draper",
+    "optionD": "Jesse Pinkman",
+    "correctAnswer": "Walter White"
+  },
+  {
+    "questionText": "Was ist das Ergebnis von 12 x 8?",
+    "optionA": "90",
+    "optionB": "96",
+    "optionC": "104",
+    "optionD": "112",
+    "correctAnswer": "96"
+  },
+  {
+    "questionText": "Wer war der letzte Zar von Russland?",
+    "optionA": "Alexander II.",
+    "optionB": "Peter der Große",
+    "optionC": "Nikolaus II.",
+    "optionD": "Iwan der Schreckliche",
+    "correctAnswer": "Nikolaus II."
+  },
+  {
+    "questionText": "Welche Stadt war die Hauptstadt des Römischen Reiches?",
+    "optionA": "Rom",
+    "optionB": "Athen",
+    "optionC": "Karthago",
+    "optionD": "Alexandria",
+    "correctAnswer": "Rom"
+  },
+  {
+    "questionText": "In welchem Jahr endete der Zweite Weltkrieg?",
+    "optionA": "1943",
+    "optionB": "1944",
+    "optionC": "1945",
+    "optionD": "1946",
+    "correctAnswer": "1945"
+  },
+  {
+    "questionText": "Welches ist der höchste Berg in Afrika?",
+    "optionA": "Mount Kilimanjaro",
+    "optionB": "Mount Kenya",
+    "optionC": "Ras Dashen",
+    "optionD": "Mount Elgon",
+    "correctAnswer": "Mount Kilimanjaro"
+  },
+  {
+    "questionText": "Welcher Planet wird auch als 'Zwergplanet' bezeichnet?",
+    "optionA": "Neptun",
+    "optionB": "Pluto",
+    "optionC": "Uranus",
+    "optionD": "Saturn",
+    "correctAnswer": "Pluto"
+  },
+  {
+    "questionText": "Wer schrieb 'Stolz und Vorurteil'?",
+    "optionA": "Emily Brontë",
+    "optionB": "Jane Austen",
+    "optionC": "Mary Shelley",
+    "optionD": "Charlotte Brontë",
+    "correctAnswer": "Jane Austen"
+  },
+  {
+    "questionText": "In welchem Stil wurde das Gemälde 'Die Nachtwache' von Rembrandt gemalt?",
+    "optionA": "Renaissance",
+    "optionB": "Barock",
+    "optionC": "Impressionismus",
+    "optionD": "Kubismus",
+    "correctAnswer": "Barock"
+  },
+  {
+    "questionText": "Welches Land gewann die Fußballweltmeisterschaft 1998?",
+    "optionA": "Brasilien",
+    "optionB": "Italien",
+    "optionC": "Frankreich",
+    "optionD": "Deutschland",
+    "correctAnswer": "Frankreich"
+  },
+  {
+    "questionText": "Wer spielte die Hauptrolle in dem Film 'Forrest Gump'?",
+    "optionA": "Brad Pitt",
+    "optionB": "Tom Hanks",
+    "optionC": "Johnny Depp",
+    "optionD": "Leonardo DiCaprio",
+    "correctAnswer": "Tom Hanks"
+  },
+  {
+    "questionText": "Was ist das Produkt von 7 und 9?",
+    "optionA": "56",
+    "optionB": "62",
+    "optionC": "63",
+    "optionD": "72",
+    "correctAnswer": "63"
+  },
+  {
+    "questionText": "Wer war der britische Premierminister während des Zweiten Weltkriegs?",
+    "optionA": "Winston Churchill",
+    "optionB": "Neville Chamberlain",
+    "optionC": "Clement Attlee",
+    "optionD": "Margaret Thatcher",
+    "correctAnswer": "Winston Churchill"
+  },
+  {
+    "questionText": "Welcher See ist der tiefste der Welt?",
+    "optionA": "Victoria-See",
+    "optionB": "Baikalsee",
+    "optionC": "Tanganjikasee",
+    "optionD": "Großer Sklavensee",
+    "correctAnswer": "Baikalsee"
+  },
+  {
+    "questionText": "Welche Zelle ist für die Weitergabe genetischer Informationen verantwortlich?",
+    "optionA": "Leukozyt",
+    "optionB": "Erythrozyt",
+    "optionC": "Spermium",
+    "optionD": "Neutron",
+    "correctAnswer": "Spermium"
+  },
+  {
+    "questionText": "Wer schrieb '1984'?",
+    "optionA": "Aldous Huxley",
+    "optionB": "George Orwell",
+    "optionC": "Ray Bradbury",
+    "optionD": "Philip K. Dick",
+    "correctAnswer": "George Orwell"
+  },
+  {
+    "questionText": "Wer malte das Gemälde 'Guernica'?",
+    "optionA": "Salvador Dalí",
+    "optionB": "Pablo Picasso",
+    "optionC": "Joan Miró",
+    "optionD": "Francisco Goya",
+    "correctAnswer": "Pablo Picasso"
+  },
+  {
+    "questionText": "Welches Land hat die meisten Olympischen Winterspiele ausgerichtet?",
+    "optionA": "USA",
+    "optionB": "Kanada",
+    "optionC": "Deutschland",
+    "optionD": "Norwegen",
+    "correctAnswer": "USA"
+  },
+  {
+    "questionText": "Welcher Film gewann den Oscar für den besten Animationsfilm im Jahr 2010?",
+    "optionA": "Toy Story 3",
+    "optionB": "Shrek Forever After",
+    "optionC": "How to Train Your Dragon",
+    "optionD": "Tangled",
+    "correctAnswer": "Toy Story 3"
+  },
+  {
+    "questionText": "Wie viele Grad hat ein Rechteck?",
+    "optionA": "180",
+    "optionB": "270",
+    "optionC": "360",
+    "optionD": "450",
+    "correctAnswer": "360"
+  },
+  {
+    "questionText": "Welche Schlacht beendete die napoleonischen Kriege?",
+    "optionA": "Schlacht bei Leipzig",
+    "optionB": "Schlacht bei Waterloo",
+    "optionC": "Schlacht von Austerlitz",
+    "optionD": "Schlacht bei Borodino",
+    "correctAnswer": "Schlacht bei Waterloo"
+  },
+  {
+    "questionText": "Welcher Ozean liegt östlich von Afrika?",
+    "optionA": "Pazifischer Ozean",
+    "optionB": "Atlantischer Ozean",
+    "optionC": "Indischer Ozean",
+    "optionD": "Arktischer Ozean",
+    "correctAnswer": "Indischer Ozean"
+  },
+  {
+    "questionText": "Welche Wissenschaft befasst sich mit der Struktur und Funktion des Körpers?",
+    "optionA": "Biologie",
+    "optionB": "Physik",
+    "optionC": "Chemie",
+    "optionD": "Anatomie",
+    "correctAnswer": "Anatomie"
+  },
+  {
+    "questionText": "Wer schrieb 'Der alte Mann und das Meer'?",
+    "optionA": "Ernest Hemingway",
+    "optionB": "William Faulkner",
+    "optionC": "John Steinbeck",
+    "optionD": "F. Scott Fitzgerald",
+    "correctAnswer": "Ernest Hemingway"
+  },
+  {
+    "questionText": "Welcher Maler war ein führender Vertreter des Impressionismus?",
+    "optionA": "Claude Monet",
+    "optionB": "Edgar Degas",
+    "optionC": "Paul Cézanne",
+    "optionD": "Georges Seurat",
+    "correctAnswer": "Claude Monet"
+  },
+  {
+    "questionText": "Wie viele Spieler befinden sich in einem Basketballteam auf dem Spielfeld?",
+    "optionA": "4",
+    "optionB": "5",
+    "optionC": "6",
+    "optionD": "7",
+    "correctAnswer": "5"
+  },
+  {
+    "questionText": "Welche Band veröffentlichte das Album 'The Dark Side of the Moon'?",
+    "optionA": "Led Zeppelin",
+    "optionB": "Pink Floyd",
+    "optionC": "The Beatles",
+    "optionD": "The Rolling Stones",
+    "correctAnswer": "Pink Floyd"
+  },
+  {
+    "questionText": "Was ist das Ergebnis von 144 ÷ 12?",
+    "optionA": "10",
+    "optionB": "11",
+    "optionC": "12",
+    "optionD": "13",
+    "correctAnswer": "12"
+  },
+  {
+    "questionText": "Wer war die erste Frau, die den Friedensnobelpreis erhielt?",
+    "optionA": "Marie Curie",
+    "optionB": "Mother Teresa",
+    "optionC": "Bertha von Suttner",
+    "optionD": "Jane Addams",
+    "correctAnswer": "Bertha von Suttner"
+  },
+  {
+    "questionText": "In welchem Land befindet sich die Wüste Sahara hauptsächlich?",
+    "optionA": "Ägypten",
+    "optionB": "Libyen",
+    "optionC": "Algerien",
+    "optionD": "Marokko",
+    "correctAnswer": "Algerien"
+  },
+  {
+    "questionText": "Welches Element hat die Ordnungszahl 1?",
+    "optionA": "Helium",
+    "optionB": "Wasserstoff",
+    "optionC": "Lithium",
+    "optionD": "Beryllium",
+    "correctAnswer": "Wasserstoff"
+  },
+  {
+    "questionText": "Wer schrieb das Stück 'Hamlet'?",
+    "optionA": "Christopher Marlowe",
+    "optionB": "John Milton",
+    "optionC": "William Shakespeare",
+    "optionD": "Geoffrey Chaucer",
+    "correctAnswer": "William Shakespeare"
+  },
+  {
+    "questionText": "Welcher Künstler ist für die Schaffung der 'Sixtinischen Kapelle' bekannt?",
+    "optionA": "Leonardo da Vinci",
+    "optionB": "Raphael",
+    "optionC": "Michelangelo",
+    "optionD": "Donatello",
+    "correctAnswer": "Michelangelo"
+  },
+  {
+    "questionText": "Wie viele Grand-Slam-Titel hat Serena Williams gewonnen?",
+    "optionA": "18",
+    "optionB": "20",
+    "optionC": "23",
+    "optionD": "24",
+    "correctAnswer": "23"
+  },
+  {
+    "questionText": "Welche Schauspielerin spielte die Hauptrolle in dem Film 'Titanic'?",
+    "optionA": "Nicole Kidman",
+    "optionB": "Julia Roberts",
+    "optionC": "Kate Winslet",
+    "optionD": "Sandra Bullock",
+    "correctAnswer": "Kate Winslet"
+  },
+  {
+    "questionText": "Was ist die Ableitung von x^2?",
+    "optionA": "x",
+    "optionB": "2x",
+    "optionC": "x^2",
+    "optionD": "2",
+    "correctAnswer": "2x"
+  },
+  {
+    "questionText": "Welches historische Ereignis fand am 6. Juni 1944 statt?",
+    "optionA": "Pearl Harbor",
+    "optionB": "D-Day",
+    "optionC": "Fall der Berliner Mauer",
+    "optionD": "Ende des Ersten Weltkriegs",
+    "correctAnswer": "D-Day"
+  },
+  {
+    "questionText": "Welche Stadt war die Hauptstadt des Heiligen Römischen Reiches?",
+    "optionA": "Aachen",
+    "optionB": "Berlin",
+    "optionC": "Wien",
+    "optionD": "Prag",
+    "correctAnswer": "Aachen"
+  },
+  {
+    "questionText": "In welchem Jahr wurde die Berliner Mauer gebaut?",
+    "optionA": "1960",
+    "optionB": "1961",
+    "optionC": "1962",
+    "optionD": "1963",
+    "correctAnswer": "1961"
+  },
+  {
+    "questionText": "Welches ist der längste Fluss der Vereinigten Staaten?",
+    "optionA": "Mississippi",
+    "optionB": "Missouri",
+    "optionC": "Colorado",
+    "optionD": "Ohio",
+    "correctAnswer": "Missouri"
+  },
+  {
+    "questionText": "Welcher Planet ist am weitesten von der Sonne entfernt?",
+    "optionA": "Neptun",
+    "optionB": "Uranus",
+    "optionC": "Saturn",
+    "optionD": "Jupiter",
+    "correctAnswer": "Neptun"
+  },
+  {
+    "questionText": "Wer schrieb 'Moby-Dick'?",
+    "optionA": "Herman Melville",
+    "optionB": "Mark Twain",
+    "optionC": "Nathaniel Hawthorne",
+    "optionD": "Edgar Allan Poe",
+    "correctAnswer": "Herman Melville"
+  },
+  {
+    "questionText": "Welcher Stil ist mit Vincent van Gogh verbunden?",
+    "optionA": "Impressionismus",
+    "optionB": "Expressionismus",
+    "optionC": "Post-Impressionismus",
+    "optionD": "Kubismus",
+    "correctAnswer": "Post-Impressionismus"
+  },
+  {
+    "questionText": "Welche Nation hat die meisten Goldmedaillen bei den Olympischen Spielen gewonnen?",
+    "optionA": "China",
+    "optionB": "Russland",
+    "optionC": "USA",
+    "optionD": "Deutschland",
+    "correctAnswer": "USA"
+  },
+  {
+    "questionText": "Welcher Schauspieler spielte den Joker in 'The Dark Knight'?",
+    "optionA": "Joaquin Phoenix",
+    "optionB": "Jack Nicholson",
+    "optionC": "Heath Ledger",
+    "optionD": "Jared Leto",
+    "correctAnswer": "Heath Ledger"
+  },
+  {
+    "questionText": "Was ist die Quadratwurzel von 64?",
+    "optionA": "6",
+    "optionB": "7",
+    "optionC": "8",
+    "optionD": "9",
+    "correctAnswer": "8"
+  },
+  {
+    "questionText": "Welche Revolution fand 1917 in Russland statt?",
+    "optionA": "Industrielle Revolution",
+    "optionB": "Französische Revolution",
+    "optionC": "Oktoberrevolution",
+    "optionD": "Chinesische Revolution",
+    "correctAnswer": "Oktoberrevolution"
+  },
+  {
+    "questionText": "Welches Land ist sowohl in Europa als auch in Asien gelegen?",
+    "optionA": "Kasachstan",
+    "optionB": "Russland",
+    "optionC": "Georgien",
+    "optionD": "Türkei",
+    "correctAnswer": "Russland"
+  },
+  {
+    "questionText": "Welches Element hat das chemische Symbol 'Fe'?",
+    "optionA": "Fluor",
+    "optionB": "Ferrum (Eisen)",
+    "optionC": "Phosphor",
+    "optionD": "Blei",
+    "correctAnswer": "Ferrum (Eisen)"
+  },
+  {
+    "questionText": "Wer schrieb die 'Ilias'?",
+    "optionA": "Sophokles",
+    "optionB": "Homer",
+    "optionC": "Euripides",
+    "optionD": "Aristophanes",
+    "correctAnswer": "Homer"
+  },
+  {
+    "questionText": "Welcher Künstler war für die Deckenmalerei in der Sixtinischen Kapelle verantwortlich?",
+    "optionA": "Raphael",
+    "optionB": "Michelangelo",
+    "optionC": "Donatello",
+    "optionD": "Leonardo da Vinci",
+    "correctAnswer": "Michelangelo"
+  },
+  {
+    "questionText": "Welches Land gewann die Fußball-Europameisterschaft 2016?",
+    "optionA": "Frankreich",
+    "optionB": "Portugal",
+    "optionC": "Deutschland",
+    "optionD": "Spanien",
+    "correctAnswer": "Portugal"
+  },
+  {
+    "questionText": "Welcher Film gewann den Oscar für den besten Film im Jahr 1997?",
+    "optionA": "Titanic",
+    "optionB": "Good Will Hunting",
+    "optionC": "L.A. Confidential",
+    "optionD": "The Full Monty",
+    "correctAnswer": "Titanic"
+  },
+  {
+    "questionText": "Was ist 5 hoch 3?",
+    "optionA": "15",
+    "optionB": "25",
+    "optionC": "125",
+    "optionD": "225",
+    "correctAnswer": "125"
+  },
+  {
+    "questionText": "Wer war der britische Monarch während des Zweiten Weltkriegs?",
+    "optionA": "George V.",
+    "optionB": "Edward VIII.",
+    "optionC": "George VI.",
+    "optionD": "Elizabeth II.",
+    "correctAnswer": "George VI."
+  },
+  {
+    "questionText": "Welches ist das größte Land in Südamerika?",
+    "optionA": "Argentinien",
+    "optionB": "Brasilien",
+    "optionC": "Chile",
+    "optionD": "Peru",
+    "correctAnswer": "Brasilien"
+  },
+  {
+    "questionText": "Welches Organ im menschlichen Körper produziert Insulin?",
+    "optionA": "Leber",
+    "optionB": "Bauchspeicheldrüse",
+    "optionC": "Herz",
+    "optionD": "Niere",
+    "correctAnswer": "Bauchspeicheldrüse"
+  },
+  {
+    "questionText": "Wer schrieb 'Der Fänger im Roggen'?",
+    "optionA": "F. Scott Fitzgerald",
+    "optionB": "J.D. Salinger",
+    "optionC": "Ernest Hemingway",
+    "optionD": "John Steinbeck",
+    "correctAnswer": "J.D. Salinger"
+  },
+  {
+    "questionText": "Welche Kunstrichtung ist Salvador Dalí zuzuordnen?",
+    "optionA": "Kubismus",
+    "optionB": "Surrealismus",
+    "optionC": "Impressionismus",
+    "optionD": "Expressionismus",
+    "correctAnswer": "Surrealismus"
+  },
+  {
+    "questionText": "Welche Sportart wird bei den Wimbledon Championships gespielt?",
+    "optionA": "Cricket",
+    "optionB": "Tennis",
+    "optionC": "Rugby",
+    "optionD": "Golf",
+    "correctAnswer": "Tennis"
+  },
+  {
+    "questionText": "Wer spielte die Hauptrolle in der TV-Serie 'Friends' als Rachel Green?",
+    "optionA": "Courteney Cox",
+    "optionB": "Lisa Kudrow",
+    "optionC": "Jennifer Aniston",
+    "optionD": "Maggie Wheeler",
+    "correctAnswer": "Jennifer Aniston"
+  },
+  {
+    "questionText": "Was ist das Volumen eines Würfels mit einer Seitenlänge von 4 cm?",
+    "optionA": "16 cm³",
+    "optionB": "32 cm³",
+    "optionC": "64 cm³",
+    "optionD": "128 cm³",
+    "correctAnswer": "64 cm³"
+  },
+  {
+    "questionText": "Wer war der erste Präsident der Vereinigten Staaten?",
+    "optionA": "Thomas Jefferson",
+    "optionB": "John Adams",
+    "optionC": "George Washington",
+    "optionD": "James Madison",
+    "correctAnswer": "George Washington"
+  },
+  {
+    "questionText": "Welches Land hat die meisten Inseln der Welt?",
+    "optionA": "Indonesien",
+    "optionB": "Philippinen",
+    "optionC": "Schweden",
+    "optionD": "Japan",
+    "correctAnswer": "Schweden"
+  },
+  {
+    "questionText": "Welche Wissenschaft befasst sich mit der Untersuchung von Stoffen und deren Umwandlung?",
+    "optionA": "Physik",
+    "optionB": "Chemie",
+    "optionC": "Biologie",
+    "optionD": "Astronomie",
+    "correctAnswer": "Chemie"
+  },
+  {
+    "questionText": "Wer schrieb das Buch 'Ulysses'?",
+    "optionA": "Virginia Woolf",
+    "optionB": "James Joyce",
+    "optionC": "Franz Kafka",
+    "optionD": "T.S. Eliot",
+    "correctAnswer": "James Joyce"
+  },
+  {
+    "questionText": "Welche Kunstbewegung wurde von Andy Warhol geprägt?",
+    "optionA": "Expressionismus",
+    "optionB": "Kubismus",
+    "optionC": "Pop Art",
+    "optionD": "Dadaismus",
+    "correctAnswer": "Pop Art"
+  },
+  {
+    "questionText": "Wie viele Spieler hat ein Eishockeyteam auf dem Eis?",
+    "optionA": "5",
+    "optionB": "6",
+    "optionC": "7",
+    "optionD": "8",
+    "correctAnswer": "6"
+  },
+  {
+    "questionText": "Welche Band veröffentlichte das Album 'Abbey Road'?",
+    "optionA": "The Rolling Stones",
+    "optionB": "The Beatles",
+    "optionC": "The Who",
+    "optionD": "Led Zeppelin",
+    "correctAnswer": "The Beatles"
+  },
+  {
+    "questionText": "Was ist die Summe der Innenwinkel eines Dreiecks?",
+    "optionA": "90°",
+    "optionB": "180°",
+    "optionC": "270°",
+    "optionD": "360°",
+    "correctAnswer": "180°"
+  },
+  {
+    "questionText": "In welchem Jahr wurde die Unabhängigkeitserklärung der Vereinigten Staaten unterzeichnet?",
+    "optionA": "1775",
+    "optionB": "1776",
+    "optionC": "1777",
+    "optionD": "1778",
+    "correctAnswer": "1776"
+  },
+  {
+    "questionText": "Welche Stadt war die Hauptstadt des antiken Ägyptens während der Zeit der Pharaonen?",
+    "optionA": "Theben",
+    "optionB": "Memphis",
+    "optionC": "Alexandria",
+    "optionD": "Kairo",
+    "correctAnswer": "Memphis"
+  },
+  {
+    "questionText": "Wer war der erste Präsident der Deutschen Demokratischen Republik (DDR)?",
+    "optionA": "Otto Grotewohl",
+    "optionB": "Walter Ulbricht",
+    "optionC": "Wilhelm Pieck",
+    "optionD": "Erich Honecker",
+    "correctAnswer": "Wilhelm Pieck"
+  },
+  {
+    "questionText": "Welcher Kontinent hat die meisten Länder?",
+    "optionA": "Afrika",
+    "optionB": "Asien",
+    "optionC": "Europa",
+    "optionD": "Südamerika",
+    "correctAnswer": "Afrika"
+  },
+  {
+    "questionText": "Welcher Planet hat den größten Vulkan im Sonnensystem?",
+    "optionA": "Erde",
+    "optionB": "Mars",
+    "optionC": "Jupiter",
+    "optionD": "Venus",
+    "correctAnswer": "Mars"
+  },
+  {
+    "questionText": "Wer schrieb 'Frankenstein'?",
+    "optionA": "Mary Shelley",
+    "optionB": "Bram Stoker",
+    "optionC": "Edgar Allan Poe",
+    "optionD": "H.G. Wells",
+    "correctAnswer": "Mary Shelley"
+  },
+  {
+    "questionText": "In welchem Kunstmuseum befindet sich das Gemälde 'Die Sternennacht' von Vincent van Gogh?",
+    "optionA": "Louvre",
+    "optionB": "Museo del Prado",
+    "optionC": "Rijksmuseum",
+    "optionD": "MoMA",
+    "correctAnswer": "MoMA"
+  },
+  {
+    "questionText": "Welche Nation gewann die FIFA Frauen-Weltmeisterschaft 2019?",
+    "optionA": "Deutschland",
+    "optionB": "USA",
+    "optionC": "Frankreich",
+    "optionD": "Japan",
+    "correctAnswer": "USA"
+  },
+  {
+    "questionText": "Welcher Film gewann den Oscar für den besten Film im Jahr 2001?",
+    "optionA": "Gladiator",
+    "optionB": "A Beautiful Mind",
+    "optionC": "Moulin Rouge!",
+    "optionD": "The Lord of the Rings: The Fellowship of the Ring",
+    "correctAnswer": "A Beautiful Mind"
+  },
+  {
+    "questionText": "Was ist der Wert von 7 hoch 2?",
+    "optionA": "42",
+    "optionB": "48",
+    "optionC": "49",
+    "optionD": "56",
+    "correctAnswer": "49"
+  },
+  {
+    "questionText": "Wer war der letzte britische Monarch des Hauses Tudor?",
+    "optionA": "Heinrich VIII.",
+    "optionB": "Maria I.",
+    "optionC": "Elisabeth I.",
+    "optionD": "Jakob I.",
+    "correctAnswer": "Elisabeth I."
+  },
+  {
+    "questionText": "Welches Land hat die längste Küstenlinie der Welt?",
+    "optionA": "Australien",
+    "optionB": "Russland",
+    "optionC": "Kanada",
+    "optionD": "Indonesien",
+    "correctAnswer": "Kanada"
+  },
+  {
+    "questionText": "Welche Wissenschaft befasst sich mit der Untersuchung von Vererbung und Genen?",
+    "optionA": "Genetik",
+    "optionB": "Molekularbiologie",
+    "optionC": "Biochemie",
+    "optionD": "Embryologie",
+    "correctAnswer": "Genetik"
+  },
+  {
+    "questionText": "Wer schrieb 'Das Bildnis des Dorian Gray'?",
+    "optionA": "Oscar Wilde",
+    "optionB": "Charles Dickens",
+    "optionC": "Thomas Hardy",
+    "optionD": "Henry James",
+    "correctAnswer": "Oscar Wilde"
+  },
+  {
+    "questionText": "Wer malte das Gemälde 'Das letzte Abendmahl'?",
+    "optionA": "Leonardo da Vinci",
+    "optionB": "Raphael",
+    "optionC": "Michelangelo",
+    "optionD": "Sandro Botticelli",
+    "correctAnswer": "Leonardo da Vinci"
+  },
+  {
+    "questionText": "Wie viele Medaillen gewann Michael Phelps bei den Olympischen Spielen 2008?",
+    "optionA": "5",
+    "optionB": "6",
+    "optionC": "7",
+    "optionD": "8",
+    "correctAnswer": "8"
+  },
+  {
+    "questionText": "Welcher Schauspieler spielte den Charakter Forrest Gump?",
+    "optionA": "Robin Williams",
+    "optionB": "Tom Hanks",
+    "optionC": "Brad Pitt",
+    "optionD": "Johnny Depp",
+    "correctAnswer": "Tom Hanks"
+  },
+  {
+    "questionText": "Was ist das Ergebnis von 15 x 4?",
+    "optionA": "45",
+    "optionB": "50",
+    "optionC": "55",
+    "optionD": "60",
+    "correctAnswer": "60"
+  },
+  {
+    "questionText": "In welchem Jahr begann die Französische Revolution?",
+    "optionA": "1787",
+    "optionB": "1788",
+    "optionC": "1789",
+    "optionD": "1790",
+    "correctAnswer": "1789"
+  },
+  {
+    "questionText": "Welches ist das kleinste Land in Südamerika nach Fläche?",
+    "optionA": "Suriname",
+    "optionB": "Guyana",
+    "optionC": "Uruguay",
+    "optionD": "Paraguay",
+    "correctAnswer": "Suriname"
+  },
+  {
+    "questionText": "Welches Organ im menschlichen Körper filtert Abfallstoffe aus dem Blut?",
+    "optionA": "Leber",
+    "optionB": "Niere",
+    "optionC": "Lunge",
+    "optionD": "Herz",
+    "correctAnswer": "Niere"
+  },
+  {
+    "questionText": "Wer schrieb 'Wuthering Heights'?",
+    "optionA": "Charlotte Brontë",
+    "optionB": "Emily Brontë",
+    "optionC": "Jane Austen",
+    "optionD": "George Eliot",
+    "correctAnswer": "Emily Brontë"
+  },
+  {
+    "questionText": "Welche Kunstbewegung ist mit Jackson Pollock verbunden?",
+    "optionA": "Kubismus",
+    "optionB": "Surrealismus",
+    "optionC": "Abstrakter Expressionismus",
+    "optionD": "Pop Art",
+    "correctAnswer": "Abstrakter Expressionismus"
+  },
+  {
+    "questionText": "Wie viele Spieler hat ein Baseballteam auf dem Feld?",
+    "optionA": "7",
+    "optionB": "8",
+    "optionC": "9",
+    "optionD": "10",
+    "correctAnswer": "9"
+  },
+  {
+    "questionText": "Wer sang den Hit 'Like a Virgin'?",
+    "optionA": "Madonna",
+    "optionB": "Whitney Houston",
+    "optionC": "Mariah Carey",
+    "optionD": "Cyndi Lauper",
+    "correctAnswer": "Madonna"
+  },
+  {
+    "questionText": "Was ist das Ergebnis von 9 + 10?",
+    "optionA": "18",
+    "optionB": "19",
+    "optionC": "20",
+    "optionD": "21",
+    "correctAnswer": "19"
+  },
+  {
+    "questionText": "Wer war der erste Mensch, der den Mount Everest bestieg?",
+    "optionA": "Reinhold Messner",
+    "optionB": "Edmund Hillary",
+    "optionC": "George Mallory",
+    "optionD": "Tenzing Norgay",
+    "correctAnswer": "Edmund Hillary"
+  },
+  {
+    "questionText": "Welche Wüste ist die größte der Welt?",
+    "optionA": "Gobi",
+    "optionB": "Sahara",
+    "optionC": "Arktische Wüste",
+    "optionD": "Antarktische Wüste",
+    "correctAnswer": "Antarktische Wüste"
+  },
+  {
+    "questionText": "Welche Wissenschaft beschäftigt sich mit der Untersuchung von Pilzen?",
+    "optionA": "Botanik",
+    "optionB": "Mykologie",
+    "optionC": "Zoologie",
+    "optionD": "Ökologie",
+    "correctAnswer": "Mykologie"
+  },
+  {
+    "questionText": "Wer schrieb 'Die Abenteuer des Huckleberry Finn'?",
+    "optionA": "Herman Melville",
+    "optionB": "F. Scott Fitzgerald",
+    "optionC": "Mark Twain",
+    "optionD": "Ernest Hemingway",
+    "correctAnswer": "Mark Twain"
+  },
+  {
+    "questionText": "Wer malte das Gemälde 'Mädchen mit dem Perlenohrring'?",
+    "optionA": "Johannes Vermeer",
+    "optionB": "Rembrandt",
+    "optionC": "Peter Paul Rubens",
+    "optionD": "Albrecht Dürer",
+    "correctAnswer": "Johannes Vermeer"
+  },
+  {
+    "questionText": "Welches Land gewann die Rugby-Weltmeisterschaft 2019?",
+    "optionA": "Neuseeland",
+    "optionB": "Südafrika",
+    "optionC": "England",
+    "optionD": "Australien",
+    "correctAnswer": "Südafrika"
+  },
+  {
+    "questionText": "Wer spielte die Rolle des Jack Dawson in 'Titanic'?",
+    "optionA": "Brad Pitt",
+    "optionB": "Johnny Depp",
+    "optionC": "Leonardo DiCaprio",
+    "optionD": "Matt Damon",
+    "correctAnswer": "Leonardo DiCaprio"
+  },
+  {
+    "questionText": "Was ist die Ableitung von 3x^3?",
+    "optionA": "3x^2",
+    "optionB": "6x^2",
+    "optionC": "9x^2",
+    "optionD": "9x",
+    "correctAnswer": "9x^2"
+  },
+  {
+    "questionText": "Welches historische Dokument wurde 1215 in England unterzeichnet?",
+    "optionA": "Bill of Rights",
+    "optionB": "Magna Carta",
+    "optionC": "Act of Union",
+    "optionD": "Treaty of Versailles",
+    "correctAnswer": "Magna Carta"
+  },
+  {
+    "questionText": "Wer war der erste Premierminister von Indien?",
+    "optionA": "Mahatma Gandhi",
+    "optionB": "Jawaharlal Nehru",
+    "optionC": "Indira Gandhi",
+    "optionD": "Rajendra Prasad",
+    "correctAnswer": "Jawaharlal Nehru"
+  },
+  {
+    "questionText": "In welchem Jahr fiel das Römische Reich im Westen?",
+    "optionA": "410",
+    "optionB": "476",
+    "optionC": "533",
+    "optionD": "1453",
+    "correctAnswer": "476"
+  },
+  {
+    "questionText": "Welches ist der größte See in Afrika?",
+    "optionA": "Tanganjikasee",
+    "optionB": "Malawisee",
+    "optionC": "Victoria-See",
+    "optionD": "Turkanasee",
+    "correctAnswer": "Victoria-See"
+  },
+  {
+    "questionText": "Welcher Planet ist der heißeste in unserem Sonnensystem?",
+    "optionA": "Merkur",
+    "optionB": "Venus",
+    "optionC": "Mars",
+    "optionD": "Jupiter",
+    "correctAnswer": "Venus"
+  },
+  {
+    "questionText": "Wer schrieb 'Die göttliche Komödie'?",
+    "optionA": "Dante Alighieri",
+    "optionB": "Geoffrey Chaucer",
+    "optionC": "John Milton",
+    "optionD": "Virgil",
+    "correctAnswer": "Dante Alighieri"
+  },
+  {
+    "questionText": "In welchem Museum befindet sich die Skulptur 'David' von Michelangelo?",
+    "optionA": "Uffizien",
+    "optionB": "Louvre",
+    "optionC": "Galleria dell'Accademia",
+    "optionD": "Museo del Prado",
+    "correctAnswer": "Galleria dell'Accademia"
+  },
+  {
+    "questionText": "Welche Nation hat die meisten Weltmeistertitel im Eishockey gewonnen?",
+    "optionA": "Kanada",
+    "optionB": "Russland",
+    "optionC": "Schweden",
+    "optionD": "Finnland",
+    "correctAnswer": "Kanada"
+  },
+  {
+    "questionText": "Wer spielte die Rolle des Indiana Jones?",
+    "optionA": "Harrison Ford",
+    "optionB": "Tom Selleck",
+    "optionC": "Mel Gibson",
+    "optionD": "Bruce Willis",
+    "correctAnswer": "Harrison Ford"
+  },
+  {
+    "questionText": "Was ist das Ergebnis von 81 ÷ 9?",
+    "optionA": "7",
+    "optionB": "8",
+    "optionC": "9",
+    "optionD": "10",
+    "correctAnswer": "9"
+  },
+  {
+    "questionText": "Wer war der erste Bundespräsident der Bundesrepublik Deutschland?",
+    "optionA": "Konrad Adenauer",
+    "optionB": "Theodor Heuss",
+    "optionC": "Gustav Heinemann",
+    "optionD": "Heinrich Lübke",
+    "correctAnswer": "Theodor Heuss"
+  },
+  {
+    "questionText": "Welches Land ist das kleinste in Europa nach Fläche?",
+    "optionA": "San Marino",
+    "optionB": "Liechtenstein",
+    "optionC": "Monaco",
+    "optionD": "Vatikanstadt",
+    "correctAnswer": "Vatikanstadt"
+  },
+  {
+    "questionText": "Welche Wissenschaft befasst sich mit dem Studium von Insekten?",
+    "optionA": "Ornithologie",
+    "optionB": "Entomologie",
+    "optionC": "Botanik",
+    "optionD": "Geologie",
+    "correctAnswer": "Entomologie"
+  },
+  {
+    "questionText": "Wer schrieb 'Der Prozess'?",
+    "optionA": "Franz Kafka",
+    "optionB": "Albert Camus",
+    "optionC": "Thomas Mann",
+    "optionD": "James Joyce",
+    "correctAnswer": "Franz Kafka"
+  },
+  {
+    "questionText": "Welcher Maler ist für das Gemälde 'Der Schrei' bekannt?",
+    "optionA": "Edvard Munch",
+    "optionB": "Claude Monet",
+    "optionC": "Paul Cézanne",
+    "optionD": "Vincent van Gogh",
+    "correctAnswer": "Edvard Munch"
+  },
+  {
+    "questionText": "Welches Land gewann die erste Fußballweltmeisterschaft im Jahr 1930?",
+    "optionA": "Argentinien",
+    "optionB": "Brasilien",
+    "optionC": "Uruguay",
+    "optionD": "Italien",
+    "correctAnswer": "Uruguay"
+  },
+  {
+    "questionText": "Wer spielte die Hauptrolle in 'Der Pate' als Michael Corleone?",
+    "optionA": "Marlon Brando",
+    "optionB": "Robert De Niro",
+    "optionC": "Al Pacino",
+    "optionD": "James Caan",
+    "correctAnswer": "Al Pacino"
+  },
+  {
+    "questionText": "Was ist das Ergebnis von 14 + 28?",
+    "optionA": "32",
+    "optionB": "42",
+    "optionC": "48",
+    "optionD": "52",
+    "correctAnswer": "42"
+  },
+  {
+    "questionText": "Wer war der Präsident der USA während des amerikanischen Bürgerkriegs?",
+    "optionA": "George Washington",
+    "optionB": "Thomas Jefferson",
+    "optionC": "Abraham Lincoln",
+    "optionD": "Andrew Jackson",
+    "correctAnswer": "Abraham Lincoln"
+  },
+  {
+    "questionText": "Welches ist das größte Binnenland der Welt nach Bevölkerung?",
+    "optionA": "Kasachstan",
+    "optionB": "Mongolei",
+    "optionC": "Bolivien",
+    "optionD": "Äthiopien",
+    "correctAnswer": "Äthiopien"
+  },
+  {
+    "questionText": "Welches Organ ist das größte im menschlichen Körper?",
+    "optionA": "Lunge",
+    "optionB": "Leber",
+    "optionC": "Haut",
+    "optionD": "Gehirn",
+    "correctAnswer": "Haut"
+  },
+  {
+    "questionText": "Wer schrieb 'Die Verwandlung'?",
+    "optionA": "Ernest Hemingway",
+    "optionB": "Franz Kafka",
+    "optionC": "Thomas Mann",
+    "optionD": "Hermann Hesse",
+    "correctAnswer": "Franz Kafka"
+  },
+  {
+    "questionText": "Welche Kunstrichtung ist mit Georges Seurat verbunden?",
+    "optionA": "Pointillismus",
+    "optionB": "Kubismus",
+    "optionC": "Surrealismus",
+    "optionD": "Impressionismus",
+    "correctAnswer": "Pointillismus"
+  },
+  {
+    "questionText": "Wie viele Grand-Slam-Titel hat Roger Federer gewonnen?",
+    "optionA": "17",
+    "optionB": "19",
+    "optionC": "20",
+    "optionD": "21",
+    "correctAnswer": "20"
+  },
+  {
+    "questionText": "Wer spielte die Rolle des Tony Stark in 'Iron Man'?",
+    "optionA": "Chris Evans",
+    "optionB": "Robert Downey Jr.",
+    "optionC": "Mark Ruffalo",
+    "optionD": "Chris Hemsworth",
+    "correctAnswer": "Robert Downey Jr."
+  },
+  {
+    "questionText": "Was ist der Flächeninhalt eines Kreises mit einem Radius von 7 cm?",
+    "optionA": "154 cm²",
+    "optionB": "44 cm²",
+    "optionC": "77 cm²",
+    "optionD": "98 cm²",
+    "correctAnswer": "154 cm²"
+  },
+  {
+    "questionText": "Wer war der britische Premierminister während der Napoleonischen Kriege?",
+    "optionA": "William Pitt der Jüngere",
+    "optionB": "Duke of Wellington",
+    "optionC": "Robert Peel",
+    "optionD": "Benjamin Disraeli",
+    "correctAnswer": "William Pitt der Jüngere"
+  },
+  {
+    "questionText": "Welches Land hat die meisten Nachbarländer?",
+    "optionA": "Russland",
+    "optionB": "China",
+    "optionC": "Brasilien",
+    "optionD": "Indien",
+    "correctAnswer": "China"
+  },
+  {
+    "questionText": "Welche Wissenschaft befasst sich mit der Untersuchung von Felsen und Mineralien?",
+    "optionA": "Astronomie",
+    "optionB": "Geologie",
+    "optionC": "Botanik",
+    "optionD": "Zoologie",
+    "correctAnswer": "Geologie"
+  },
+  {
+    "questionText": "Wer schrieb 'Faust'?",
+    "optionA": "Johann Wolfgang von Goethe",
+    "optionB": "Friedrich Schiller",
+    "optionC": "Gotthold Ephraim Lessing",
+    "optionD": "Heinrich Heine",
+    "correctAnswer": "Johann Wolfgang von Goethe"
+  },
+  {
+    "questionText": "Welcher Künstler ist für das Gemälde 'Die Nachtwache' bekannt?",
+    "optionA": "Rembrandt",
+    "optionB": "Johannes Vermeer",
+    "optionC": "Pieter Bruegel",
+    "optionD": "Jan van Eyck",
+    "correctAnswer": "Rembrandt"
+  },
+  {
+    "questionText": "Welche Mannschaft gewann den Super Bowl 2020?",
+    "optionA": "San Francisco 49ers",
+    "optionB": "New England Patriots",
+    "optionC": "Kansas City Chiefs",
+    "optionD": "Green Bay Packers",
+    "correctAnswer": "Kansas City Chiefs"
+  },
+  {
+    "questionText": "Wer spielte die Hauptrolle in 'Jurassic Park' als Dr. Alan Grant?",
+    "optionA": "Sam Neill",
+    "optionB": "Jeff Goldblum",
+    "optionC": "Richard Attenborough",
+    "optionD": "Harrison Ford",
+    "correctAnswer": "Sam Neill"
+  },
+  {
+    "questionText": "Was ist das Ergebnis von 3⁴?",
+    "optionA": "9",
+    "optionB": "27",
+    "optionC": "81",
+    "optionD": "243",
+    "correctAnswer": "81"
+  },
+  {
+    "questionText": "Welches historische Dokument wurde 1215 in England unterzeichnet?",
+    "optionA": "Bill of Rights",
+    "optionB": "Magna Carta",
+    "optionC": "Act of Union",
+    "optionD": "Treaty of Versailles",
+    "correctAnswer": "Magna Carta"
+  },
+  {
+    "questionText": "Wer war der erste Premierminister von Indien?",
+    "optionA": "Mahatma Gandhi",
+    "optionB": "Jawaharlal Nehru",
+    "optionC": "Indira Gandhi",
+    "optionD": "Rajendra Prasad",
+    "correctAnswer": "Jawaharlal Nehru"
+  },
+  {
+    "questionText": "In welchem Jahr fiel das Römische Reich im Westen?",
+    "optionA": "410",
+    "optionB": "476",
+    "optionC": "533",
+    "optionD": "1453",
+    "correctAnswer": "476"
+  },
+  {
+    "questionText": "Welches ist der größte See in Afrika?",
+    "optionA": "Tanganjikasee",
+    "optionB": "Malawisee",
+    "optionC": "Victoria-See",
+    "optionD": "Turkanasee",
+    "correctAnswer": "Victoria-See"
+  },
+  {
+    "questionText": "Welcher Planet ist der heißeste in unserem Sonnensystem?",
+    "optionA": "Merkur",
+    "optionB": "Venus",
+    "optionC": "Mars",
+    "optionD": "Jupiter",
+    "correctAnswer": "Venus"
+  },
+  {
+    "questionText": "Wer schrieb 'Die göttliche Komödie'?",
+    "optionA": "Dante Alighieri",
+    "optionB": "Geoffrey Chaucer",
+    "optionC": "John Milton",
+    "optionD": "Virgil",
+    "correctAnswer": "Dante Alighieri"
+  },
+  {
+    "questionText": "In welchem Museum befindet sich die Skulptur 'David' von Michelangelo?",
+    "optionA": "Uffizien",
+    "optionB": "Louvre",
+    "optionC": "Galleria dell'Accademia",
+    "optionD": "Museo del Prado",
+    "correctAnswer": "Galleria dell'Accademia"
+  },
+  {
+    "questionText": "Welche Nation hat die meisten Weltmeistertitel im Eishockey gewonnen?",
+    "optionA": "Kanada",
+    "optionB": "Russland",
+    "optionC": "Schweden",
+    "optionD": "Finnland",
+    "correctAnswer": "Kanada"
+  },
+  {
+    "questionText": "Wer spielte die Rolle des Indiana Jones?",
+    "optionA": "Harrison Ford",
+    "optionB": "Tom Selleck",
+    "optionC": "Mel Gibson",
+    "optionD": "Bruce Willis",
+    "correctAnswer": "Harrison Ford"
+  },
+  {
+    "questionText": "Was ist das Ergebnis von 81 ÷ 9?",
+    "optionA": "7",
+    "optionB": "8",
+    "optionC": "9",
+    "optionD": "10",
+    "correctAnswer": "9"
+  },
+  {
+    "questionText": "Wer war der erste Bundespräsident der Bundesrepublik Deutschland?",
+    "optionA": "Konrad Adenauer",
+    "optionB": "Theodor Heuss",
+    "optionC": "Gustav Heinemann",
+    "optionD": "Heinrich Lübke",
+    "correctAnswer": "Theodor Heuss"
+  },
+  {
+    "questionText": "Welches Land ist das kleinste in Europa nach Fläche?",
+    "optionA": "San Marino",
+    "optionB": "Liechtenstein",
+    "optionC": "Monaco",
+    "optionD": "Vatikanstadt",
+    "correctAnswer": "Vatikanstadt"
+  },
+  {
+    "questionText": "Welche Wissenschaft befasst sich mit dem Studium von Insekten?",
+    "optionA": "Ornithologie",
+    "optionB": "Entomologie",
+    "optionC": "Botanik",
+    "optionD": "Geologie",
+    "correctAnswer": "Entomologie"
+  },
+  {
+    "questionText": "Wer schrieb 'Der Prozess'?",
+    "optionA": "Franz Kafka",
+    "optionB": "Albert Camus",
+    "optionC": "Thomas Mann",
+    "optionD": "James Joyce",
+    "correctAnswer": "Franz Kafka"
+  },
+  {
+    "questionText": "Welcher Maler ist für das Gemälde 'Der Schrei' bekannt?",
+    "optionA": "Edvard Munch",
+    "optionB": "Claude Monet",
+    "optionC": "Paul Cézanne",
+    "optionD": "Vincent van Gogh",
+    "correctAnswer": "Edvard Munch"
+  },
+  {
+    "questionText": "Welches Land gewann die erste Fußballweltmeisterschaft im Jahr 1930?",
+    "optionA": "Argentinien",
+    "optionB": "Brasilien",
+    "optionC": "Uruguay",
+    "optionD": "Italien",
+    "correctAnswer": "Uruguay"
+  },
+  {
+    "questionText": "Wer spielte die Hauptrolle in 'Der Pate' als Michael Corleone?",
+    "optionA": "Marlon Brando",
+    "optionB": "Robert De Niro",
+    "optionC": "Al Pacino",
+    "optionD": "James Caan",
+    "correctAnswer": "Al Pacino"
+  },
+  {
+    "questionText": "Was ist das Ergebnis von 14 + 28?",
+    "optionA": "32",
+    "optionB": "42",
+    "optionC": "48",
+    "optionD": "52",
+    "correctAnswer": "42"
+  },
+  {
+    "questionText": "Wer war der Präsident der USA während des amerikanischen Bürgerkriegs?",
+    "optionA": "George Washington",
+    "optionB": "Thomas Jefferson",
+    "optionC": "Abraham Lincoln",
+    "optionD": "Andrew Jackson",
+    "correctAnswer": "Abraham Lincoln"
+  },
+  {
+    "questionText": "Welches ist das größte Binnenland der Welt nach Bevölkerung?",
+    "optionA": "Kasachstan",
+    "optionB": "Mongolei",
+    "optionC": "Bolivien",
+    "optionD": "Äthiopien",
+    "correctAnswer": "Äthiopien"
+  },
+  {
+    "questionText": "Welches Organ ist das größte im menschlichen Körper?",
+    "optionA": "Lunge",
+    "optionB": "Leber",
+    "optionC": "Haut",
+    "optionD": "Gehirn",
+    "correctAnswer": "Haut"
+  },
+  {
+    "questionText": "Wer schrieb 'Die Verwandlung'?",
+    "optionA": "Ernest Hemingway",
+    "optionB": "Franz Kafka",
+    "optionC": "Thomas Mann",
+    "optionD": "Hermann Hesse",
+    "correctAnswer": "Franz Kafka"
+  },
+  {
+    "questionText": "Welche Kunstrichtung ist mit Georges Seurat verbunden?",
+    "optionA": "Pointillismus",
+    "optionB": "Kubismus",
+    "optionC": "Surrealismus",
+    "optionD": "Impressionismus",
+    "correctAnswer": "Pointillismus"
+  },
+  {
+    "questionText": "Wie viele Grand-Slam-Titel hat Roger Federer gewonnen?",
+    "optionA": "17",
+    "optionB": "19",
+    "optionC": "20",
+    "optionD": "21",
+    "correctAnswer": "20"
+  },
+  {
+    "questionText": "Wer spielte die Rolle des Tony Stark in 'Iron Man'?",
+    "optionA": "Chris Evans",
+    "optionB": "Robert Downey Jr.",
+    "optionC": "Mark Ruffalo",
+    "optionD": "Chris Hemsworth",
+    "correctAnswer": "Robert Downey Jr."
+  },
+  {
+    "questionText": "Was ist der Flächeninhalt eines Kreises mit einem Radius von 7 cm?",
+    "optionA": "154 cm²",
+    "optionB": "44 cm²",
+    "optionC": "77 cm²",
+    "optionD": "98 cm²",
+    "correctAnswer": "154 cm²"
+  },
+  {
+    "questionText": "Wer war der britische Premierminister während der Napoleonischen Kriege?",
+    "optionA": "William Pitt der Jüngere",
+    "optionB": "Duke of Wellington",
+    "optionC": "Robert Peel",
+    "optionD": "Benjamin Disraeli",
+    "correctAnswer": "William Pitt der Jüngere"
+  },
+  {
+    "questionText": "Welches Land hat die meisten Nachbarländer?",
+    "optionA": "Russland",
+    "optionB": "China",
+    "optionC": "Brasilien",
+    "optionD": "Indien",
+    "correctAnswer": "China"
+  },
+  {
+    "questionText": "Welche Wissenschaft befasst sich mit der Untersuchung von Felsen und Mineralien?",
+    "optionA": "Astronomie",
+    "optionB": "Geologie",
+    "optionC": "Botanik",
+    "optionD": "Zoologie",
+    "correctAnswer": "Geologie"
+  },
+  {
+    "questionText": "Wer schrieb 'Faust'?",
+    "optionA": "Johann Wolfgang von Goethe",
+    "optionB": "Friedrich Schiller",
+    "optionC": "Gotthold Ephraim Lessing",
+    "optionD": "Heinrich Heine",
+    "correctAnswer": "Johann Wolfgang von Goethe"
+  },
+  {
+    "questionText": "Welcher Künstler ist für das Gemälde 'Die Nachtwache' bekannt?",
+    "optionA": "Rembrandt",
+    "optionB": "Johannes Vermeer",
+    "optionC": "Pieter Bruegel",
+    "optionD": "Jan van Eyck",
+    "correctAnswer": "Rembrandt"
+  },
+  {
+    "questionText": "Welche Mannschaft gewann den Super Bowl 2020?",
+    "optionA": "San Francisco 49ers",
+    "optionB": "New England Patriots",
+    "optionC": "Kansas City Chiefs",
+    "optionD": "Green Bay Packers",
+    "correctAnswer": "Kansas City Chiefs"
+  },
+  {
+    "questionText": "Wer spielte die Hauptrolle in 'Jurassic Park' als Dr. Alan Grant?",
+    "optionA": "Sam Neill",
+    "optionB": "Jeff Goldblum",
+    "optionC": "Richard Attenborough",
+    "optionD": "Harrison Ford",
+    "correctAnswer": "Sam Neill"
+  },
+  {
+    "questionText": "Was ist das Ergebnis von 3⁴?",
+    "optionA": "9",
+    "optionB": "27",
+    "optionC": "81",
+    "optionD": "243",
+    "correctAnswer": "81"
+  },
+  {
+    "questionText": "In welchem Jahr wurde die erste Mondlandung durchgeführt?",
+    "optionA": "1967",
+    "optionB": "1968",
+    "optionC": "1969",
+    "optionD": "1970",
+    "correctAnswer": "1969"
+  },
+  {
+    "questionText": "Welcher Vertrag beendete den Ersten Weltkrieg?",
+    "optionA": "Vertrag von Versailles",
+    "optionB": "Vertrag von Trianon",
+    "optionC": "Vertrag von Saint-Germain",
+    "optionD": "Vertrag von Neuilly",
+    "correctAnswer": "Vertrag von Versailles"
+  },
+  {
+    "questionText": "Wer war der erste Kaiser des Heiligen Römischen Reiches?",
+    "optionA": "Karl der Große",
+    "optionB": "Otto I.",
+    "optionC": "Heinrich IV.",
+    "optionD": "Friedrich Barbarossa",
+    "correctAnswer": "Otto I."
+  },
+  {
+    "questionText": "Welches ist der größte Ozean der Welt?",
+    "optionA": "Atlantischer Ozean",
+    "optionB": "Indischer Ozean",
+    "optionC": "Arktischer Ozean",
+    "optionD": "Pazifischer Ozean",
+    "correctAnswer": "Pazifischer Ozean"
+  },
+  {
+    "questionText": "Welcher Planet hat den größten Mond?",
+    "optionA": "Jupiter",
+    "optionB": "Saturn",
+    "optionC": "Neptun",
+    "optionD": "Uranus",
+    "correctAnswer": "Jupiter"
+  },
+  {
+    "questionText": "Wer schrieb 'Die Brüder Karamasow'?",
+    "optionA": "Leo Tolstoi",
+    "optionB": "Fyodor Dostojewski",
+    "optionC": "Anton Tschechow",
+    "optionD": "Nikolai Gogol",
+    "correctAnswer": "Fyodor Dostojewski"
+  },
+  {
+    "questionText": "Welcher Künstler schuf die Skulptur 'Der Denker'?",
+    "optionA": "Auguste Rodin",
+    "optionB": "Henry Moore",
+    "optionC": "Michelangelo",
+    "optionD": "Donatello",
+    "correctAnswer": "Auguste Rodin"
+  },
+  {
+    "questionText": "Welches Land gewann die FIFA Weltmeisterschaft 1954?",
+    "optionA": "Brasilien",
+    "optionB": "Deutschland",
+    "optionC": "Ungarn",
+    "optionD": "Argentinien",
+    "correctAnswer": "Deutschland"
+  },
+  {
+    "questionText": "Welcher Schauspieler spielte die Rolle des Luke Skywalker in der 'Star Wars'-Reihe?",
+    "optionA": "Harrison Ford",
+    "optionB": "Mark Hamill",
+    "optionC": "Carrie Fisher",
+    "optionD": "Alec Guinness",
+    "correctAnswer": "Mark Hamill"
+  },
+  {
+    "questionText": "Was ist das Ergebnis von 25 x 4?",
+    "optionA": "100",
+    "optionB": "120",
+    "optionC": "130",
+    "optionD": "140",
+    "correctAnswer": "100"
+  },
+  {
+    "questionText": "Wer war der erste Präsident der Französischen Republik?",
+    "optionA": "Napoleon Bonaparte",
+    "optionB": "Charles de Gaulle",
+    "optionC": "Louis-Napoleon Bonaparte",
+    "optionD": "François Mitterrand",
+    "correctAnswer": "Louis-Napoleon Bonaparte"
+  },
+  {
+    "questionText": "Welches Land hat die längste Nord-Süd-Ausdehnung?",
+    "optionA": "Kanada",
+    "optionB": "Brasilien",
+    "optionC": "Chile",
+    "optionD": "USA",
+    "correctAnswer": "Chile"
+  },
+  {
+    "questionText": "Welche Wissenschaft befasst sich mit der Struktur des Universums?",
+    "optionA": "Astronomie",
+    "optionB": "Kosmologie",
+    "optionC": "Geologie",
+    "optionD": "Physik",
+    "correctAnswer": "Kosmologie"
+  },
+  {
+    "questionText": "Wer schrieb 'Die Leiden des jungen Werther'?",
+    "optionA": "Johann Wolfgang von Goethe",
+    "optionB": "Friedrich Schiller",
+    "optionC": "Heinrich Heine",
+    "optionD": "Gotthold Ephraim Lessing",
+    "correctAnswer": "Johann Wolfgang von Goethe"
+  },
+  {
+    "questionText": "Welcher Künstler ist für das Werk 'Die Erschaffung Adams' bekannt?",
+    "optionA": "Leonardo da Vinci",
+    "optionB": "Michelangelo",
+    "optionC": "Raphael",
+    "optionD": "Botticelli",
+    "correctAnswer": "Michelangelo"
+  },
+  {
+    "questionText": "Wer gewann die Goldmedaille im 100-Meter-Sprint bei den Olympischen Spielen 2008?",
+    "optionA": "Tyson Gay",
+    "optionB": "Usain Bolt",
+    "optionC": "Yohan Blake",
+    "optionD": "Justin Gatlin",
+    "correctAnswer": "Usain Bolt"
+  },
+  {
+    "questionText": "Welcher Film gewann den Oscar für den besten Film im Jahr 1994?",
+    "optionA": "Forrest Gump",
+    "optionB": "Pulp Fiction",
+    "optionC": "The Shawshank Redemption",
+    "optionD": "Schindler's List",
+    "correctAnswer": "Forrest Gump"
+  },
+  {
+    "questionText": "Was ist das Quadrat von 12?",
+    "optionA": "124",
+    "optionB": "136",
+    "optionC": "144",
+    "optionD": "156",
+    "correctAnswer": "144"
+  },
+  {
+    "questionText": "Wer war der erste König von Preußen?",
+    "optionA": "Friedrich Wilhelm I.",
+    "optionB": "Friedrich I.",
+    "optionC": "Friedrich II.",
+    "optionD": "Wilhelm II.",
+    "correctAnswer": "Friedrich I."
+  },
+  {
+    "questionText": "Welcher Fluss ist der längste in Europa?",
+    "optionA": "Donau",
+    "optionB": "Wolga",
+    "optionC": "Rhein",
+    "optionD": "Elbe",
+    "correctAnswer": "Wolga"
+  },
+  {
+    "questionText": "Welches Organ ist für die Regulierung des Blutzuckerspiegels verantwortlich?",
+    "optionA": "Niere",
+    "optionB": "Leber",
+    "optionC": "Bauchspeicheldrüse",
+    "optionD": "Lunge",
+    "correctAnswer": "Bauchspeicheldrüse"
+  },
+  {
+    "questionText": "Wer schrieb 'Anna Karenina'?",
+    "optionA": "Leo Tolstoi",
+    "optionB": "Fyodor Dostojewski",
+    "optionC": "Anton Tschechow",
+    "optionD": "Alexander Puschkin",
+    "correctAnswer": "Leo Tolstoi"
+  },
+  {
+    "questionText": "Welcher Künstler ist mit der Entwicklung des Surrealismus verbunden?",
+    "optionA": "Salvador Dalí",
+    "optionB": "Pablo Picasso",
+    "optionC": "Henri Matisse",
+    "optionD": "René Magritte",
+    "correctAnswer": "Salvador Dalí"
+  },
+  {
+    "questionText": "Welches Land hat die meisten Wimbledon-Titel bei den Männern gewonnen?",
+    "optionA": "USA",
+    "optionB": "Großbritannien",
+    "optionC": "Australien",
+    "optionD": "Schweiz",
+    "correctAnswer": "Großbritannien"
+  },
+  {
+    "questionText": "Wer sang das Lied 'Bohemian Rhapsody'?",
+    "optionA": "The Beatles",
+    "optionB": "Queen",
+    "optionC": "The Rolling Stones",
+    "optionD": "Pink Floyd",
+    "correctAnswer": "Queen"
+  },
+  {
+    "questionText": "Was ist das Ergebnis von 8 x 8?",
+    "optionA": "56",
+    "optionB": "64",
+    "optionC": "72",
+    "optionD": "80",
+    "correctAnswer": "64"
+  },
+  {
+    "questionText": "Wer war der erste Mensch im Weltraum?",
+    "optionA": "Yuri Gagarin",
+    "optionB": "Neil Armstrong",
+    "optionC": "John Glenn",
+    "optionD": "Alan Shepard",
+    "correctAnswer": "Yuri Gagarin"
+  },
+  {
+    "questionText": "Welches ist das bevölkerungsreichste Land der Welt?",
+    "optionA": "Indien",
+    "optionB": "China",
+    "optionC": "USA",
+    "optionD": "Indonesien",
+    "correctAnswer": "China"
+  },
+  {
+    "questionText": "Welche Wissenschaft befasst sich mit der Untersuchung von Fossilien?",
+    "optionA": "Paläontologie",
+    "optionB": "Archäologie",
+    "optionC": "Geologie",
+    "optionD": "Anthropologie",
+    "correctAnswer": "Paläontologie"
+  },
+  {
+    "questionText": "Wer schrieb 'Die Abenteuer des Tom Sawyer'?",
+    "optionA": "Mark Twain",
+    "optionB": "Herman Melville",
+    "optionC": "Nathaniel Hawthorne",
+    "optionD": "Jules Verne",
+    "correctAnswer": "Mark Twain"
+  },
+  {
+    "questionText": "Welcher Maler ist für das Werk 'Die Schule von Athen' bekannt?",
+    "optionA": "Raphael",
+    "optionB": "Leonardo da Vinci",
+    "optionC": "Michelangelo",
+    "optionD": "Donatello",
+    "correctAnswer": "Raphael"
+  },
+  {
+    "questionText": "Welches Land gewann die Europameisterschaft im Fußball 2004?",
+    "optionA": "Frankreich",
+    "optionB": "Italien",
+    "optionC": "Griechenland",
+    "optionD": "Portugal",
+    "correctAnswer": "Griechenland"
+  },
+  {
+    "questionText": "Wer spielte die Rolle des John McClane in 'Stirb langsam'?",
+    "optionA": "Sylvester Stallone",
+    "optionB": "Arnold Schwarzenegger",
+    "optionC": "Bruce Willis",
+    "optionD": "Mel Gibson",
+    "correctAnswer": "Bruce Willis"
+  },
+  {
+    "questionText": "Was ist der Umfang eines Kreises mit einem Durchmesser von 10 cm?",
+    "optionA": "31.4 cm",
+    "optionB": "62.8 cm",
+    "optionC": "15.7 cm",
+    "optionD": "20 cm",
+    "correctAnswer": "31.4 cm"
+  },
+  {
+    "questionText": "In welchem Jahr begann die Amerikanische Revolution?",
+    "optionA": "1765",
+    "optionB": "1775",
+    "optionC": "1785",
+    "optionD": "1795",
+    "correctAnswer": "1775"
+  },
+  {
+    "questionText": "Welches historische Bauwerk wurde in den 1930er Jahren in New York City fertiggestellt?",
+    "optionA": "Eiffelturm",
+    "optionB": "Golden Gate Bridge",
+    "optionC": "Empire State Building",
+    "optionD": "Chrysler Building",
+    "correctAnswer": "Empire State Building"
+  },
+  {
+    "questionText": "Welcher Kaiser rief das 'Edikt von Mailand' aus, das den Christen Glaubensfreiheit gewährte?",
+    "optionA": "Diokletian",
+    "optionB": "Konstantin der Große",
+    "optionC": "Nero",
+    "optionD": "Hadrian",
+    "correctAnswer": "Konstantin der Große"
+  },
+  {
+    "questionText": "Welches ist das kleinste Meer der Welt?",
+    "optionA": "Ostsee",
+    "optionB": "Schwarzes Meer",
+    "optionC": "Mittelmeer",
+    "optionD": "Nordsee",
+    "correctAnswer": "Nordsee"
+  },
+  {
+    "questionText": "Welcher Planet ist für seine extrem langen Jahre bekannt, die 84 Erdjahre dauern?",
+    "optionA": "Neptun",
+    "optionB": "Saturn",
+    "optionC": "Uranus",
+    "optionD": "Pluto",
+    "correctAnswer": "Uranus"
+  },
+  {
+    "questionText": "Wer schrieb 'Der alte Mann und das Meer'?",
+    "optionA": "Ernest Hemingway",
+    "optionB": "F. Scott Fitzgerald",
+    "optionC": "William Faulkner",
+    "optionD": "John Steinbeck",
+    "correctAnswer": "Ernest Hemingway"
+  },
+  {
+    "questionText": "Welcher Künstler ist für das Gemälde 'Die Sternennacht' bekannt?",
+    "optionA": "Vincent van Gogh",
+    "optionB": "Claude Monet",
+    "optionC": "Paul Gauguin",
+    "optionD": "Edvard Munch",
+    "correctAnswer": "Vincent van Gogh"
+  },
+  {
+    "questionText": "Welches Land gewann die FIFA Frauen-Weltmeisterschaft 2011?",
+    "optionA": "Japan",
+    "optionB": "USA",
+    "optionC": "Deutschland",
+    "optionD": "Schweden",
+    "correctAnswer": "Japan"
+  },
+  {
+    "questionText": "Welcher Film gewann den Oscar für den besten Film im Jahr 2012?",
+    "optionA": "The Artist",
+    "optionB": "Argo",
+    "optionC": "The King's Speech",
+    "optionD": "The Hurt Locker",
+    "correctAnswer": "Argo"
+  },
+  {
+    "questionText": "Was ist das Ergebnis von 5 x 12?",
+    "optionA": "50",
+    "optionB": "60",
+    "optionC": "70",
+    "optionD": "80",
+    "correctAnswer": "60"
+  },
+  {
+    "questionText": "Welcher britische Monarch führte das Land während des Zweiten Weltkriegs?",
+    "optionA": "George V.",
+    "optionB": "Edward VIII.",
+    "optionC": "George VI.",
+    "optionD": "Elizabeth II.",
+    "correctAnswer": "George VI."
+  },
+  {
+    "questionText": "Welches ist der tiefste Punkt der Erde?",
+    "optionA": "Marianengraben",
+    "optionB": "Tonga-Graben",
+    "optionC": "Java-Graben",
+    "optionD": "Puerto-Rico-Graben",
+    "correctAnswer": "Marianengraben"
+  },
+  {
+    "questionText": "Welche Wissenschaft befasst sich mit der Erforschung des Gehirns?",
+    "optionA": "Neurologie",
+    "optionB": "Onkologie",
+    "optionC": "Psychologie",
+    "optionD": "Kardiologie",
+    "correctAnswer": "Neurologie"
+  },
+  {
+    "questionText": "Wer schrieb das Buch '1984'?",
+    "optionA": "George Orwell",
+    "optionB": "Aldous Huxley",
+    "optionC": "Ray Bradbury",
+    "optionD": "J.D. Salinger",
+    "correctAnswer": "George Orwell"
+  },
+  {
+    "questionText": "Welcher Maler ist für die Fresken in der Sixtinischen Kapelle verantwortlich?",
+    "optionA": "Michelangelo",
+    "optionB": "Leonardo da Vinci",
+    "optionC": "Raphael",
+    "optionD": "Donatello",
+    "correctAnswer": "Michelangelo"
+  },
+  {
+    "questionText": "Welches Land gewann die Rugby-Weltmeisterschaft 2011?",
+    "optionA": "Australien",
+    "optionB": "Südafrika",
+    "optionC": "Neuseeland",
+    "optionD": "England",
+    "correctAnswer": "Neuseeland"
+  },
+  {
+    "questionText": "Wer spielte die Hauptrolle in dem Film 'Schindler's Liste' als Oskar Schindler?",
+    "optionA": "Liam Neeson",
+    "optionB": "Ben Kingsley",
+    "optionC": "Ralph Fiennes",
+    "optionD": "Harrison Ford",
+    "correctAnswer": "Liam Neeson"
+  },
+  {
+    "questionText": "Was ist das Ergebnis von 11 x 11?",
+    "optionA": "111",
+    "optionB": "121",
+    "optionC": "131",
+    "optionD": "141",
+    "correctAnswer": "121"
+  },
+  {
+    "questionText": "Wer war der Anführer der Sowjetunion während des Zweiten Weltkriegs?",
+    "optionA": "Wladimir Lenin",
+    "optionB": "Josef Stalin",
+    "optionC": "Leonid Breschnew",
+    "optionD": "Nikita Chruschtschow",
+    "correctAnswer": "Josef Stalin"
+  },
+  {
+    "questionText": "Welches Land hat die größte Wüste der Welt?",
+    "optionA": "China",
+    "optionB": "Australien",
+    "optionC": "Saudi-Arabien",
+    "optionD": "Antarktis",
+    "correctAnswer": "Antarktis"
+  },
+  {
+    "questionText": "Welches ist das größte Organ im menschlichen Körper?",
+    "optionA": "Leber",
+    "optionB": "Haut",
+    "optionC": "Gehirn",
+    "optionD": "Lunge",
+    "correctAnswer": "Haut"
+  },
+  {
+    "questionText": "Wer schrieb das Buch 'Der Hobbit'?",
+    "optionA": "J.R.R. Tolkien",
+    "optionB": "C.S. Lewis",
+    "optionC": "J.K. Rowling",
+    "optionD": "Philip Pullman",
+    "correctAnswer": "J.R.R. Tolkien"
+  },
+  {
+    "questionText": "Welcher Künstler ist für das Gemälde 'Das Mädchen mit dem Perlenohrring' bekannt?",
+    "optionA": "Johannes Vermeer",
+    "optionB": "Rembrandt",
+    "optionC": "Pieter Bruegel",
+    "optionD": "Jan van Eyck",
+    "correctAnswer": "Johannes Vermeer"
+  },
+  {
+    "questionText": "Welches Land hat die meisten Olympischen Goldmedaillen im Schwimmen gewonnen?",
+    "optionA": "Australien",
+    "optionB": "USA",
+    "optionC": "China",
+    "optionD": "Deutschland",
+    "correctAnswer": "USA"
+  },
+  {
+    "questionText": "Wer spielte die Rolle des Captain Jack Sparrow in 'Fluch der Karibik'?",
+    "optionA": "Orlando Bloom",
+    "optionB": "Johnny Depp",
+    "optionC": "Geoffrey Rush",
+    "optionD": "Keira Knightley",
+    "correctAnswer": "Johnny Depp"
+  },
+  {
+    "questionText": "Was ist das Ergebnis von 20 ÷ 4?",
+    "optionA": "4",
+    "optionB": "5",
+    "optionC": "6",
+    "optionD": "7",
+    "correctAnswer": "5"
+  },
+  {
+    "questionText": "Wer war der erste Mensch, der den Südpol erreichte?",
+    "optionA": "Robert Falcon Scott",
+    "optionB": "Roald Amundsen",
+    "optionC": "Ernest Shackleton",
+    "optionD": "James Cook",
+    "correctAnswer": "Roald Amundsen"
+  },
+  {
+    "questionText": "Welches ist das größte Binnenmeer der Welt?",
+    "optionA": "Schwarzes Meer",
+    "optionB": "Kaspisches Meer",
+    "optionC": "Mittelmeer",
+    "optionD": "Rotes Meer",
+    "correctAnswer": "Kaspisches Meer"
+  },
+  {
+    "questionText": "Welche Wissenschaft befasst sich mit der Erforschung von Pflanzen?",
+    "optionA": "Zoologie",
+    "optionB": "Mykologie",
+    "optionC": "Botanik",
+    "optionD": "Entomologie",
+    "correctAnswer": "Botanik"
+  },
+  {
+    "questionText": "Wer schrieb 'Die unendliche Geschichte'?",
+    "optionA": "J.K. Rowling",
+    "optionB": "Michael Ende",
+    "optionC": "J.R.R. Tolkien",
+    "optionD": "Cornelia Funke",
+    "correctAnswer": "Michael Ende"
+  },
+  {
+    "questionText": "Welcher Künstler ist für das Gemälde 'Guernica' bekannt?",
+    "optionA": "Pablo Picasso",
+    "optionB": "Salvador Dalí",
+    "optionC": "Henri Matisse",
+    "optionD": "Joan Miró",
+    "correctAnswer": "Pablo Picasso"
+  },
+  {
+    "questionText": "Welche Mannschaft gewann den FIFA-Weltpokal 2002?",
+    "optionA": "Deutschland",
+    "optionB": "Brasilien",
+    "optionC": "Frankreich",
+    "optionD": "Argentinien",
+    "correctAnswer": "Brasilien"
+  },
+  {
+    "questionText": "Wer spielte die Rolle des Forrest Gump im gleichnamigen Film?",
+    "optionA": "Tom Hanks",
+    "optionB": "Brad Pitt",
+    "optionC": "Leonardo DiCaprio",
+    "optionD": "Johnny Depp",
+    "correctAnswer": "Tom Hanks"
+  },
+  {
+    "questionText": "Was ist die Fläche eines Rechtecks mit den Maßen 5 cm x 10 cm?",
+    "optionA": "30 cm²",
+    "optionB": "40 cm²",
+    "optionC": "50 cm²",
+    "optionD": "60 cm²",
+    "correctAnswer": "50 cm²"
+  },
+  {
+    "questionText": "In welchem Jahr wurde die Berliner Mauer errichtet?",
+    "optionA": "1961",
+    "optionB": "1962",
+    "optionC": "1963",
+    "optionD": "1964",
+    "correctAnswer": "1961"
+  },
+  {
+    "questionText": "Wer war der erste Präsident der Weimarer Republik?",
+    "optionA": "Paul von Hindenburg",
+    "optionB": "Friedrich Ebert",
+    "optionC": "Gustav Stresemann",
+    "optionD": "Wilhelm Cuno",
+    "correctAnswer": "Friedrich Ebert"
+  },
+  {
+    "questionText": "Welcher Entdecker gilt als der erste, der Amerika erreichte?",
+    "optionA": "Vasco da Gama",
+    "optionB": "Christoph Kolumbus",
+    "optionC": "Ferdinand Magellan",
+    "optionD": "James Cook",
+    "correctAnswer": "Christoph Kolumbus"
+  },
+  {
+    "questionText": "Welches ist das tiefste Meer der Erde?",
+    "optionA": "Karibisches Meer",
+    "optionB": "Schwarzes Meer",
+    "optionC": "Philippinensee",
+    "optionD": "Japanisches Meer",
+    "correctAnswer": "Philippinensee"
+  },
+  {
+    "questionText": "Welcher Planet hat das schnellste Rotationsverhalten im Sonnensystem?",
+    "optionA": "Saturn",
+    "optionB": "Neptun",
+    "optionC": "Jupiter",
+    "optionD": "Mars",
+    "correctAnswer": "Jupiter"
+  },
+  {
+    "questionText": "Wer schrieb 'Romeo und Julia'?",
+    "optionA": "William Shakespeare",
+    "optionB": "Christopher Marlowe",
+    "optionC": "Ben Jonson",
+    "optionD": "Thomas Kyd",
+    "correctAnswer": "William Shakespeare"
+  },
+  {
+    "questionText": "Welcher Künstler ist für das Werk 'Der Schrei' bekannt?",
+    "optionA": "Edvard Munch",
+    "optionB": "Claude Monet",
+    "optionC": "Salvador Dalí",
+    "optionD": "Paul Cézanne",
+    "correctAnswer": "Edvard Munch"
+  },
+  {
+    "questionText": "Welches Land gewann die FIFA Weltmeisterschaft 1998?",
+    "optionA": "Brasilien",
+    "optionB": "Frankreich",
+    "optionC": "Deutschland",
+    "optionD": "Argentinien",
+    "correctAnswer": "Frankreich"
+  },
+  {
+    "questionText": "Wer spielte die Hauptrolle in dem Film 'Titanic' als Jack Dawson?",
+    "optionA": "Leonardo DiCaprio",
+    "optionB": "Brad Pitt",
+    "optionC": "Tom Hanks",
+    "optionD": "Johnny Depp",
+    "correctAnswer": "Leonardo DiCaprio"
+  },
+  {
+    "questionText": "Was ist das Ergebnis von 13 x 4?",
+    "optionA": "42",
+    "optionB": "48",
+    "optionC": "52",
+    "optionD": "56",
+    "correctAnswer": "52"
+  },
+  {
+    "questionText": "Wer war der britische Premierminister während des Ersten Weltkriegs?",
+    "optionA": "Winston Churchill",
+    "optionB": "David Lloyd George",
+    "optionC": "Neville Chamberlain",
+    "optionD": "Herbert Asquith",
+    "correctAnswer": "David Lloyd George"
+  },
+  {
+    "questionText": "Welcher Fluss fließt durch London?",
+    "optionA": "Seine",
+    "optionB": "Thames",
+    "optionC": "Rhein",
+    "optionD": "Elbe",
+    "correctAnswer": "Thames"
+  },
+  {
+    "questionText": "Welche Wissenschaft befasst sich mit der Erforschung des Verhaltens von Tieren?",
+    "optionA": "Ökologie",
+    "optionB": "Zoologie",
+    "optionC": "Ethologie",
+    "optionD": "Anthropologie",
+    "correctAnswer": "Ethologie"
+  },
+  {
+    "questionText": "Wer schrieb 'Sturmhöhe'?",
+    "optionA": "Emily Brontë",
+    "optionB": "Charlotte Brontë",
+    "optionC": "Jane Austen",
+    "optionD": "George Eliot",
+    "correctAnswer": "Emily Brontë"
+  },
+  {
+    "questionText": "Welcher Künstler ist für die Werke 'Die Wasserlilien' bekannt?",
+    "optionA": "Claude Monet",
+    "optionB": "Paul Cézanne",
+    "optionC": "Vincent van Gogh",
+    "optionD": "Henri Matisse",
+    "correctAnswer": "Claude Monet"
+  },
+  {
+    "questionText": "Welches Land gewann die Fußballweltmeisterschaft 2010?",
+    "optionA": "Brasilien",
+    "optionB": "Deutschland",
+    "optionC": "Spanien",
+    "optionD": "Italien",
+    "correctAnswer": "Spanien"
+  },
+  {
+    "questionText": "Wer spielte die Rolle des Joker im Film 'The Dark Knight'?",
+    "optionA": "Jack Nicholson",
+    "optionB": "Joaquin Phoenix",
+    "optionC": "Heath Ledger",
+    "optionD": "Jared Leto",
+    "correctAnswer": "Heath Ledger"
+  },
+  {
+    "questionText": "Was ist das Ergebnis von 25 ÷ 5?",
+    "optionA": "4",
+    "optionB": "5",
+    "optionC": "6",
+    "optionD": "7",
+    "correctAnswer": "5"
+  },
+  {
+    "questionText": "Wer war der erste Mensch, der den Mond betrat?",
+    "optionA": "Yuri Gagarin",
+    "optionB": "Buzz Aldrin",
+    "optionC": "Neil Armstrong",
+    "optionD": "John Glenn",
+    "correctAnswer": "Neil Armstrong"
+  },
+  {
+    "questionText": "Welches Land hat die meisten Nachbarstaaten?",
+    "optionA": "China",
+    "optionB": "Russland",
+    "optionC": "Indien",
+    "optionD": "Brasilien",
+    "correctAnswer": "China"
+  },
+  {
+    "questionText": "Welches Organ im menschlichen Körper ist für die Reinigung des Blutes zuständig?",
+    "optionA": "Herz",
+    "optionB": "Lunge",
+    "optionC": "Leber",
+    "optionD": "Niere",
+    "correctAnswer": "Niere"
+  },
+  {
+    "questionText": "Wer schrieb 'Oliver Twist'?",
+    "optionA": "Charles Dickens",
+    "optionB": "Mark Twain",
+    "optionC": "Emily Brontë",
+    "optionD": "Thomas Hardy",
+    "correctAnswer": "Charles Dickens"
+  },
+  {
+    "questionText": "Welcher Künstler ist für das Werk 'Guernica' bekannt?",
+    "optionA": "Pablo Picasso",
+    "optionB": "Vincent van Gogh",
+    "optionC": "Henri Matisse",
+    "optionD": "Joan Miró",
+    "correctAnswer": "Pablo Picasso"
+  },
+  {
+    "questionText": "Welches Land gewann die Europameisterschaft im Fußball 2016?",
+    "optionA": "Portugal",
+    "optionB": "Frankreich",
+    "optionC": "Deutschland",
+    "optionD": "Spanien",
+    "correctAnswer": "Portugal"
+  },
+  {
+    "questionText": "Wer spielte die Rolle des Tony Stark in 'Iron Man'?",
+    "optionA": "Robert Downey Jr.",
+    "optionB": "Chris Evans",
+    "optionC": "Mark Ruffalo",
+    "optionD": "Chris Hemsworth",
+    "correctAnswer": "Robert Downey Jr."
+  },
+  {
+    "questionText": "Was ist das Ergebnis von 36 ÷ 6?",
+    "optionA": "5",
+    "optionB": "6",
+    "optionC": "7",
+    "optionD": "8",
+    "correctAnswer": "6"
+  },
+  {
+    "questionText": "Welcher US-Präsident wurde 1963 in Dallas ermordet?",
+    "optionA": "John F. Kennedy",
+    "optionB": "Abraham Lincoln",
+    "optionC": "Lyndon B. Johnson",
+    "optionD": "Harry S. Truman",
+    "correctAnswer": "John F. Kennedy"
+  },
+  {
+    "questionText": "Welches ist der längste Fluss in Asien?",
+    "optionA": "Jangtse",
+    "optionB": "Mekong",
+    "optionC": "Indus",
+    "optionD": "Ganges",
+    "correctAnswer": "Jangtse"
+  },
+  {
+    "questionText": "Welche Wissenschaft befasst sich mit dem Erbgut und den Genen?",
+    "optionA": "Geologie",
+    "optionB": "Genetik",
+    "optionC": "Botanik",
+    "optionD": "Virologie",
+    "correctAnswer": "Genetik"
+  },
+  {
+    "questionText": "Wer schrieb das Buch 'Alice im Wunderland'?",
+    "optionA": "Hans Christian Andersen",
+    "optionB": "J.R.R. Tolkien",
+    "optionC": "Lewis Carroll",
+    "optionD": "J.K. Rowling",
+    "correctAnswer": "Lewis Carroll"
+  },
+  {
+    "questionText": "Welcher Künstler ist für das Gemälde 'Die Sonnenblumen' bekannt?",
+    "optionA": "Vincent van Gogh",
+    "optionB": "Claude Monet",
+    "optionC": "Paul Cézanne",
+    "optionD": "Henri Rousseau",
+    "correctAnswer": "Vincent van Gogh"
+  },
+  {
+    "questionText": "Welches Land gewann die Fußball-Weltmeisterschaft 1982?",
+    "optionA": "Brasilien",
+    "optionB": "Italien",
+    "optionC": "Deutschland",
+    "optionD": "Argentinien",
+    "correctAnswer": "Italien"
+  },
+  {
+    "questionText": "Wer spielte die Rolle des Harry Potter in der gleichnamigen Filmreihe?",
+    "optionA": "Rupert Grint",
+    "optionB": "Daniel Radcliffe",
+    "optionC": "Elijah Wood",
+    "optionD": "Tom Felton",
+    "correctAnswer": "Daniel Radcliffe"
+  },
+  {
+    "questionText": "Was ist der Flächeninhalt eines Quadrats mit einer Seitenlänge von 10 cm?",
+    "optionA": "50 cm²",
+    "optionB": "100 cm²",
+    "optionC": "150 cm²",
+    "optionD": "200 cm²",
+    "correctAnswer": "100 cm²"
+  },
+  {
+    "questionText": "Wer war der erste Präsident der Vereinigten Staaten?",
+    "optionA": "Thomas Jefferson",
+    "optionB": "John Adams",
+    "optionC": "George Washington",
+    "optionD": "James Madison",
+    "correctAnswer": "George Washington"
+  },
+  {
+    "questionText": "Welches Land hat die längste Küste der Welt?",
+    "optionA": "Russland",
+    "optionB": "Kanada",
+    "optionC": "USA",
+    "optionD": "Australien",
+    "correctAnswer": "Kanada"
+  },
+  {
+    "questionText": "Welcher Planet ist als der Rote Planet bekannt?",
+    "optionA": "Jupiter",
+    "optionB": "Mars",
+    "optionC": "Venus",
+    "optionD": "Merkur",
+    "correctAnswer": "Mars"
+  },
+  {
+    "questionText": "Wer schrieb den Roman 'Moby-Dick'?",
+    "optionA": "Herman Melville",
+    "optionB": "Mark Twain",
+    "optionC": "Charles Dickens",
+    "optionD": "Nathaniel Hawthorne",
+    "correctAnswer": "Herman Melville"
+  },
+  {
+    "questionText": "Welcher Künstler malte das Werk 'Die Sternennacht'?",
+    "optionA": "Vincent van Gogh",
+    "optionB": "Pablo Picasso",
+    "optionC": "Claude Monet",
+    "optionD": "Edvard Munch",
+    "correctAnswer": "Vincent van Gogh"
+  },
+  {
+    "questionText": "Welches Land gewann die FIFA Weltmeisterschaft 2002?",
+    "optionA": "Brasilien",
+    "optionB": "Deutschland",
+    "optionC": "Argentinien",
+    "optionD": "Frankreich",
+    "correctAnswer": "Brasilien"
+  },
+  {
+    "questionText": "Wer spielte die Rolle des Tony Stark in der Marvel Cinematic Universe (MCU)-Reihe?",
+    "optionA": "Chris Evans",
+    "optionB": "Mark Ruffalo",
+    "optionC": "Robert Downey Jr.",
+    "optionD": "Tom Hiddleston",
+    "correctAnswer": "Robert Downey Jr."
+  },
+  {
+    "questionText": "Was ist das Ergebnis von 45 ÷ 5?",
+    "optionA": "7",
+    "optionB": "8",
+    "optionC": "9",
+    "optionD": "10",
+    "correctAnswer": "9"
+  },
+  {
+    "questionText": "Welches Land ist flächenmäßig das kleinste der Welt?",
+    "optionA": "Monaco",
+    "optionB": "Vatikanstadt",
+    "optionC": "San Marino",
+    "optionD": "Liechtenstein",
+    "correctAnswer": "Vatikanstadt"
+  },
+  {
+    "questionText": "Welcher Fluss ist der längste der Welt?",
+    "optionA": "Amazonas",
+    "optionB": "Nil",
+    "optionC": "Mississippi",
+    "optionD": "Jangtse",
+    "correctAnswer": "Nil"
+  },
+  {
+    "questionText": "Welche Wissenschaft befasst sich mit der Untersuchung des Wetters?",
+    "optionA": "Geologie",
+    "optionB": "Astronomie",
+    "optionC": "Meteorologie",
+    "optionD": "Ökologie",
+    "correctAnswer": "Meteorologie"
+  },
+  {
+    "questionText": "Wer schrieb den Roman 'Die Reise zum Mittelpunkt der Erde'?",
+    "optionA": "Jules Verne",
+    "optionB": "H.G. Wells",
+    "optionC": "Mary Shelley",
+    "optionD": "Edgar Allan Poe",
+    "correctAnswer": "Jules Verne"
+  },
+  {
+    "questionText": "Welcher Künstler schuf das Werk 'Das letzte Abendmahl'?",
+    "optionA": "Michelangelo",
+    "optionB": "Leonardo da Vinci",
+    "optionC": "Raphael",
+    "optionD": "Donatello",
+    "correctAnswer": "Leonardo da Vinci"
+  },
+  {
+    "questionText": "Welches Land gewann die Olympischen Sommerspiele 2012 im Medaillenspiegel?",
+    "optionA": "USA",
+    "optionB": "China",
+    "optionC": "Russland",
+    "optionD": "Großbritannien",
+    "correctAnswer": "USA"
+  },
+  {
+    "questionText": "Wer spielte die Hauptrolle in dem Film 'Forrest Gump'?",
+    "optionA": "Tom Hanks",
+    "optionB": "Brad Pitt",
+    "optionC": "Leonardo DiCaprio",
+    "optionD": "Johnny Depp",
+    "correctAnswer": "Tom Hanks"
+  },
+  {
+    "questionText": "Was ist das Ergebnis von 36 ÷ 4?",
+    "optionA": "6",
+    "optionB": "7",
+    "optionC": "8",
+    "optionD": "9",
+    "correctAnswer": "9"
+  },
+  {
+    "questionText": "Wer war der erste Mensch, der den Weltraum betrat?",
+    "optionA": "Neil Armstrong",
+    "optionB": "Buzz Aldrin",
+    "optionC": "John Glenn",
+    "optionD": "Yuri Gagarin",
+    "correctAnswer": "Yuri Gagarin"
+  },
+  {
+    "questionText": "Welches Land hat die größte Bevölkerung der Welt?",
+    "optionA": "Indien",
+    "optionB": "China",
+    "optionC": "USA",
+    "optionD": "Indonesien",
+    "correctAnswer": "China"
+  },
+  {
+    "questionText": "Welches Organ im menschlichen Körper ist für die Sauerstoffaufnahme verantwortlich?",
+    "optionA": "Leber",
+    "optionB": "Herz",
+    "optionC": "Lunge",
+    "optionD": "Niere",
+    "correctAnswer": "Lunge"
+  },
+  {
+    "questionText": "Wer schrieb den Roman 'Große Erwartungen'?",
+    "optionA": "Mark Twain",
+    "optionB": "Charles Dickens",
+    "optionC": "F. Scott Fitzgerald",
+    "optionD": "Thomas Hardy",
+    "correctAnswer": "Charles Dickens"
+  },
+  {
+    "questionText": "Welcher Künstler ist für das Werk 'Die Wasserlilien' bekannt?",
+    "optionA": "Claude Monet",
+    "optionB": "Pablo Picasso",
+    "optionC": "Vincent van Gogh",
+    "optionD": "Salvador Dalí",
+    "correctAnswer": "Claude Monet"
+  },
+  {
+    "questionText": "Welches Land gewann die Fußball-Weltmeisterschaft 1986?",
+    "optionA": "Deutschland",
+    "optionB": "Argentinien",
+    "optionC": "Brasilien",
+    "optionD": "Italien",
+    "correctAnswer": "Argentinien"
+  },
+  {
+    "questionText": "Wer spielte die Rolle des Luke Skywalker in der 'Star Wars'-Filmreihe?",
+    "optionA": "Harrison Ford",
+    "optionB": "Mark Hamill",
+    "optionC": "Liam Neeson",
+    "optionD": "Ewan McGregor",
+    "correctAnswer": "Mark Hamill"
+  },
+  {
+    "questionText": "Was ist das Ergebnis von 64 ÷ 8?",
+    "optionA": "7",
+    "optionB": "8",
+    "optionC": "9",
+    "optionD": "10",
+    "correctAnswer": "8"
+  },
+  {
+    "questionText": "In welchem Jahr begann der Erste Weltkrieg?",
+    "optionA": "1912",
+    "optionB": "1914",
+    "optionC": "1916",
+    "optionD": "1918",
+    "correctAnswer": "1914"
+  },
+  {
+    "questionText": "Wer war der erste Mensch, der den Südpol erreichte?",
+    "optionA": "Robert Falcon Scott",
+    "optionB": "Roald Amundsen",
+    "optionC": "Ernest Shackleton",
+    "optionD": "James Cook",
+    "correctAnswer": "Roald Amundsen"
+  },
+  {
+    "questionText": "Welches Land hat die meisten Vulkane der Welt?",
+    "optionA": "Indonesien",
+    "optionB": "Japan",
+    "optionC": "Island",
+    "optionD": "USA",
+    "correctAnswer": "Indonesien"
+  },
+  {
+    "questionText": "Wer schrieb das Buch 'Die Abenteuer des Huckleberry Finn'?",
+    "optionA": "Mark Twain",
+    "optionB": "Charles Dickens",
+    "optionC": "Ernest Hemingway",
+    "optionD": "F. Scott Fitzgerald",
+    "correctAnswer": "Mark Twain"
+  },
+  {
+    "questionText": "Welcher Künstler ist für das Werk 'Der Schrei' bekannt?",
+    "optionA": "Edvard Munch",
+    "optionB": "Pablo Picasso",
+    "optionC": "Claude Monet",
+    "optionD": "Vincent van Gogh",
+    "correctAnswer": "Edvard Munch"
+  },
+  {
+    "questionText": "Welches Land gewann die Fußballweltmeisterschaft 1990?",
+    "optionA": "Deutschland",
+    "optionB": "Argentinien",
+    "optionC": "Brasilien",
+    "optionD": "Italien",
+    "correctAnswer": "Deutschland"
+  },
+  {
+    "questionText": "Wer spielte die Hauptrolle in dem Film 'Gladiator'?",
+    "optionA": "Russell Crowe",
+    "optionB": "Brad Pitt",
+    "optionC": "Tom Hanks",
+    "optionD": "Joaquin Phoenix",
+    "correctAnswer": "Russell Crowe"
+  },
+  {
+    "questionText": "Was ist das Ergebnis von 16 ÷ 4?",
+    "optionA": "3",
+    "optionB": "4",
+    "optionC": "5",
+    "optionD": "6",
+    "correctAnswer": "4"
+  },
+  {
+    "questionText": "Welches Land wurde 1776 unabhängig?",
+    "optionA": "Kanada",
+    "optionB": "Australien",
+    "optionC": "USA",
+    "optionD": "Neuseeland",
+    "correctAnswer": "USA"
+  },
+  {
+    "questionText": "Welcher Fluss ist der längste in Europa?",
+    "optionA": "Donau",
+    "optionB": "Wolga",
+    "optionC": "Rhein",
+    "optionD": "Elbe",
+    "correctAnswer": "Wolga"
+  },
+  {
+    "questionText": "Welche Wissenschaft befasst sich mit der Untersuchung von Insekten?",
+    "optionA": "Entomologie",
+    "optionB": "Ornithologie",
+    "optionC": "Botanik",
+    "optionD": "Herpetologie",
+    "correctAnswer": "Entomologie"
+  },
+  {
+    "questionText": "Wer schrieb den Roman 'Dracula'?",
+    "optionA": "Bram Stoker",
+    "optionB": "Mary Shelley",
+    "optionC": "H.G. Wells",
+    "optionD": "Edgar Allan Poe",
+    "correctAnswer": "Bram Stoker"
+  },
+  {
+    "questionText": "Welcher Künstler malte das Werk 'Guernica'?",
+    "optionA": "Pablo Picasso",
+    "optionB": "Salvador Dalí",
+    "optionC": "Vincent van Gogh",
+    "optionD": "Henri Matisse",
+    "correctAnswer": "Pablo Picasso"
+  },
+  {
+    "questionText": "Welches Land gewann die Rugby-Weltmeisterschaft 2019?",
+    "optionA": "Neuseeland",
+    "optionB": "Südafrika",
+    "optionC": "England",
+    "optionD": "Australien",
+    "correctAnswer": "Südafrika"
+  },
+  {
+    "questionText": "Wer spielte die Rolle des Jack Sparrow in der 'Fluch der Karibik'-Reihe?",
+    "optionA": "Johnny Depp",
+    "optionB": "Orlando Bloom",
+    "optionC": "Brad Pitt",
+    "optionD": "Tom Hanks",
+    "correctAnswer": "Johnny Depp"
+  },
+  {
+    "questionText": "Was ist das Ergebnis von 72 ÷ 8?",
+    "optionA": "7",
+    "optionB": "8",
+    "optionC": "9",
+    "optionD": "10",
+    "correctAnswer": "9"
+  },
+  {
+    "questionText": "Wer war der Präsident der USA während des Zweiten Weltkriegs?",
+    "optionA": "Harry S. Truman",
+    "optionB": "Franklin D. Roosevelt",
+    "optionC": "Dwight D. Eisenhower",
+    "optionD": "Herbert Hoover",
+    "correctAnswer": "Franklin D. Roosevelt"
+  },
+  {
+    "questionText": "Welches ist der größte Ozean der Welt?",
+    "optionA": "Atlantischer Ozean",
+    "optionB": "Indischer Ozean",
+    "optionC": "Arktischer Ozean",
+    "optionD": "Pazifischer Ozean",
+    "correctAnswer": "Pazifischer Ozean"
+  },
+  {
+    "questionText": "Welches Organ im menschlichen Körper filtert das Blut?",
+    "optionA": "Leber",
+    "optionB": "Niere",
+    "optionC": "Lunge",
+    "optionD": "Herz",
+    "correctAnswer": "Niere"
+  },
+  {
+    "questionText": "Wer schrieb das Buch 'Stolz und Vorurteil'?",
+    "optionA": "Emily Brontë",
+    "optionB": "Jane Austen",
+    "optionC": "Charlotte Brontë",
+    "optionD": "Mary Shelley",
+    "correctAnswer": "Jane Austen"
+  },
+  {
+    "questionText": "Welcher Künstler ist für die Werke 'Die Seerosen' bekannt?",
+    "optionA": "Claude Monet",
+    "optionB": "Vincent van Gogh",
+    "optionC": "Salvador Dalí",
+    "optionD": "Pablo Picasso",
+    "correctAnswer": "Claude Monet"
+  },
+  {
+    "questionText": "Welches Land gewann die Fußballweltmeisterschaft 1978?",
+    "optionA": "Brasilien",
+    "optionB": "Argentinien",
+    "optionC": "Deutschland",
+    "optionD": "Italien",
+    "correctAnswer": "Argentinien"
+  },
+  {
+    "questionText": "Wer spielte die Rolle des Frodo Beutlin in der 'Herr der Ringe'-Trilogie?",
+    "optionA": "Daniel Radcliffe",
+    "optionB": "Elijah Wood",
+    "optionC": "Orlando Bloom",
+    "optionD": "Viggo Mortensen",
+    "correctAnswer": "Elijah Wood"
+  },
+  {
+    "questionText": "Was ist das Ergebnis von 8 x 9?",
+    "optionA": "64",
+    "optionB": "72",
+    "optionC": "81",
+    "optionD": "88",
+    "correctAnswer": "72"
+  }
+]

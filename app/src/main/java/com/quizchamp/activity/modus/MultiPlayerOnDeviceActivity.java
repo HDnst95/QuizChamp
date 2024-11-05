@@ -25,6 +25,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.quizchamp.R;
 import com.quizchamp.activity.menu.MainMenuActivity;
 import com.quizchamp.model.Question;
+import com.quizchamp.repository.QuestionRepository;
+import com.quizchamp.utils.JsonUtils;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -34,7 +36,6 @@ import java.util.Random;
 public class MultiPlayerOnDeviceActivity extends AppCompatActivity {
 
     private static final String TAG = "HighscoreActivity";
-    FirebaseFirestore db;
     private FirebaseAuth mAuth;
     private GridLayout spielstandAnzeigeName, spielstandAnzeigeScore;
     private TextView questionTextView, textViewFrage, textViewPlayer1, textViewPlayer2, textViewPlayer1Score, textViewPlayer2Score;
@@ -49,12 +50,22 @@ public class MultiPlayerOnDeviceActivity extends AppCompatActivity {
     private int player1Score = 0;
     private int player2Score = 0;
     private Question question;
+    private List<Question> gespielteFragen = new ArrayList<Question>();
     private int anzahlFragen = 0;
+    private QuestionRepository questionRepository;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_question);
+        mAuth = FirebaseAuth.getInstance();
+
+        questionRepository = QuestionRepository.getInstance(this);
+        questionRepository.open(); // Open the database
+        // Clear the questions table and insert questions from JSON
+        questionRepository.clearQuestionsTable();
+        String json = JsonUtils.loadJSONFromAsset(this, "questions.json");
+        questionRepository.insertQuestionsFromJson(json);
 
         Intent intent = getIntent();
         playerName1 = intent.getStringExtra("PLAYER_1");
@@ -90,12 +101,6 @@ public class MultiPlayerOnDeviceActivity extends AppCompatActivity {
         textViewPlayer1Score.setText(String.valueOf(player1Score));
         textViewPlayer2Score.setText(String.valueOf(player2Score));
 
-        mAuth = FirebaseAuth.getInstance();
-        db = FirebaseFirestore.getInstance();
-
-        elementeAusblenden();
-
-        erstesFragenLaden();
 
         // Setze Click-Listener für die Antwort-Buttons
         View.OnClickListener answerClickListener = v -> {
@@ -110,108 +115,53 @@ public class MultiPlayerOnDeviceActivity extends AppCompatActivity {
         nextQuestionButton.setOnClickListener(v -> nextTurn());
         backToMainMenuButton.setOnClickListener(v -> backToMainMenu());
 
+        loadQuestion();
     }
 
-    private void elementeAusblenden() {
-        textViewFrage.setVisibility(View.GONE);
-        questionTextView.setVisibility(View.GONE);
-        buttonAnswer1.setVisibility(View.GONE);
-        buttonAnswer2.setVisibility(View.GONE);
-        buttonAnswer3.setVisibility(View.GONE);
-        buttonAnswer4.setVisibility(View.GONE);
-        nextQuestionButton.setVisibility(View.INVISIBLE);
-        backToMainMenuButton.setVisibility(View.INVISIBLE);
-        spielstandAnzeigeName.setVisibility(View.GONE);
-        spielstandAnzeigeScore.setVisibility(View.GONE);
+    private void loadQuestion() {
+        prüfeFragendoppelung();
+        if (question != null) {
+            textViewFrage.setText("Frage " + (currentQuestionIndex));
+
+            List<String> options = new ArrayList<>();
+            options.add(question.getOptionA());
+            options.add(question.getOptionB());
+            options.add(question.getOptionC());
+            options.add(question.getOptionD());
+            Collections.shuffle(options);
+
+            questionTextView.setText(question.getQuestionText());
+            buttonAnswer1.setText(options.get(0));
+            buttonAnswer2.setText(options.get(1));
+            buttonAnswer3.setText(options.get(2));
+            buttonAnswer4.setText(options.get(3));
+
+            List<MaterialButton> buttons = new ArrayList<>();
+            buttons.add(buttonAnswer1);
+            buttons.add(buttonAnswer2);
+            buttons.add(buttonAnswer3);
+            buttons.add(buttonAnswer4);
+
+            setButtonHeights(buttons);
+
+            resetButtons();
+            nextQuestionButton.setVisibility(View.INVISIBLE);
+        } else {
+            Log.e(TAG, "No questions available in the database.");
+        }
     }
 
-    private void elementeEinblenden() {
-        textViewFrage.setVisibility(View.VISIBLE);
-        questionTextView.setVisibility(View.VISIBLE);
-        buttonAnswer1.setVisibility(View.VISIBLE);
-        buttonAnswer2.setVisibility(View.VISIBLE);
-        buttonAnswer3.setVisibility(View.VISIBLE);
-        buttonAnswer4.setVisibility(View.VISIBLE);
-        nextQuestionButton.setVisibility(View.VISIBLE);
-        backToMainMenuButton.setVisibility(View.VISIBLE);
-        spielstandAnzeigeName.setVisibility(View.VISIBLE);
-        spielstandAnzeigeScore.setVisibility(View.VISIBLE);
-    }
-
-    private void erstesFragenLaden() {
-        fetchRandomQuestionFromDatabase(new MultiPlayerOnDeviceActivity.QuestionFetchCallback() {
-            @Override
-            public void onQuestionFetched(Question fetchedQuestion) {
-                showQuestion(fetchedQuestion);
-                elementeEinblenden();
+    private void prüfeFragendoppelung() {
+        question = questionRepository.getRandomQuestion();
+        for (Question q : gespielteFragen) {
+            if (q.getId() == question.getId()) {
+                question = questionRepository.getRandomQuestion();
+                if (gespielteFragen.size() == anzahlFragen) {
+                    endGameButton();
+                }
             }
-
-            @Override
-            public void onError(Exception e) {
-                Log.e(TAG, "Error fetching question: ", e);
-            }
-        });
-    }
-
-    private void displayQuestion() {
-        fetchRandomQuestionFromDatabase(new MultiPlayerOnDeviceActivity.QuestionFetchCallback() {
-            @Override
-            public void onQuestionFetched(Question fetchedQuestion) {
-                showQuestion(fetchedQuestion);
-            }
-
-            @Override
-            public void onError(Exception e) {
-                Log.e(TAG, "Error fetching question: ", e);
-            }
-        });
-    }
-
-    private void fetchRandomQuestionFromDatabase(MultiPlayerOnDeviceActivity.QuestionFetchCallback callback) {
-        int randomIndex = new Random().nextInt(anzahlFragen);
-        db.collection("questions").document(String.valueOf(randomIndex)).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
-                Question randomQuestion = task.getResult().toObject(Question.class);
-                question = randomQuestion;
-                callback.onQuestionFetched(randomQuestion);
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                callback.onError(e);
-            }
-        });
-    }
-
-    private void showQuestion(Question currentQuestion) {
-        textViewFrage.setText("Frage " + (currentQuestionIndex));
-        textViewPlayer1.setText(playerName1);
-        textViewPlayer2.setText(playerName2);
-        textViewPlayer1Score.setText(String.valueOf(player1Score));
-        textViewPlayer2Score.setText(String.valueOf(player2Score));
-
-
-        List<String> options = new ArrayList<>();
-        options.add(currentQuestion.getOptionA());
-        options.add(currentQuestion.getOptionB());
-        options.add(currentQuestion.getOptionC());
-        options.add(currentQuestion.getOptionD());
-        Collections.shuffle(options);
-
-        questionTextView.setText(currentQuestion.getQuestionText());
-        buttonAnswer1.setText(options.get(0));
-        buttonAnswer2.setText(options.get(1));
-        buttonAnswer3.setText(options.get(2));
-        buttonAnswer4.setText(options.get(3));
-
-        List<MaterialButton> buttons = new ArrayList<>();
-        buttons.add(buttonAnswer1);
-        buttons.add(buttonAnswer2);
-        buttons.add(buttonAnswer3);
-        buttons.add(buttonAnswer4);
-
-        setButtonHeights(buttons);
+        }
+        gespielteFragen.add(question);
     }
 
     private int getMaxButtonHeight(List<MaterialButton> buttons) {
@@ -235,7 +185,7 @@ public class MultiPlayerOnDeviceActivity extends AppCompatActivity {
         return textView.getMeasuredHeight();
     }
 
-    private void resetButtonColors() {
+    private void resetButtons() {
         int buttonColor = getResources().getColor(R.color.buttonColor);
         buttonAnswer1.setBackgroundColor(buttonColor);
         buttonAnswer2.setBackgroundColor(buttonColor);
@@ -258,25 +208,27 @@ public class MultiPlayerOnDeviceActivity extends AppCompatActivity {
         if (currentQuestionIndex < questionCount) {
             if (currentPlayer == 1) {
                 currentPlayer = 2;
-                resetButtonColors();
+                resetButtons();
                 Toast.makeText(this, currentPlayer + " ist an der Reihe", Toast.LENGTH_SHORT).show();
             } else {
                 currentPlayer = 1;
-                resetButtonColors();
+                resetButtons();
                 Toast.makeText(this, currentPlayer + " ist an der Reihe", Toast.LENGTH_SHORT).show();
                 currentQuestionIndex++;
-                displayQuestion();
+                loadQuestion();
             }
         } else if (currentQuestionIndex == questionCount && currentPlayer == 1) {
-            currentPlayer = 2;
-            resetButtonColors();
-            Toast.makeText(this, currentPlayer + " ist an der Reihe", Toast.LENGTH_SHORT).show();
+
         } else if (currentQuestionIndex == questionCount && currentPlayer == 2) {
-            endGame();
-            nextQuestionButton.setText(R.string.end_game);
-            nextQuestionButton.setVisibility(View.VISIBLE);
+            endGameButton();
         }
 
+    }
+
+    private void endGameButton() {
+        nextQuestionButton.setText(R.string.end_game);
+        nextQuestionButton.setVisibility(View.VISIBLE);
+        nextQuestionButton.setOnClickListener(v -> endGame());
     }
 
     private void endGame() {
@@ -307,9 +259,4 @@ public class MultiPlayerOnDeviceActivity extends AppCompatActivity {
         }
     }
 
-    private interface QuestionFetchCallback {
-        void onQuestionFetched(Question fetchedQuestion);
-
-        void onError(Exception e);
-    }
 }

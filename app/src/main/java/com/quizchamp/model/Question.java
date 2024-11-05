@@ -5,7 +5,8 @@ public class Question {
     public Question() {
     }
     // Constructor
-    public Question(String questionText, String optionA, String optionB, String optionC, String optionD, String correctAnswer) {
+    public Question(int id, String questionText, String optionA, String optionB, String optionC, String optionD, String correctAnswer) {
+        this.id = id;
         this.questionText = questionText;
         this.optionA = optionA;
         this.optionB = optionB;
@@ -13,6 +14,9 @@ public class Question {
         this.optionD = optionD;
         this.correctAnswer = correctAnswer;
     }
+
+    private int id;
+
     private String questionText;
     private String optionA;
     private String optionB;
@@ -20,12 +24,24 @@ public class Question {
     private String optionD;
     private String correctAnswer;
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getOptionA() {
         return optionA;
     }
 
     public void setQuestionText(String questionText) {
         this.questionText = questionText;
+    }
+
+    public String getQuestionText() {
+        return questionText;
     }
 
     public void setOptionA(String optionA) {
@@ -55,11 +71,7 @@ public class Question {
     public void setOptionD(String optionD) {
         this.optionD = optionD;
     }
-
     // Getters and Setters
-    public String getQuestionText() {
-        return questionText;
-    }
 
     public String getCorrectAnswer() {
         return correctAnswer;

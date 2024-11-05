@@ -36,6 +36,8 @@ import com.quizchamp.activity.modus.MultiPlayerOnDeviceActivity;
 import com.quizchamp.activity.modus.SinglePlayerActivity;
 import com.quizchamp.model.DifficultyLevel;
 import com.quizchamp.model.Question;
+import com.quizchamp.repository.QuestionRepository;
+import com.quizchamp.utils.JsonUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -58,6 +60,7 @@ public class MainMenuActivity extends AppCompatActivity {
     private String playerName;
     private int anzahlFragen;
     private boolean hostOrJoin = false;
+    private QuestionRepository questionRepository;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,9 +71,9 @@ public class MainMenuActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
 
+
         savePlayerNameButton = findViewById(R.id.savePlayerNameButton);
         playerNameEditText = findViewById(R.id.playerNameEditText);
-
 
         singlePlayerButton = findViewById(R.id.singlePlayerButton);
 
@@ -89,8 +92,6 @@ public class MainMenuActivity extends AppCompatActivity {
             showInfoDialog();
         }
         playerNameEditText.setText(playerName);
-
-
 
         savePlayerNameButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -147,9 +148,6 @@ public class MainMenuActivity extends AppCompatActivity {
                 signOut();
             }
         });
-
-        multiPlayerButton.setBackgroundColor(getResources().getColor(R.color.disabledButtonTextColor));
-        multiPlayerButton.setEnabled(false);
 
         checkUser();
         zaehleFragen();
@@ -364,8 +362,11 @@ public class MainMenuActivity extends AppCompatActivity {
     }
 
     private String generateGameId() {
-        // Generate a unique Game ID
-        return UUID.randomUUID().toString();
+        StringBuilder gameId = new StringBuilder();
+        for (int i = 0; i < 10; i++) {
+            gameId.append((char) ('A' + (int) (Math.random() * 26)));
+        }
+        return gameId.toString();
     }
 
     private void copyToClipboard(String text) {
@@ -383,12 +384,10 @@ public class MainMenuActivity extends AppCompatActivity {
                 intent.putExtra("QUESTION_COUNT", questionCount);
                 intent.putExtra("DIFFICULTY", comStrength);
                 intent.putExtra("PLAYER_NAME", playerName);
-                intent.putExtra("ANZAHL_DB", anzahlFragen);
                 break;
             case "Multiplayer":
                 intent = new Intent(MainMenuActivity.this, MultiPlayerActivity.class);
                 intent.putExtra("PLAYER_NAME", playerName);
-                intent.putExtra("ANZAHL_DB", anzahlFragen);
                 intent.putExtra("MATCH_ID", matchId);
                 intent.putExtra("IS_HOST", isHost);
                 break;
@@ -397,12 +396,10 @@ public class MainMenuActivity extends AppCompatActivity {
                 intent.putExtra("PLAYER_1", playerMultiName1);
                 intent.putExtra("PLAYER_2", playerMultiName2);
                 intent.putExtra("QUESTION_COUNT", questionCount);
-                intent.putExtra("ANZAHL_DB", anzahlFragen);
                 break;
             case "Highscore":
                 intent = new Intent(MainMenuActivity.this, HighscoreActivity.class);
                 intent.putExtra("PLAYER_NAME", playerName);
-                intent.putExtra("ANZAHL_DB", anzahlFragen);
                 break;
             default:
                 return;

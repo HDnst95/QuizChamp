@@ -4,11 +4,11 @@ package com.quizchamp.model;
 import java.io.Serializable;
 
 public enum DifficultyLevel implements Serializable {
-    VERY_EASY("sehr einfach", 0.65),
-    EASY("einfach", 0.80),
-    MEDIUM("mittel", 0.88),
-    HARD("schwer", 0.92),
-    VERY_HARD("sehr schwer", 0.98);
+    VERY_EASY("sehr einfach", 0.5),
+    EASY("einfach", 0.6),
+    MEDIUM("mittel", 0.7),
+    HARD("schwer", 0.85),
+    VERY_HARD("sehr schwer", 0.95);
 
     DifficultyLevel(String definition, double accuracy) {
         this.definition = definition;

@@ -1,9 +1,12 @@
 [versions]
-agp = "8.5.2"
+agp = "8.6.1"
 androidxJunit = "1.2.1"
+androidxJunitVersion = "1.1.3"
 appcompatVersion = "1.7.0"
 constraintlayout = "2.1.4"
 constraintlayoutVersion = "2.1.4"
+core = "1.6.1"
+coreVersion = "1.4.0"
 espressoCoreVersion = "3.6.1"
 firebaseAdmin = "9.2.0"
 firebaseAuthVersion = "21.1.0"
@@ -20,6 +23,8 @@ espressoCore = "3.6.1"
 appcompat = "1.7.0"
 material = "1.12.0"
 materialVersion = "1.4.0"
+mockitoCore = "3.11.2"
+mockitoCoreVersion = "5.13.0"
 playServicesAuth = "21.2.0"
 playServicesAuthVersion = "20.2.0"
 playServicesIdentity = "18.1.0"
@@ -28,6 +33,9 @@ googleGmsGoogleServices = "4.4.2"
 firebaseDatabase = "21.0.0"
 firebaseFirestore = "25.1.0"
 firebaseAuth = "23.0.0"
+rules = "1.4.0"
+runner = "1.6.2"
+runnerVersion = "1.4.0"
 webrtc = "122.0.0-dev.362"
 webrtcGoogleWebrtc = "XXX"
 webrtcGoogleWebrtcVersion = "1.0.23995"
@@ -37,7 +45,10 @@ gridlayout = "1.0.0"
 appcompat-v140 = { module = "androidx.appcompat:appcompat", version.ref = "appcompatVersion" }
 constraintlayout = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayout" }
 constraintlayout-v204 = { module = "androidx.constraintlayout:constraintlayout", version.ref = "constraintlayoutVersion" }
+core = { module = "androidx.test:core", version.ref = "core" }
+core-v140 = { module = "androidx.test:core", version.ref = "coreVersion" }
 espresso-core-v340 = { module = "androidx.test.espresso:espresso-core", version.ref = "espressoCoreVersion" }
+ext-junit-v113 = { module = "androidx.test.ext:junit", version.ref = "androidxJunitVersion" }
 firebase-admin = { module = "com.google.firebase:firebase-admin", version.ref = "firebaseAdmin" }
 firebase-auth-v2110 = { module = "com.google.firebase:firebase-auth", version.ref = "firebaseAuthVersion" }
 firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
@@ -58,6 +69,8 @@ junit-v113 = { module = "androidx.test.ext:junit", version.ref = "androidxJunit"
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 material-v140 = { module = "com.google.android.material:material", version.ref = "materialVersion" }
 material-v190 = { module = "com.google.android.material:material", version.ref = "googleMaterial" }
+mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockitoCore" }
+mockito-core-v5130 = { module = "org.mockito:mockito-core", version.ref = "mockitoCoreVersion" }
 play-services-auth = { module = "com.google.android.gms:play-services-auth", version.ref = "playServicesAuth" }
 play-services-auth-v2020 = { module = "com.google.android.gms:play-services-auth", version.ref = "playServicesAuthVersion" }
 play-services-identity = { module = "com.google.android.gms:play-services-identity", version.ref = "playServicesIdentity" }
@@ -66,6 +79,10 @@ room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomRunti
 firebase-database = { group = "com.google.firebase", name = "firebase-database", version.ref = "firebaseDatabase" }
 firebase-firestore = { group = "com.google.firebase", name = "firebase-firestore", version.ref = "firebaseFirestore" }
 firebase-auth = { group = "com.google.firebase", name = "firebase-auth", version.ref = "firebaseAuth" }
+rules = { module = "androidx.test:rules", version.ref = "core" }
+rules-v140 = { module = "androidx.test:rules", version.ref = "rules" }
+runner = { module = "androidx.test:runner", version.ref = "runner" }
+runner-v140 = { module = "androidx.test:runner", version.ref = "runnerVersion" }
 webrtc = { module = "com.vonage:webrtc", version.ref = "webrtc" }
 gridlayout = { group = "androidx.gridlayout", name = "gridlayout", version.ref = "gridlayout" }
 
